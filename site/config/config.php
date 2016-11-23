@@ -9,7 +9,7 @@ License Setup
 
 */
 
-c::set('license', 'your license key');
+if (file_exists(__DIR__ . DS . 'license.php')) include __DIR__ . DS . 'license.php';
 
 
 /* -----------------------------------------------------------------------------
