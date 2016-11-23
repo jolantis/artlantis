@@ -1,0 +1,68 @@
+/* ==========================================================================
+   States (https://github.com/suitcss/utils-state)
+   ========================================================================== */
+
+/**
+ * Completely remove from the flow and screen readers.
+ */
+
+// .is-hidden { display: none !important; }
+
+/**
+ * Completely remove from the flow but leave available to screen readers.
+ */
+
+@mixin is-hidden-visually() {
+	position: absolute;
+	overflow: hidden;
+	clip: rect(1px, 1px, 1px, 1px);
+	padding: 0;
+	width: 1px;
+	height: 1px;
+	border: 0;
+}
+
+.is-hidden-visually,
+%is-hidden-visually { @include is-hidden-visually(); }
+
+/**
+ * Control visibility without affecting flow.
+ *
+ * And use for nice trick: http://j.mp/1qhPKiU
+ */
+
+%is-invisible {
+	visibility: hidden;
+}
+
+%is-visible {
+	visibility: visible;
+}
+
+/**
+ * Hide text (use for image replacement).
+ */
+
+@mixin is-hidden-text($param: false) {
+	// Scott Kellum method (http://wp.me/p4WtR-2xq)
+	@if $param == skm {
+		text-indent: 200%;
+		overflow: hidden;
+		white-space: nowrap;
+	}
+	// H5BP method (http://j.mp/SjVjgP)
+	@else {
+		background-color: transparent;
+		border: 0;
+		overflow: hidden;
+
+		&:before {
+			content: "";
+			display: block;
+			width: 0;
+			height: 100%;
+		}
+	}
+}
+
+%is-hidden-text { @include is-hidden-text(); }

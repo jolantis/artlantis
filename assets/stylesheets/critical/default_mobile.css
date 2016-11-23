@@ -1,0 +1,6 @@
+/**
+ * Artlantis — Jonathan van Wunnik — v0.0.1 — 2016-11-16
+ * http://artlantis.nl
+ * Copyright (c) 2016 Jonathan van Wunnik
+ */
+body,div,h2,header,html,label,ol,pre,span,strong,table,tbody,td,thead,tr{padding:0;margin:0}h2{font-size:inherit;line-height:inherit}h2,td{font-weight:inherit}html{font-weight:300;font-size:87.5%;line-height:1.4;overflow-y:auto;overflow-x:hidden;min-height:100%;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;box-sizing:border-box;font-family:"Helvetica Neue Thin","HelveticaNeue-Thin","Helvetica Light","Helvetica Neue","HelveticaNeue",Helvetica,Arial,ArialMT,sans-serif;color:#141414;background-color:#fefefe}header{display:block}strong{font-weight:bolder}pre{font-family:monospace,monospace;font-size:1em}*{box-sizing:inherit}@media (min-width:20em){html{font-size:calc(93.75% + 8*(100vw - 280px)/1128)}}@media (min-width:48em){html{line-height:1.5}}@media (min-width:64em){html{font-size:137.5%}}
