@@ -3,14 +3,15 @@
    ========================================================================== */
 
 .template {
-	height: 100%;
 
 	&-temp {
+		height: 100%;
 		background-color: $color-base-black;
-		border: rhythm(.5) solid rgb(255,255,255);
+		// border: rhythm(.5) solid rgb(255,255,255);
 
 		body {
-			min-height: 100%;                                                    // To make 'vertically centered` elements work
+			min-height: 100%;                                                   // To make 'vertically centered` elements work
+			border: rhythm(.5) solid rgb(255,255,255);
 		}
 	}
 }
