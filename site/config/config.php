@@ -4,8 +4,17 @@
 if(!defined('KIRBY')) die('Direct access is not allowed');
 
 /* -----------------------------------------------------------------------------
-License Setup
+License
 --------------------------------------------------------------------------------
+
+To be able to add the site's code in public repository (e.g. on Github),
+without exposing the Kirby license code, create a seperate `license.php` file
+and add it to `site/config/` folder. In this file only add the following line:
+
+<?php c::set('license', 'your-license-key-here');
+
+The `license.php` file is ignored by git, and therefore needs to be uploaded
+manually to the production server.
 
 */
 
@@ -400,8 +409,9 @@ Thumbs
 */
 
 c::set('thumbs.driver', 'im');                                                  // The thumbnail library which is being used by Kirby's thumb function/class ('gd' or 'im')
-c::set('thumbs.quality', 78);                                                   // The default jpg compression (or quality setting) for thumbs (figure plugin and tag);
-
+c::set('thumbs.quality', 82);                                                   // The default jpg compression (or quality setting) for thumbs (figure plugin and tag);
+c::set('thumbs.icc.profile', true);                                             // Preserve embedded color (or icc) profile in generated thumb only (any other profile and meta-data is removed); only works when thumb driver is set to 'im' (ImageMagick)
+c::set('thumbs.meta.data', false);                                              // Preserve all embedded meta data in generated thumb (e.g. EXIF, IPTC, color profile, etc.); only works when thumb driver is set to 'im' (ImageMagick)
 
 /* -----------------------------------------------------------------------------
 Figureimage (layout grid) settings
