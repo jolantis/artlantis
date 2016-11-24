@@ -12,7 +12,7 @@
 
 		<main role="main" class="">
 
-			<h1><?php echo $page->title()->smartypants()->widont(); ?></h1>
+			<h1><?php echo $site->title()->smartypants()->widont(); ?></h1>
 
 			<?php echo $page->intro()->kirbytext(); ?>
 			<?php echo $page->text()->kirbytext(); ?>
