@@ -68,7 +68,7 @@ module.exports = function(grunt) {
 					// '<%= project.scripts_plugins %>/gumshoe/gumshoe.js',
 				],
 				polyfills: [
-					// '<%= project.scripts_polyfills %>/classlist.js',
+					'<%= project.scripts_polyfills %>/classlist.js',
 					// '<%= project.scripts_polyfills %>/promise.js',
 				],
 				utils: [
@@ -104,7 +104,7 @@ module.exports = function(grunt) {
 					// '<%= project.scripts_plugins %>/smooth-scroll/smooth-scroll.js',
 				],
 				polyfills: [
-					// '<%= project.scripts_polyfills %>/classlist.js',
+					'<%= project.scripts_polyfills %>/classlist.js',
 					// '<%= project.scripts_polyfills %>/promise.js',
 				],
 				utils: [
