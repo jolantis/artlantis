@@ -1,5 +1,5 @@
 <?php snippet_detect('html-head', array(
-	'criticalcss' => 'temp',
+	// 'criticalcss' => 'temp',
 )); ?>
 
 	<?php echo bgimage($page->images()->shuffle()->first(), array(
