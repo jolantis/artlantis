@@ -10,8 +10,8 @@
     Location: Denmark
 
 /** SITE **/
-    Standards: HTML5, CSS3
-    Components: Mobile Detect, Modernizr, Vanilla JS, etc.
+    Standards: HTML5, CSS3, Vanilla JS
+    Components: Mobile Detect, Modernizr, etc.
     Software: Kirby CMS
     Webfonts: Kawak Light & Bold
     (buy: https://www.youworkforthem.com/font-license,
