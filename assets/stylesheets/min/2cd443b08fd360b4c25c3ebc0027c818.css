@@ -3,7 +3,7 @@
  *
  * @authors   Jonathan van Wunnik <jonathan@artlantis.nl>
  * @link      http://artlantis.nl
- * @version   0.0.1
+ * @version   0.0.2
  * @generated 2016-11-27:05:11
  * @copyright (c) 2016 Jonathan van Wunnik
  * @license   MIT
