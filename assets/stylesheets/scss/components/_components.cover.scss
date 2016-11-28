@@ -17,8 +17,8 @@
 	min-height: 100%;
 	background-position: center center;
 	background-size: cover;
-}
 
-.cover--temp {
-	border: rhythm(.5) solid $color-snow-white;
+	&--temp {
+		border: rhythm(.5) solid $color-snow-white;
+	}
 }
