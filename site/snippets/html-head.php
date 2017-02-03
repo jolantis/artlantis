@@ -64,8 +64,8 @@ $fontobserver = (isset($_COOKIE['fonts-loaded']) && $_COOKIE['fonts-loaded'] == 
 	<link rel="dns-prefetch" href="https://www.google-analytics.com">
 
 	<?php // Preload assets (fonts, stylesheets, etc.) ?>
-	<link rel="preload" href="<?php $site->url(); ?>/assets/fonts/kawak/kawak-bold.woff2" as="font" type="font/woff2">
-	<link rel="preload" href="<?php $site->url(); ?>/assets/fonts/kawak/kawak-light.woff2" as="font" type="font/woff2">
+	<link rel="preload" href="<?php $site->url(); ?>/assets/fonts/kawak/kawak-bold.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="<?php $site->url(); ?>/assets/fonts/kawak/kawak-light.woff2" as="font" type="font/woff2" crossorigin>
 
 	<?php // Page title and (meta) description ?>
 	<?php snippet('page-title-description') ?>
