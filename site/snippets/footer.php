@@ -14,8 +14,6 @@
 		</footer>
 	</div>
 
-	<?php // snippet('photoswipe-dom'); ?>
-	<?php snippet('no-ctm-fallback'); ?>
 	<?php snippet('google-analytics'); ?>
 </body>
 </html>

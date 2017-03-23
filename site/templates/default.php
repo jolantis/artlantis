@@ -4,17 +4,13 @@
 
 	<?php snippet('banner'); ?>
 
-	<div class="contain-padding">
+	<main role="main" class="copy copy--contain copy--max-width copy--percentage-gutter space-trailer-m">
 
-		<main role="main" class="copy space-trailer-m">
+		<h1><?php echo $page->title()->smartypants()->widont(); ?></h1>
 
-			<h1><?php echo $page->title()->smartypants()->widont(); ?></h1>
+		<?php echo $page->intro()->kirbytext(); ?>
+		<?php echo $page->text()->kirbytext(); ?>
 
-			<?php echo $page->intro()->kirbytext(); ?>
-			<?php echo $page->text()->kirbytext(); ?>
-
-		</main>
-
-	</div>
+	</main>
 
 <?php snippet_detect('footer'); ?>

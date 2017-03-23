@@ -8,42 +8,61 @@
 
 .copy {
 
-	/* Baseline
+	/* Contain
 	   ========================================================================== */
 
-	// $lh: 22px;
-	// background: repeating-linear-gradient(to bottom, transparent 0px, transparent #{$lh - 1px}, black #{$lh - 1px}, black $lh);
-	// background-position: 0 2px;
+	&--contain {
+
+		> *:not(.full-width) {
+			@extend %contain-padding;
+		}
+	}
+
+	/* Text max width
+	========================================================================== */
+
+	&--max-width {
+
+		> h1, > h2, > h3, > h4, > h5, > h6,
+		> p,
+		> ul li,
+		> ol li,
+		> dl dt,
+		> dl dd,
+		> time,
+		> table,
+		> form,
+		figcaption,
+		> .figure-image.text-width {
+			max-width: $text-max-width;
+		}
+
+		> .blockquote,
+		> .figure-image:not([class*="-width"]),
+		> .figure-grid:not([class*="-width"]) {
+			max-width: $contain-max-width;
+		}
+
+		> *,
+		figcaption {
+			margin-right: auto; // Center maximized text 'column'
+			margin-left: auto;
+		}
+	}
 
 	/* Vertical spacing
 	   ========================================================================== */
 
 	/**
-	 * Set default vertical spacing for all elements:
-	 * 1. every second, third, etc. element that has not a `.grid` class
-	 * 2. every element with a `.grid` class that is not proceded
-	 *    by an element with a `.grid` class
+	 * Set default vertical spacing for all elements that have not a `grid-container`
+	 * class and are not preceded by an element with a `grid-container` class.
 	 *
 	 * Based on 'The "Leftover Glue" problem' solution:
 	 * http://slides.com/heydon/effortless-style/#/22
 	 */
 
-	> * + *:not(.grid), // [1]
-	> *:not(.grid) + .grid { // [2]
+	> *:not([class*="figure-"]) + *:not([class*="figure-"]) {
 		margin-top: rhythm(1);
-	}
-
-	/**
-	 * Set additonal vertical spacing aroundf figure elements:
-	 * 3. every figure with a `figure-image` class that comes direclty
-	 *    after an element without a `.grid` class
-	 * 4. every element that has not a `.grid` class and is proceded
-	 *    by a figure element with `.figure-image` class
-	 */
-
-	> *:not(.grid) + .figure-image, // [3]
-	> .figure-image + *:not(.grid) { // [4]
-		margin-top: rhythm(3);
 	}
 
 	/**
@@ -51,44 +70,75 @@
 	 * See: http://zellwk.com/blog/wrong-about-vertical-rhythm/
 	 */
 
-	> *:not(.grid) + p {
+	> *:not([class*="figure-"]) + p,
+	> *:not([class*="figure-"]) + ul,
+	> *:not([class*="figure-"]) + ol,
+	> *:not([class*="figure-"]) + dl {
 		margin-top: rhythm(.5) !important;
 	}
 
-	> *:not(.grid) + ul,
-	> *:not(.grid) + ol,
-	> *:not(.grid) + dl {
+	> h2 + > *:not([class*="figure-"]),
+	> h3 + > *:not([class*="figure-"]) {
 		margin-top: rhythm(.5) !important;
 	}
 
-	> h2 + *:not(.grid),
-	> h3 + *:not(.grid) {
-		margin-top: rhythm(.5) !important;
-	}
-
-	> h4 + p:not(.grid),
-	> h5 + p:not(.grid),
-	> h6 + p:not(.grid) {
+	> h4 + p:not([class*="figure-"]),
+	> h5 + p:not([class*="figure-"]),
+	> h6 + p:not([class*="figure-"]) {
 		margin-top: 0 !important;
 	}
 
-	/* Text max width
-	========================================================================== */
+	/**
+	 * Set additonal vertical spacing 'above' figure-image and -grid blocks:
+	 */
 
-	> h1, > h2, > h3, > h4, > h5, > h6,
-	> p,
-	> ul li,
-	> ol li,
-	> dl dt,
-	> dl dd,
-	> time,
-	> table,
-	> form,
-	> .blockquote,
-	figcaption p {
-		max-width: $text-max-width;
-		// margin-right: auto; // Center maximized text 'column'
-		// margin-left: auto;
+	> *:not([class*="figure-"]) + .figure-grid, // [1]
+	> *:not([class*="figure-"]) + .figure-image { // [1]
+			margin-top: rhythm(3);
+	}
+
+	/**
+	 * Set additonal vertical spacing 'below' figure-image and -grid blocks:
+	 */
+
+	> .figure-grid + *:not([class*="figure-"]), // [2]
+	> .figure-image + *:not([class*="figure-"]) { // [2]
+			margin-top: rhythm(3);
+	}
+
+	/**
+	 * Set additonal vertical spacing 'inbewteen' figure-image and -grid blocks.
+	 * To make the spacing rhythm based add the `.copy--gutter` class to the
+	 * copy wrapper or `.copy--percentage-gutter` to make it percentage based.
+	 */
+
+	&--gutter { // [3]
+
+		.figure-image + .figure-image > span,
+		.figure-grid + .figure-image > span,
+		.figure-grid + .figure-grid .grid__cell,
+		.figure-image + .figure-grid .grid__cell {
+			margin-top: rhythm($grid-gutter-rhythm-unit);
+		}
+
+		.grid {
+			@extend %grid--gutter;
+		}
+	}
+
+	&--percentage-gutter { // [3]
+
+		.figure-image + .figure-image > span,
+		.figure-grid + .figure-image > span,
+		.figure-grid + .figure-grid .grid__cell,
+		.figure-image + .figure-grid .grid__cell,
+		*:not([class*="figure-"]) + .figure-grid .grid__cell:nth-child(n+2) {
+			margin-top: $grid-spacing-percentage;
+		}
+
+		.grid {
+			@extend %grid--percentage-gutter;
+		}
 	}
 
 	/* Hyphenation
@@ -276,5 +326,4 @@
 		@extend .table;
 		@extend .table--striped;
 	}
-
 }

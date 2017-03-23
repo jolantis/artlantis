@@ -21,16 +21,19 @@
 			<?php echo $page->text()->kirbytext(); ?>
 
 			<?php /* if($page->hasImages()) : ?>
-				<!-- start: load photos from folder -->
 
 				<h2>Photo(s) form page</h2>
 
 				<?php foreach($page->images() as $image): ?>
-					<?php $caption = $image->caption() == '' ? $image->title() : ''; ?>
-					<?php echo figure($image, array('cropratio' => 1/2, 'caption' => $caption)); ?>
+					<?php $caption = ($image->caption()->isNotEmpty()) ? $image->caption() : ''; ?>
+					<figure class="figure-image">
+						<?php echo $image->imageset('default'); ?>
+						<?php if($caption): ?>
+							<figcaption><?php echo $caption->smartypants(); ?></figcaption>
+						<?php endif; ?>
+					</figure>
 				<?php endforeach; ?>
 
-				<!-- end -->
 			<?php endif; */ ?>
 
 		</article>

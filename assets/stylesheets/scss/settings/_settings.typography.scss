@@ -20,7 +20,7 @@ $mono-font-stack:               Monaco, "Courier New", "CourierNewPSMT", Courier
 // A text measure between 45 - 75 characters means the max width of
 // your text element must be between 22.5em and 37.5em.
 
-$text-max-width:                800px; //37em;
+$text-max-width:                37rem;
 
 // Text sizing
 // --------------------------------------------------------------------------
@@ -28,9 +28,9 @@ $text-max-width:                800px; //37em;
 $text-sizes: (
 	null:                       (14px, 1.4),                                    // base font size(s) and line height(s)
 	small:                      (15px),
-	compact:                    (16px),
-	medium:                     (18px, 1.5),
-	large:                      (22px),
+	compact:                    (16px, 1.5),
+	medium:                     (18px),
+	large:                      (22px, 1.6),
 );
 
 $text-temp: (                                                                   // temp message font size(s) and line height(s)

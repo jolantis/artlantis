@@ -99,11 +99,11 @@
 }
 
 /**
- * Modifier: bottom-align grid cells
+ * Modifier: top-align grid cells
  */
 
-.grid--align-bottom > .grid__cell {
-	vertical-align: bottom;
+.grid--align-top > .grid__cell {
+	vertical-align: top;
 }
 
 /**
@@ -122,7 +122,7 @@
 	margin: 0;
 	padding: 0;
 	width: 100%; // [2]
-	vertical-align: top; // [3]
+	vertical-align: bottom; // [3]
 	text-align: left; // [4]
 	font-size: 1rem; // [5]
 }
@@ -136,7 +136,8 @@
 
 .grid__cell--center {
 	display: block;
-	margin: 0 auto;
+	margin-right: auto;
+	margin-left: auto;
 }
 
 /**
@@ -145,9 +146,10 @@
 
 /* Rhythm unit gutter/spacing */
 
-.grid--gutter {
-	margin-right: rhythm(-.5 * $grid-gutter-rhythm-unit); /* Removes the `gutter` right */
-	margin-left: rhythm(-.5 * $grid-gutter-rhythm-unit); /* Removes the `gutter` right */
+.grid--gutter,
+%grid--gutter {
+	margin-right: rhythm(-.5 * $grid-gutter-rhythm-unit); // Removes the `gutter` right
+	margin-left: rhythm(-.5 * $grid-gutter-rhythm-unit); // Removes the `gutter` right
 
 	& > .grid__cell {
 		padding-right: rhythm(.5 * $grid-gutter-rhythm-unit);
@@ -157,9 +159,10 @@
 
 /* Percentage gutter/spacing */
 
-.grid--percentage-gutter {
-	margin-right: -.5 * $grid-gutter-percentage; /* Removes the `gutter` right */
-	margin-left: -.5 * $grid-gutter-percentage; /* Removes the `gutter` right */
+.grid--percentage-gutter,
+%grid--percentage-gutter {
+	margin-right: -.5 * $grid-gutter-percentage; // Removes the `gutter` right
+	margin-left: -.5 * $grid-gutter-percentage; // Removes the `gutter` right
 
 	& > .grid__cell {
 		padding-right: .5 * $grid-gutter-percentage;
