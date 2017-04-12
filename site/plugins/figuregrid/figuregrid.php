@@ -1,10 +1,12 @@
 <?php
 
 /**
- * Columns Plugin
+ * Figure Grid
  *
- * @author Bastian Allgeier <bastian@getkirby.com>
+ * @author Jonathan van Wunnuj <jonathan@artlantis.nl>
  * @version 1.0.0
+ *
+ * Heavily based Bastian Allgeier's columns plugin (example)
  */
 
 kirbytext::$pre[] = function($kirbytext, $text) {
