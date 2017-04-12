@@ -47,7 +47,7 @@ module.exports = function(grunt) {
 			head: [
 				'<%= project.scripts_plugins %>/enhance/enhance.js',
 				// '<%= project.scripts_plugins %>/modernizr/modernizr.dev.js',
-				'<%= project.scripts_plugins %>/modernizr/modernizr.min.js',               // ALWAYS use custom build modernizr in production!
+				'<%= project.scripts_plugins %>/modernizr/modernizr.min.js',    // ALWAYS use custom build modernizr in production!
 				'<%= project.scripts %>/head.scripts.js',
 			],
 			main: {
@@ -55,7 +55,7 @@ module.exports = function(grunt) {
 					// '<%= project.scripts_plugins %>/domdelegate/domdelegate.js',
 					'<%= project.scripts_plugins %>/domready/domready.js',
 					'<%= project.scripts_plugins %>/fontfaceobserver/fontfaceobserver.js',
-					'<%= project.scripts_plugins %>/imageset/imageset.js',  // Out-comment when using imageset's lazyload
+					'<%= project.scripts_plugins %>/imageset/imageset.js',      // Out-comment when using imageset's lazyload
 					// '<%= project.scripts_plugins %>/lazysizes/ls.bgset.js',     // Out-comment when using imageset's lazyload + (multiple) background image(s) with a width descriptor, similar to how img[srcset] works
 					// '<%= project.scripts_plugins %>/lazysizes/ls.parent-fit.js', // Out-comment when using imageset's lazyload + bgset, to calculate the right sizes for object-fit: contain|cover image elements (e.g. for Edge, IE11 and older, iOS 9, etc.)
 					// '<%= project.scripts_plugins %>/transitionend/transitionend.js',
@@ -65,13 +65,13 @@ module.exports = function(grunt) {
 				polyfills: [
 					'<%= project.scripts_polyfills %>/classlist.js',
 					// '<%= project.scripts_polyfills %>/promise.js',
-					// '<%= project.scripts_plugins %>/imageset/respimage.js', // Out-comment when using imageset's lazyload, to add support for the <picture> element to browser that do not provide native support (e.g. for IE11 and older, iOS 9.2 and older, Opera Mini, etc.)!!1
+					// '<%= project.scripts_plugins %>/respimage.js',              // Out-comment when using imageset's lazyload, to add support for the <picture> element to browser that do not provide native support (e.g. for IE11 and older, iOS 9.2 and older, Opera Mini, etc.)!!1
 				],
 				utils: [
 					// '<%= project.scripts_utils %>/ajax.util.js',
 					// '<%= project.scripts_utils %>/cookie.util.js',              // Out-comment when enhance (and thus enhance.cookie) is not used
-					// '<%= project.scripts_utils %>/domparents.util.js',
-					// '<%= project.scripts_utils %>/extend.util.js',
+					'<%= project.scripts_utils %>/domparents.util.js',
+					'<%= project.scripts_utils %>/extend.util.js',
 				],
 				modules: [
 					// '<%= project.scripts_modules %>/alerts.module.js',
@@ -88,7 +88,7 @@ module.exports = function(grunt) {
 					// '<%= project.scripts_plugins %>/domdelegate/domdelegate.js',
 					'<%= project.scripts_plugins %>/domready/domready.js',
 					'<%= project.scripts_plugins %>/fontfaceobserver/fontfaceobserver.js',
-					'<%= project.scripts_plugins %>/imageset/imageset.js',  // Out-comment when using imageset's lazyload
+					'<%= project.scripts_plugins %>/imageset/imageset.js',      // Out-comment when using imageset's lazyload
 					// '<%= project.scripts_plugins %>/lazysizes/ls.bgset.js',     // Out-comment when using imageset's lazyload + (multiple) background image(s) with a width descriptor, similar to how img[srcset] works
 					// '<%= project.scripts_plugins %>/lazysizes/ls.parent-fit.js', // Out-comment when using imageset's lazyload + bgset, to calculate the right sizes for object-fit: contain|cover image elements (e.g. for Edge, IE11 and older, iOS 9, etc.)
 					// '<%= project.scripts_plugins %>/transitionend/transitionend.js',
@@ -97,13 +97,13 @@ module.exports = function(grunt) {
 				polyfills: [
 					'<%= project.scripts_polyfills %>/classlist.js',
 					// '<%= project.scripts_polyfills %>/promise.js',
-					// '<%= project.scripts_plugins %>/imageset/respimage.js', // Out-comment when using imageset's lazyload, to add support for the <picture> element to browser that do not provide native support (e.g. for IE11 and older, iOS 9.2 and older, Opera Mini, etc.)!!1
+					// '<%= project.scripts_plugins %>/respimage.js',              // Out-comment when using imageset's lazyload, to add support for the <picture> element to browser that do not provide native support (e.g. for IE11 and older, iOS 9.2 and older, Opera Mini, etc.)!!1
 				],
 				utils: [
 					// '<%= project.scripts_utils %>/ajax.util.js',
 					// '<%= project.scripts_utils %>/cookie.util.js',              // Out-comment when enhance (and thus enhance.cookie) is not used
-					// '<%= project.scripts_utils %>/domparents.util.js',
-					// '<%= project.scripts_utils %>/extend.util.js',
+					'<%= project.scripts_utils %>/domparents.util.js',
+					'<%= project.scripts_utils %>/extend.util.js',
 				],
 				modules: [
 					// '<%= project.scripts_modules %>/alerts.module.js',
