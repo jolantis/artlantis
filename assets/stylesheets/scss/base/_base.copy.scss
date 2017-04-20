@@ -54,8 +54,8 @@
 	   ========================================================================== */
 
 	/**
-	 * Set default vertical spacing for all elements that have not a `grid-container`
-	 * class and are not preceded by an element with a `grid-container` class.
+	 * Set default vertical spacing for all elements that have not a `figure-*`
+	 * class and are not preceded by an element with a `figure-*` class.
 	 *
 	 * Based on 'The "Leftover Glue" problem' solution:
 	 * http://slides.com/heydon/effortless-style/#/22
@@ -89,7 +89,7 @@
 	}
 
 	/**
-	 * Set additonal vertical spacing 'above' figure-image and -grid blocks:
+	 * Set additonal vertical spacing 'above' `figure-*` blocks:
 	 */
 
 	> *:not([class*="figure-"]) + .figure-grid, // [1]
@@ -98,7 +98,7 @@
 	}
 
 	/**
-	 * Set additonal vertical spacing 'below' figure-image and -grid blocks:
+	 * Set additonal vertical spacing 'below' `figure-*` blocks:
 	 */
 
 	> .figure-grid + *:not([class*="figure-"]), // [2]
@@ -107,9 +107,10 @@
 	}
 
 	/**
-	 * Set additonal vertical spacing 'inbewteen' figure-image and -grid blocks.
-	 * To make the spacing rhythm based add the `.copy--gutter` class to the
-	 * copy wrapper or `.copy--percentage-gutter` to make it percentage based.
+	 * Set additonal vertical spacing 'inbewteen' `figure-*` blocks.
+	 * To apply the rhythm based spacing add `.copy--gutter` class
+	 * to the copy wrapper element or `.copy--percentage-gutter`
+	 * to make it percentage based.
 	 */
 
 	&--gutter { // [3]
@@ -117,8 +118,14 @@
 		.figure-image + .figure-image > span,
 		.figure-grid + .figure-image > span,
 		.figure-grid + .figure-grid .grid__cell,
-		.figure-image + .figure-grid .grid__cell {
+		.figure-image + .figure-grid .grid__cell,
+		*:not([class*="figure-"]) + .figure-grid .grid__cell {
 			margin-top: rhythm($grid-gutter-rhythm-unit);
+		}
+
+		// Undo top margin by negetively offsetting the whole grid row
+		*:not([class*="figure-"]) + .figure-grid .grid {
+			margin-top: rhythm(-$grid-gutter-rhythm-unit);
 		}
 
 		.grid {
@@ -132,8 +139,13 @@
 		.figure-grid + .figure-image > span,
 		.figure-grid + .figure-grid .grid__cell,
 		.figure-image + .figure-grid .grid__cell,
-		*:not([class*="figure-"]) + .figure-grid .grid__cell:nth-child(n+2) {
+		*:not([class*="figure-"]) + .figure-grid .grid__cell {
 			margin-top: $grid-spacing-percentage;
+		}
+
+		// Undo top margin by negetively offsetting the whole grid row
+		*:not([class*="figure-"]) + .figure-grid .grid {
+			margin-top: -$grid-spacing-percentage;
 		}
 
 		.grid {
