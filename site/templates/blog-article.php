@@ -4,42 +4,37 @@
 )); ?>
 
 	<?php snippet('banner'); ?>
+	<?php snippet('breadcrumb'); ?>
 
-	<main role="main" class="contain-padding">
+	<main class="copy copy--contain space-trailer-l">
 
-		<?php snippet('breadcrumb'); ?>
+		<h1><?php echo $page->title()->smartypants()->widont(); ?></h1>
 
-		<article class="copy space-leader-m space-trailer-m">
+		<?php if($page->date($format=true)): ?>
+			<p><small><?php snippet('datetime'); ?></small></p>
+		<?php endif; ?>
 
-			<h1><?php echo $page->title()->smartypants()->widont(); ?></h1>
+		<?php echo $page->intro()->kirbytext(); ?>
+		<?php echo $page->text()->kirbytext(); ?>
 
-			<?php if($page->date($format=true)): ?>
-				<p><small><?php snippet('datetime'); ?></small></p>
-			<?php endif; ?>
+		<?php /* if($page->hasImages()) : ?>
 
-			<?php echo $page->intro()->kirbytext(); ?>
-			<?php echo $page->text()->kirbytext(); ?>
+			<h2>Photo(s) form page</h2>
 
-			<?php /* if($page->hasImages()) : ?>
+			<?php foreach($page->images() as $image): ?>
+				<?php $caption = ($image->caption()->isNotEmpty()) ? $image->caption() : ''; ?>
+				<figure class="figure-image">
+					<?php echo $image->imageset('default'); ?>
+					<?php if($caption): ?>
+						<figcaption><?php echo $caption->smartypants(); ?></figcaption>
+					<?php endif; ?>
+				</figure>
+			<?php endforeach; ?>
 
-				<h2>Photo(s) form page</h2>
-
-				<?php foreach($page->images() as $image): ?>
-					<?php $caption = ($image->caption()->isNotEmpty()) ? $image->caption() : ''; ?>
-					<figure class="figure-image">
-						<?php echo $image->imageset('default'); ?>
-						<?php if($caption): ?>
-							<figcaption><?php echo $caption->smartypants(); ?></figcaption>
-						<?php endif; ?>
-					</figure>
-				<?php endforeach; ?>
-
-			<?php endif; */ ?>
-
-		</article>
-
-		<?php snippet('nav-sub'); ?>
+		<?php endif; */ ?>
 
 	</main>
+
+	<?php snippet('nav-sub'); ?>
 
 <?php snippet_detect('footer'); ?>

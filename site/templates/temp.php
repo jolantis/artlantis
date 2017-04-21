@@ -8,7 +8,7 @@
 		'class'     => 'cover cover--temp'
 	)); ?>
 
-	<div class="temp-message contain-padding1">
+	<div class="temp-message">
 
 		<main role="main" class="">
 
@@ -21,5 +21,6 @@
 
 	</div>
 
-<?php snippet('no-ctm-fallback'); ?>
+	<?php snippet('no-ctm-fallback'); ?>
+
 <?php snippet('google-analytics'); ?>
