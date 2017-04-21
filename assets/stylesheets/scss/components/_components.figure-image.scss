@@ -55,17 +55,25 @@
 
 		margin-top: rhythm(.5);
 		margin-bottom: rhythm(1.5);
-		text-align: center;
 	}
 }
 
-// Vertical align images to top in grid when preceded by an `figure-image` element/class
-.figure-image + .figure-grid .grid__cell {
-	vertical-align: top;
-}
+/**
+ * Vertical align images within (figure-)grid
+ *
+ * Default alignment is top; see `grid__cell` class in `objects.grid` partial.
+ * Enble below styles to set vertical alignment to bottom.
+ */
 
-// Vertical align images to bottom in grid when preceded by anything but a `figure-image` element/class
-// This is default `grid__cell` nbehavior; only out-comment when set differently in `grid__cell` class
-// *:not([class*="figure-"]) + .figure-grid .grid__cell {
-// 	vertical-align: bottom;
+// .figure-grid .grid__cell {
+
+// 	// Align to bottom when preceded by an `figure-image` element/class
+// 	.figure-image + & {
+// 		vertical-align: bottom;
+// 	}
+
+// 	// Align to bottom when preceded by anything but a `figure-image` element/class
+// 	*:not([class*="figure-"]) + & {
+// 		vertical-align: bottom;
+// 	}
 // }

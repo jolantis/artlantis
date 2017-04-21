@@ -14,14 +14,6 @@ $heading-web-font:              "Kawak";
 $serif-font-stack:              "Lucida Bright", "LucidaBright", Georgia, serif;
 $mono-font-stack:               Monaco, "Courier New", "CourierNewPSMT", Courier, monospace, serif;
 
-// Text max-width
-// --------------------------------------------------------------------------
-// One character is approximately 0.5em.
-// A text measure between 45 - 75 characters means the max width of
-// your text element must be between 22.5em and 37.5em.
-
-$text-max-width:                37rem;
-
 // Text sizing
 // --------------------------------------------------------------------------
 
@@ -87,7 +79,7 @@ $text-nano: (                                                                   
 );
 
 $text-pico: (                                                                   // pico heading font size(s) and line height(s)
-	null:                       (.75rem),
+	null:                       (.65rem),
 );
 
 

@@ -16,37 +16,53 @@
 		> *:not(.full-width) {
 			@extend %contain-padding;
 		}
-	}
 
-	/* Text max width
-	========================================================================== */
-
-	&--max-width {
+		> *:not(.full-width),
+		> .full-width figcaption {
+			margin-right: auto;
+			margin-left: auto;
+		}
 
 		> h1, > h2, > h3, > h4, > h5, > h6,
 		> p,
-		> ul li,
-		> ol li,
-		> dl dt,
-		> dl dd,
+		> ul,
+		> ol,
+		> dl,
 		> time,
 		> table,
 		> form,
-		figcaption,
 		> .figure-image.text-width {
-			max-width: $text-max-width;
+			max-width: $text-max-width + (2 * rhythm($contain-rhythm-unit)); // Text max width
+		}
+
+		> hr {
+			max-width: $text-max-width - (2 * rhythm($contain-rhythm-unit)); // Padding has no effect on <hr>!!!
 		}
 
 		> .blockquote,
+		> .full-width figcaption,
 		> .figure-image:not([class*="-width"]),
 		> .figure-grid:not([class*="-width"]) {
-			max-width: $contain-max-width;
+			max-width: $figure-max-width + (2 * rhythm($contain-rhythm-unit)); // Contain width
 		}
 
-		> *,
-		figcaption {
-			margin-right: auto; // Center maximized text 'column'
+		// /**
+		//  * Left align figcaption
+		//  */
+
+		// > .full-width figcaption {
+		// 	@extend %contain-padding;
+		// }
+
+		/**
+		 * Center align figcaption
+		 */
+
+		> .figure-image figcaption {
+			max-width: $text-max-width - rhythm($contain-rhythm-unit); // Maximize width
+			margin-right: auto;
 			margin-left: auto;
+			text-align: center;
 		}
 	}
 
@@ -108,49 +124,44 @@
 
 	/**
 	 * Set additonal vertical spacing 'inbewteen' `figure-*` blocks.
-	 * To apply the rhythm based spacing add `.copy--gutter` class
-	 * to the copy wrapper element or `.copy--percentage-gutter`
-	 * to make it percentage based.
+	 * It is possibe to apply two spacing methods, rhythm (1) or
+	 * percentage (2) based:
+	 *
+	 * 1. rhythm($grid-gutter-rhythm-unit)
+	 * 2. $grid-spacing-percentage
+	 *
+	 * Enable the spacing to be used, and extend the corresponding
+	 * grid (percentage) gutter:
+	 *
+	 * 1. %grid--gutter
+	 * 2. %grid--percentage-gutter
 	 */
 
-	&--gutter { // [3]
-
-		.figure-image + .figure-image > span,
-		.figure-grid + .figure-image > span,
-		.figure-grid + .figure-grid .grid__cell,
-		.figure-image + .figure-grid .grid__cell,
-		*:not([class*="figure-"]) + .figure-grid .grid__cell {
-			margin-top: rhythm($grid-gutter-rhythm-unit);
-		}
-
-		// Undo top margin by negetively offsetting the whole grid row
-		*:not([class*="figure-"]) + .figure-grid .grid {
-			margin-top: rhythm(-$grid-gutter-rhythm-unit);
-		}
-
-		.grid {
-			@extend %grid--gutter;
-		}
+	.figure-image + .figure-image > span,
+	.figure-grid + .figure-image > span,
+	.figure-grid + .figure-grid .grid__cell,
+	.figure-image + .figure-grid .grid__cell,
+	*:not([class*="figure-"]) + .figure-grid .grid__cell {
+		// margin-top: rhythm($grid-gutter-rhythm-unit);
+		margin-top: $grid-spacing-percentage;
 	}
 
-	&--percentage-gutter { // [3]
+	/**
+	 * Undo top margin by negetively offsetting the whole grid row
+	 */
 
-		.figure-image + .figure-image > span,
-		.figure-grid + .figure-image > span,
-		.figure-grid + .figure-grid .grid__cell,
-		.figure-image + .figure-grid .grid__cell,
-		*:not([class*="figure-"]) + .figure-grid .grid__cell {
-			margin-top: $grid-spacing-percentage;
-		}
+	*:not([class*="figure-"]) + .figure-grid .grid {
+		// margin-top: rhythm(-$grid-gutter-rhythm-unit);
+		margin-top: -$grid-spacing-percentage;
+	}
 
-		// Undo top margin by negetively offsetting the whole grid row
-		*:not([class*="figure-"]) + .figure-grid .grid {
-			margin-top: -$grid-spacing-percentage;
-		}
+	/**
+	 * Grid gutter (horizontal spacing)
+	 */
 
-		.grid {
-			@extend %grid--percentage-gutter;
-		}
+	.grid {
+		// @extend %grid--gutter;
+		@extend %grid--percentage-gutter;
 	}
 
 	/* Hyphenation
