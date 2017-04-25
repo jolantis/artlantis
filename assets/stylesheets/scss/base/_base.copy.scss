@@ -105,7 +105,7 @@
 	}
 
 	/**
-	 * Set additonal vertical spacing 'above' `figure-*` blocks:
+	 * Set (additonal) vertical spacing 'above' `figure-*` blocks:
 	 */
 
 	> *:not([class*="figure-"]) + .figure-grid, // [1]
@@ -114,7 +114,7 @@
 	}
 
 	/**
-	 * Set additonal vertical spacing 'below' `figure-*` blocks:
+	 * Set (additonal) vertical spacing 'below' `figure-*` blocks:
 	 */
 
 	> .figure-grid + *:not([class*="figure-"]), // [2]
@@ -123,34 +123,28 @@
 	}
 
 	/**
-	 * Set additonal vertical spacing 'inbewteen' `figure-*` blocks.
-	 * It is possibe to apply two spacing methods, rhythm (1) or
-	 * percentage (2) based:
-	 *
-	 * 1. rhythm($grid-gutter-rhythm-unit)
-	 * 2. $grid-spacing-percentage
-	 *
-	 * Enable the spacing to be used, and extend the corresponding
-	 * grid (percentage) gutter:
-	 *
-	 * 1. %grid--gutter
-	 * 2. %grid--percentage-gutter
+	 * Set (percentage based) vertical spacing 'inbewteen' `figure-*` blocks.
 	 */
 
-	.figure-image + .figure-image > span,
-	.figure-grid + .figure-image > span,
-	.figure-grid + .figure-grid .grid__cell,
-	.figure-image + .figure-grid .grid__cell,
-	*:not([class*="figure-"]) + .figure-grid .grid__cell {
+	> .figure-image + .figure-image > span,
+	> .figure-grid + .figure-image > span,
+	> .figure-grid + .figure-grid .grid__cell,
+	> .figure-image + .figure-grid .grid__cell,
+	> *:not([class*="figure-"]) + .figure-grid .grid__cell {
 		// margin-top: rhythm($grid-gutter-rhythm-unit);
 		margin-top: $grid-spacing-percentage;
+	}
+
+	> .figure-grid .figure-image + .figure-image {
+		// margin-top: rhythm($grid-gutter-rhythm-unit);
+		margin-top: 2* $grid-spacing-percentage;
 	}
 
 	/**
 	 * Undo top margin by negetively offsetting the whole grid row
 	 */
 
-	*:not([class*="figure-"]) + .figure-grid .grid {
+	> *:not([class*="figure-"]) + .figure-grid .grid {
 		// margin-top: rhythm(-$grid-gutter-rhythm-unit);
 		margin-top: -$grid-spacing-percentage;
 	}
@@ -159,7 +153,7 @@
 	 * Grid gutter (horizontal spacing)
 	 */
 
-	.grid {
+	> .figure-grid .grid {
 		// @extend %grid--gutter;
 		@extend %grid--percentage-gutter;
 	}
