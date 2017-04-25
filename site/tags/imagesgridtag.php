@@ -25,7 +25,7 @@ kirbytext::$tags['imagesgrid'] = array(
 
 		} else {
 
-			$containers = explode('|', $tag->attr('images'));
+			$containers = explode('|', $tag->attr('imagesgrid'));
 			$class = $tag->attr('class');
 
 			$html = '<div class="figure-grid ' . $class . '">';
