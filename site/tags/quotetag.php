@@ -1,19 +1,15 @@
 <?php
 /**
- * Quote
- * ----
- * Inline quotation with language locale.
+ * Quotetag
+ * implements inline quotation with language locale, by wrapping a text string
+ * in a <q> tag, with class `quote` and a (default) language attribute.
  *
- * What it does:
- * Wraps  passed text string in <q> tag, with class `quote`
- * and passed or oterhwise default language attribute.
- *
- * Usage:
+ * Syntax:
  * (quote: This is an English inline quote)
  * (quote: This is an English inline quote lang: en)
  *
- * Example:
- * http://altair.studiodumbar.com/base#paragraph
+ * Copyright: Marijn Tijhuis (fatpixel.nl), Jonathan van Wunnik (artlantis.nl)
+ * License: http://www.gnu.org/licenses/gpl-3.0.txt GPLv3 License
  */
 
 kirbytext::$tags['quote'] = array(
@@ -35,5 +31,3 @@ kirbytext::$tags['quote'] = array(
 
 	}
 );
-
-?>

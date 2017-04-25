@@ -1,19 +1,16 @@
 <?php
 /**
- * Thumb
- * ----
- * (Cropped) thumb generation.
+ * Thumbtag
+ * Implements a thumb generated image, by wrapping an
+ * img tag inside a figure element.
  *
- * What it does:
- * Generates a thumb image in a <figure> tag.
- *
- * Usage:
+ * Syntac:
  * (thumb: image.jpg width: 225 height: 225 alt: Just a thumb)
  * (thumb: image.jpg width: 225 height: 225 quality: 75 alt: Thumb with quality 75)
  * (thumb: image.jpg width: 400 height: 250 crop: true alt: Thumb cropped)
  *
- * Example:
- * http://altair.studiodumbar.com/images
+ * Copyright: Marijn Tijhuis (fatpixel.nl)
+ * License: http://www.gnu.org/licenses/gpl-3.0.txt GPLv3 License
  */
 
 kirbytext::$tags['thumb'] = array(
@@ -45,5 +42,3 @@ kirbytext::$tags['thumb'] = array(
 
 	}
 );
-
-?>

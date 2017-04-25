@@ -1,16 +1,15 @@
 <?php
 /**
- * Video
- * ----
- * A generic tag to embed video's.
+ * Videotag
+ * Implements an (fluid) embed of youtube ond vimeo video's.
  *
- * What it does:
- * Embeds youtube or vimeo video in a fluid embed.
- *
- * Usage:
+ * Syntax:
  * 1) (video: 77383196 source: vimeo)
  * 2) (video: hXU63NXzg5A source: youtube ratio: 4by3)
  * 3) (video: zJs9p-VNORw source: vimeo ratio: 2by1)
+ *
+ * Copyright: Marijn Tijhuis (fatpixel.nl)
+ * License: http://www.gnu.org/licenses/gpl-3.0.txt GPLv3 License
  */
 
 kirbytext::$tags['video'] = array(
