@@ -131,13 +131,13 @@
 	> .figure-grid + .figure-grid .grid__cell,
 	> .figure-image + .figure-grid .grid__cell,
 	> *:not([class*="figure-"]) + .figure-grid .grid__cell {
-		// margin-top: rhythm($grid-gutter-rhythm-unit);
-		margin-top: $grid-spacing-percentage;
+		margin-top: rhythm($grid-gutter-rhythm-unit);
+		// margin-top: $grid-spacing-percentage;
 	}
 
 	> .figure-grid .figure-image + .figure-image {
-		// margin-top: rhythm($grid-gutter-rhythm-unit);
-		margin-top: 2* $grid-spacing-percentage;
+		margin-top: rhythm($grid-gutter-rhythm-unit);
+		// margin-top: 2* $grid-spacing-percentage;
 	}
 
 	/**
@@ -145,8 +145,8 @@
 	 */
 
 	> *:not([class*="figure-"]) + .figure-grid .grid {
-		// margin-top: rhythm(-$grid-gutter-rhythm-unit);
-		margin-top: -$grid-spacing-percentage;
+		margin-top: rhythm(-$grid-gutter-rhythm-unit);
+		// margin-top: -$grid-spacing-percentage;
 	}
 
 	/**
@@ -154,8 +154,8 @@
 	 */
 
 	> .figure-grid .grid {
-		// @extend %grid--gutter;
-		@extend %grid--percentage-gutter;
+		@extend %grid--gutter;
+		// @extend %grid--percentage-gutter;
 	}
 
 	/* Hyphenation
