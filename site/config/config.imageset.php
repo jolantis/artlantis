@@ -14,9 +14,9 @@ https://github.com/fabianmichael/kirby-imageset#3-global-configuration
 c::set('imageset.styles.consolidate', false);
 c::set('imageset.tags.image', true);
 c::set('imageset.tags.image.sizes.default', 'default');
-c::set('imageset.placeholder', 'color');
 // c::set('imageset.tags.image.class', 'figure-image size-{size}');
 c::set('imageset.tags.image.class', 'figure-image');
+c::set('imageset.placeholder', 'color'); // false, triangles, mosaic, blurred, lqip, color
 c::set('imageset.noscript', true);
 c::set('imageset.lazyload', true);
 
