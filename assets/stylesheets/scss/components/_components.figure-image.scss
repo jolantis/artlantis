@@ -23,6 +23,7 @@
  *
  * <figure class="figure-image grid grid--align-center">
  * 		<img src="..." class="grid__cell compact-2of3" alt="A centered image" />
+ * 		<figcaption>Caption...</figcaption>
  * </figure>
  *
  */
@@ -51,10 +52,11 @@
 	}
 
 	figcaption {
-		@include responsive-text-size($text-pico); // (Re)set font-size (it has been set to `0` by wrapping `.Grid` element!)
+		@include responsive-text-size($text-pico); // (Re)set font-size (it has been set to `0` by wrapping `.grid` element!)
 
 		margin-top: rhythm(.5);
 		margin-bottom: rhythm(1.5);
+		text-align: center; // Center align text in figcaption
 	}
 }
 
@@ -62,7 +64,7 @@
  * Vertical align images within (figure-)grid
  *
  * Default alignment is top; see `grid__cell` class in `objects.grid` partial.
- * Enble below styles to set vertical alignment to bottom.
+ * Enble styles below to set vertical alignment to bottom.
  */
 
 // .figure-grid .grid__cell {
@@ -72,8 +74,8 @@
 // 		vertical-align: bottom;
 // 	}
 
-// 	// Align to bottom when preceded by anything but a `figure-image` element/class
-// 	*:not([class*="figure-"]) + & {
-// 		vertical-align: bottom;
-// 	}
+//	// Align to bottom when preceded by anything but a `figure-image` element/class
+//	*:not(.figure-image) + & {
+//		vertical-align: bottom;
+//	}
 // }

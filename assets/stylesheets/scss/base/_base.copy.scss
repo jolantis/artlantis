@@ -13,12 +13,13 @@
 
 	&--contain {
 
-		> *:not(.full-width) {
+		> *:not(.full-width),
+		> .full-width figcaption {
 			@extend %contain-padding;
 		}
 
 		> *:not(.full-width),
-		> .full-width figcaption {
+		> .figure-image figcaption {
 			margin-right: auto;
 			margin-left: auto;
 		}
@@ -31,39 +32,25 @@
 		> time,
 		> table,
 		> form,
+		> .figure-image.full-width figcaption,
 		> .figure-image.text-width {
 			max-width: $text-max-width + (2 * rhythm($contain-rhythm-unit)); // Text max width
 		}
 
-		> hr {
-			max-width: $text-max-width - (2 * rhythm($contain-rhythm-unit)); // Padding has no effect on <hr>!!!
-		}
-
 		> .blockquote,
-		> .full-width figcaption,
+		// > .figure-image.full-width figcaption,
 		> .figure-image:not([class*="-width"]),
 		> .figure-grid:not([class*="-width"]) {
 			max-width: $figure-max-width + (2 * rhythm($contain-rhythm-unit)); // Contain width
 		}
 
-		// /**
-		//  * Left align figcaption
-		//  */
-
-		// > .full-width figcaption {
-		// 	@extend %contain-padding;
-		// }
-
-		/**
-		 * Center align figcaption
-		 */
-
 		> .figure-image figcaption {
-			max-width: $text-max-width - rhythm($contain-rhythm-unit); // Maximize width
-			margin-right: auto;
-			margin-left: auto;
-			text-align: center;
+			max-width: $text-max-width; // Maximize width
 		}
+
+		// > hr {
+		// 	max-width: $text-max-width - (2 * rhythm($contain-rhythm-unit)); // Padding has no effect on <hr>!!!
+		// }
 	}
 
 	/* Vertical spacing
@@ -77,7 +64,7 @@
 	 * http://slides.com/heydon/effortless-style/#/22
 	 */
 
-	> *:not([class*="figure-"]) + *:not([class*="figure-"]) {
+	> *:not(.figure-image) + *:not(.figure-image) {
 		margin-top: rhythm(1);
 	}
 
@@ -86,21 +73,21 @@
 	 * See: http://zellwk.com/blog/wrong-about-vertical-rhythm/
 	 */
 
-	> *:not([class*="figure-"]) + p,
-	> *:not([class*="figure-"]) + ul,
-	> *:not([class*="figure-"]) + ol,
-	> *:not([class*="figure-"]) + dl {
+	> *:not(.figure-image) + p,
+	> *:not(.figure-image) + ul,
+	> *:not(.figure-image) + ol,
+	> *:not(.figure-image) + dl {
 		margin-top: rhythm(.5) !important;
 	}
 
-	> h2 + > *:not([class*="figure-"]),
-	> h3 + > *:not([class*="figure-"]) {
+	> h2 + > *:not(.figure-image),
+	> h3 + > *:not(.figure-image) {
 		margin-top: rhythm(.5) !important;
 	}
 
-	> h4 + p:not([class*="figure-"]),
-	> h5 + p:not([class*="figure-"]),
-	> h6 + p:not([class*="figure-"]) {
+	> h4 + p:not(.figure-image),
+	> h5 + p:not(.figure-image),
+	> h6 + p:not(.figure-image) {
 		margin-top: 0 !important;
 	}
 
@@ -108,8 +95,7 @@
 	 * Set (additonal) vertical spacing 'above' `figure-*` blocks:
 	 */
 
-	> *:not([class*="figure-"]) + .figure-grid, // [1]
-	> *:not([class*="figure-"]) + .figure-image { // [1]
+	> *:not(.figure-image) + .figure-image {
 			margin-top: rhythm(3);
 	}
 
@@ -117,45 +103,39 @@
 	 * Set (additonal) vertical spacing 'below' `figure-*` blocks:
 	 */
 
-	> .figure-grid + *:not([class*="figure-"]), // [2]
-	> .figure-image + *:not([class*="figure-"]) { // [2]
+	> .figure-image + *:not(.figure-image) {
 			margin-top: rhythm(3);
 	}
 
 	/**
-	 * Set (percentage based) vertical spacing 'inbewteen' `figure-*` blocks.
+	 * Set (rhythm based) vertical spacing 'inbewteen' `figure-*` blocks.
 	 */
 
 	> .figure-image + .figure-image > span,
-	> .figure-grid + .figure-image > span,
-	> .figure-grid + .figure-grid .grid__cell,
-	> .figure-image + .figure-grid .grid__cell,
-	> *:not([class*="figure-"]) + .figure-grid .grid__cell {
-		margin-top: rhythm($grid-gutter-rhythm-unit);
-		// margin-top: $grid-spacing-percentage;
+	> .figure-image + .figure-image .grid__cell,
+	> *:not(.figure-image) + .figure-image .grid__cell {
+		margin-top: rhythm($grid-spacing-rhythm-unit);
 	}
 
-	> .figure-grid .figure-image + .figure-image {
+	> .figure-image .figure-image + .figure-image {
 		margin-top: rhythm($grid-gutter-rhythm-unit);
-		// margin-top: 2* $grid-spacing-percentage;
 	}
 
 	/**
 	 * Undo top margin by negetively offsetting the whole grid row
 	 */
 
-	> *:not([class*="figure-"]) + .figure-grid .grid {
-		margin-top: rhythm(-$grid-gutter-rhythm-unit);
-		// margin-top: -$grid-spacing-percentage;
+	// > *:not(.figure-image) + .figure-grid .grid {
+	> *:not(.figure-image) + .figure-image .grid {
+		margin-top: rhythm(-$grid-spacing-rhythm-unit);
 	}
 
 	/**
 	 * Grid gutter (horizontal spacing)
 	 */
 
-	> .figure-grid .grid {
+	> .figure-image .grid {
 		@extend %grid--gutter;
-		// @extend %grid--percentage-gutter;
 	}
 
 	/* Hyphenation
@@ -216,7 +196,7 @@
 	/* Figures
 	   ========================================================================== */
 
-	// figcaption {}
+	// figure {}
 
 	/* Pull, block- and run-in quotes
 	   ========================================================================== */
