@@ -69,5 +69,3 @@ thumb::$drivers['im'] = function($thumb) {
 	exec(implode(' ', $command));
 
 };
-
-?>
