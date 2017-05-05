@@ -11,14 +11,13 @@ https://github.com/fabianmichael/kirby-imageset#3-global-configuration
 
 */
 
-c::set('imageset.styles.consolidate', false);
-c::set('imageset.tags.image', true);
-c::set('imageset.tags.image.sizes.default', 'default');
-// c::set('imageset.tags.image.class', 'figure-image size-{size}');
-c::set('imageset.tags.image.class', 'figure-image');
+c::set('imageset.styles.consolidate', false); // only enable if passing the HTML5 validator is really important and if AJAX is not used to load markup containing image sets dynamically!!!
+c::set('imageset.tags.image', true); // replace Kirby's built-in image Kirbytag
+c::set('imageset.tags.image.sizes.default', 'default'); // the default size of image sets generated via the image Kirbytag
+c::set('imageset.tags.image.class', 'figure-image'); // use {size} placeholder to be replaced by the name of the corresponding preset
 c::set('imageset.placeholder', 'color'); // false, triangles, mosaic, blurred, lqip, color
-c::set('imageset.noscript', true);
-c::set('imageset.lazyload', true);
+c::set('imageset.noscript', true); // include a fallback for clients without JavaScript support or disabled JavaScript
+c::set('imageset.lazyload', true); // enable lazy loading of image sets
 
 
 /* -----------------------------------------------------------------------------
