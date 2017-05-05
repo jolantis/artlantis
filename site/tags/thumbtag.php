@@ -19,23 +19,58 @@ kirbytext::$tags['thumb'] = array(
 		'height',
 		'alt',
 		'quality',
-		'crop'
+		'crop',
+		'blur',
+		'grayscale',
+		'class'
 		),
 	'html' => function($tag) {
 
-		$url = $tag->attr('thumb');
-		$file = $tag->file($url);
-		$quality = $tag->attr('quality', c::get('thumbs.quality', 92));
+		$url       = $tag->attr('thumb');
+		$class     = $tag->attr('class');
+		$crop      = $tag->attr('crop');
+		$blur      = $tag->attr('blur');
+		$grayscale = $tag->attr('grayscale');
+		$file      = $tag->file($url);
 
-		$image = thumb($file,array(
-			'width' => $tag->attr('width'),
-			'height' => $tag->attr('height'),
-			'alt' => $tag->attr('alt'),
-			'quality' => $quality,
-			'crop' => $tag->attr('crop'),
+		// Only crop when explicitly set to true; default is false
+		if($crop == 'true') {
+			$crop = true;
+		}
+		else {
+			$crop = false;
+		}
+
+		// Only blur when explicitly set to true; default is false
+		if($blur == 'true') {
+			$blur = true;
+		}
+		else {
+			$blur = false;
+		}
+
+		// Only grayscale when explicitly set to true; default is false
+		if($grayscale == 'true') {
+			$grayscale = true;
+		}
+		else {
+			$grayscale = false;
+		}
+
+		$image = thumb($file, array(
+			'width'     => $tag->attr('width'),
+			'height'    => $tag->attr('height'),
+			'alt'       => $tag->attr('alt'),
+			'quality'   => $tag->attr('quality', c::get('thumbs.quality', 92)),
+			'crop'      => $crop,
+			'blur'      => $blur,
+			'grayscale' => $grayscale,
 		));
 
 		$figure = new Brick('figure');
+		if($class) {
+			$figure->addClass($class);
+		}
 		$figure->append($image);
 
 		return $figure;
