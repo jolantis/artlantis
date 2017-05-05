@@ -7,7 +7,7 @@
 // Do not wrap images in Kirbytext in figure elements
 // $kirby->set('option', 'kirbytext.image.figure', true);
 
-// Reset clas(ses) set on imageset figure (wrapper) elements
+// Reset class(es) set on imageset figure (wrapper)
 $kirby->set('option', 'imageset.tags.image.class', '');
 
 // Generate plain markup for imagesets
