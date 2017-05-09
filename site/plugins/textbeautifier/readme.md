@@ -27,7 +27,7 @@ It works with Markdown and Kirbytext.
 
 ## Author
 
-This project is developed and maintained by [Anselm Hannemann](https://helloanselm.com/).
+This plugin is developed and maintained by [Anselm Hannemann](https://helloanselm.com/).
 
 ## LICENSE
 
