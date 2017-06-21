@@ -65,7 +65,7 @@ module.exports = function(grunt) {
 				polyfills: [
 					'<%= project.scripts_polyfills %>/classlist.js',
 					// '<%= project.scripts_polyfills %>/promise.js',
-					// '<%= project.scripts_polyfills %>/respimage.js',            // Out-comment when using imageset's lazyload, to add support for the <picture> element to browser that do not provide native support (e.g. for IE11 and older, iOS 9.2 and older, Opera Mini, etc.)!!1
+					// '<%= project.scripts_polyfills %>/respimage.js',            // Out-comment when using imageset's lazyload, to add support for the `srcset` and `picture` element to browsers that do not provide native support (e.g. for IE11 and older, iOS 9.2 and older, Opera Mini, etc.)!!1
 				],
 				utils: [
 					// '<%= project.scripts_utils %>/ajax.util.js',
@@ -97,7 +97,7 @@ module.exports = function(grunt) {
 				polyfills: [
 					'<%= project.scripts_polyfills %>/classlist.js',
 					// '<%= project.scripts_polyfills %>/promise.js',
-					// '<%= project.scripts_polyfills %>/respimage.js',            // Out-comment when using imageset's lazyload, to add support for the <picture> element to browser that do not provide native support (e.g. for IE11 and older, iOS 9.2 and older, Opera Mini, etc.)!!1
+					// '<%= project.scripts_polyfills %>/respimage.js',            // Out-comment when using imageset's lazyload, to add support for the `srcset` and `picture` element to browsers that do not provide native support (e.g. for IE11 and older, iOS 9.2 and older, Opera Mini, etc.)!!1
 				],
 				utils: [
 					// '<%= project.scripts_utils %>/ajax.util.js',
