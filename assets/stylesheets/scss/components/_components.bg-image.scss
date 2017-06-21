@@ -20,8 +20,11 @@
 	overflow: hidden;
 
 	&--link {
-		max-height:72vh;
-		min-height: 14rem;
+
+		@include breakpoint(small) {
+			max-height:72vh;
+			min-height: 14rem;
+		}
 
 		.bg-image__placeholder {
 
