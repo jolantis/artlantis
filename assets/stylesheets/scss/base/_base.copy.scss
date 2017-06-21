@@ -8,6 +8,13 @@
 
 .copy {
 
+	/**
+	 * COpy container top and bottom margins
+	 */
+
+	margin-top: rhythm(3);
+	margin-bottom: rhythm(3);
+
 	/* Contain
 	   ========================================================================== */
 
@@ -15,7 +22,13 @@
 
 		> *:not(.full-width),
 		> .full-width figcaption {
-			@extend %contain-padding;
+			padding-right: $contain-percentage;
+			padding-left: $contain-percentage;
+
+			@include breakpoint(medium) {
+				padding-right: rhythm($contain-rhythm-unit);
+				padding-left: rhythm($contain-rhythm-unit);
+			}
 		}
 
 		> *:not(.full-width),
@@ -32,20 +45,29 @@
 		> time,
 		> table,
 		> form,
-		> .figure-image.full-width figcaption,
+		// > .figure-image.full-width figcaption,
 		> .figure-image.text-width {
 			max-width: $text-max-width + (2 * rhythm($contain-rhythm-unit)); // Text max width
 		}
 
 		> .blockquote,
-		// > .figure-image.full-width figcaption,
+		> .figure-image.full-width figcaption,
 		> .figure-image:not([class*="-width"]),
 		> .figure-grid:not([class*="-width"]) {
 			max-width: $figure-max-width + (2 * rhythm($contain-rhythm-unit)); // Contain width
 		}
 
-		> .figure-image figcaption {
-			max-width: $text-max-width; // Maximize width
+		// > .figure-image figcaption {
+		// 	// max-width: $text-max-width; // Maximize width
+		// 	max-width: $figure-max-width; // Maximize width
+		// }
+
+		> .figure-image.full-width {
+
+			@include breakpoint(compact, max) {
+				padding-right: $contain-percentage;
+				padding-left: $contain-percentage;
+			}
 		}
 
 		// > hr {
@@ -80,59 +102,97 @@
 		margin-top: rhythm(.5) !important;
 	}
 
-	> h2 + > *:not(.figure-image),
-	> h3 + > *:not(.figure-image) {
+	> h2 + *:not(.figure-image),
+	> h3 + *:not(.figure-image) {
 		margin-top: rhythm(.5) !important;
 	}
 
-	> h4 + p:not(.figure-image),
-	> h5 + p:not(.figure-image),
-	> h6 + p:not(.figure-image) {
+	> h4 + p,
+	> h5 + p,
+	> h6 + p {
 		margin-top: 0 !important;
 	}
 
 	/**
-	 * Set (additonal) vertical spacing 'above' `figure-*` blocks:
+	 * Set (additonal) vertical spacing 'above' `figure-image` blocks:
 	 */
 
-	> *:not(.figure-image) + .figure-image {
-			margin-top: rhythm(3);
-	}
-
-	/**
-	 * Set (additonal) vertical spacing 'below' `figure-*` blocks:
-	 */
-
+	> *:not(.figure-image) + .figure-image,
 	> .figure-image + *:not(.figure-image) {
-			margin-top: rhythm(3);
+		margin-top: rhythm(3);
 	}
 
 	/**
-	 * Set (rhythm based) vertical spacing 'inbewteen' `figure-*` blocks.
+	 * Set (rhythm based) vertical spacing inbewteen `figure-image` blocks.
 	 */
 
 	> .figure-image + .figure-image > span,
 	> .figure-image + .figure-image .grid__cell,
 	> *:not(.figure-image) + .figure-image .grid__cell {
-		margin-top: rhythm($grid-spacing-rhythm-unit);
-	}
-
-	> .figure-image .figure-image + .figure-image {
-		margin-top: rhythm($grid-gutter-rhythm-unit);
+		margin-top: rhythm(2 * $grid-gutter-rhythm-unit);
 	}
 
 	/**
 	 * Undo top margin by negetively offsetting the whole grid row
 	 */
 
-	// > *:not(.figure-image) + .figure-grid .grid {
 	> *:not(.figure-image) + .figure-image .grid {
-		margin-top: rhythm(-$grid-spacing-rhythm-unit);
+		margin-top: rhythm(-2 * $grid-gutter-rhythm-unit);
 	}
 
 	/**
-	 * Grid gutter (horizontal spacing)
+	 * Set (rhythm based) vertical spacing inbewteen `full-width` blocks.
 	 */
+
+	> .full-width + .full-width > span,
+	> .full-width + .full-width .grid__cell,
+	> *:not(.figure-image) + .full-width .grid__cell {
+		// margin-top: rhythm(2 * $grid-gutter-rhythm-unit);
+
+		@include breakpoint(compact) {
+			margin-top: rhythm($grid-gutter-rhythm-unit);
+		}
+	}
+
+	/**
+	 * Undo top margin by negetively offsetting the whole grid row
+	 */
+
+	> *:not(.figure-image) + .full-width .grid {
+
+		@include breakpoint(compact) {
+			margin-top: rhythm(-$grid-gutter-rhythm-unit);
+		}
+	}
+
+	/**
+	 * Increase (rhythm based) vertical spacing bewteen `figure-image`
+	 * and `full-width` figure blocks from compact and above.
+	 */
+
+	> .figure-image:not(.full-width) + .full-width,
+	> .full-width + .figure-image:not(.full-width) > span,
+	> .full-width + .figure-image .grid__cell {
+
+		@include breakpoint(compact) {
+			margin-top: rhythm(1.5);
+		}
+		@include breakpoint(medium) {
+			margin-top: rhythm(3);
+		}
+	}
+
+	/**
+	 * Set (rhythm based) vertical spacing between images within a
+	 * figure grid column (must be the same as the grid gutter).
+	 */
+
+	> .figure-image .figure-image + .figure-image {
+		margin-top: rhythm($grid-gutter-rhythm-unit);
+	}
+
+	/* Figure grid (horizontal spacing)
+	   ========================================================================== */
 
 	> .figure-image .grid {
 		@extend %grid--gutter;
@@ -186,12 +246,19 @@
 	// h1.giga-heading { @extend .giga-heading; }
 	// h1.mega-heading { @extend .mega-heading; }
 
-	h1 { @extend .alpha-heading; }
-	h2 { @extend .beta-heading; }
-	h3 { @extend .gamma-heading; }
-	h4 { @extend .delta-heading; }
-	h5 { @extend .epsilon-heading; }
+	h1 { @extend .beta-heading; }
+	h2 { @extend .gamma-heading; }
+	h3 { @extend .delta-heading; }
+	h4 { @extend .epsilon-heading; }
+	h5,
 	h6 { @extend .zeta-heading; }
+
+	/* Paragraphs
+	   ========================================================================== */
+
+	p {
+		@extend %text-hang;
+	}
 
 	/* Figures
 	   ========================================================================== */
@@ -225,9 +292,9 @@
 		@extend %text-small;
 	}
 
-	time {
-		@extend %text-time;
-	}
+	// time {
+	// 	@extend %text-time;
+	// }
 
 	/* Addresses styling not present in IE7/8/9 */
 

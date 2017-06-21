@@ -1,13 +1,15 @@
+/* ==========================================================================
+   Clearfix
+   ========================================================================== */
 
-// --------------------------------------------------------------------------
-// Clearfix
-// --------------------------------------------------------------------------
-// Micro clearfix, as per:
-// - http://cssmojo.com/the-very-latest-clearfix-reloaded/
-// --------------------------------------------------------------------------
-// Extend the clearfix placeholder class `%clearfix` with Sass to avoid
-// the `.clearfix` class appearing over and over in your markup.
-// --------------------------------------------------------------------------
+/**
+ * Clearfix
+ * Micro clearfix, as per:
+ * http://cssmojo.com/the-very-latest-clearfix-reloaded/
+ *
+ * Extend the clearfix placeholder class `%clearfix` with Sass to avoid
+ * the `.clearfix` class appearing over and over in your markup.
+ */
 
 .clearfix,
 %clearfix {

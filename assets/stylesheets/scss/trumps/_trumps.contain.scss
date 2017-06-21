@@ -12,6 +12,8 @@
 	padding-left: $contain-percentage !important;
 
 	@include breakpoint(medium) {
+		// padding-right: rhythm($grid-gutter-rhythm-unit) !important;
+		// padding-left: rhythm($grid-gutter-rhythm-unit) !important;
 		padding-right: rhythm($contain-rhythm-unit) !important;
 		padding-left: rhythm($contain-rhythm-unit) !important;
 	}

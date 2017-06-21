@@ -1,0 +1,22 @@
+/* ==========================================================================
+   Aligner
+   ========================================================================== */
+
+.aligner {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	// text-align: center;
+}
+
+.aligner__item {
+	text-align: center;
+}
+
+.aligner__item--top {
+	align-self: flex-start;
+}
+
+.aligner__item--bottom {
+	align-self: flex-end;
+}

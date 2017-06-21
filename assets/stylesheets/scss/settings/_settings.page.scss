@@ -10,8 +10,8 @@ $background-color:              $color-base-white;
 // Contain
 // --------------------------------------------------------------------------
 
-$contain-percentage:           6%;                                              // Left and right percentage sized paddings/margins
-$contain-rhythm-unit:          2;                                               // Left and right rhytm (unit) sized paddings/margins (e.g. for smaller window sizes)
+$contain-percentage:           3%;                                              // Left and right percentage sized paddings/margins
+$contain-rhythm-unit:          1.5;                                             // Left and right rhytm (unit) sized paddings/margins (e.g. for smaller window sizes)
 
 
 // Text max-width
@@ -25,4 +25,4 @@ $text-max-width:                37rem;
 // Image max-width
 // --------------------------------------------------------------------------
 
-$figure-max-width:              58rem;
+$figure-max-width:              68rem;

@@ -3,7 +3,7 @@
    ========================================================================== */
 
 .temp-message {
-	@include responsive-text-size($text-temp);
+	// @include responsive-text-size($text-temp);
 
 	position: absolute;
 	right: 0;

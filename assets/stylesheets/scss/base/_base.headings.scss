@@ -18,8 +18,11 @@
  */
 
 %heading-settings {
-	@include heading-font(700);
-	letter-spacing: .01em;
+	// @include heading-font(700);
+	@include heading-font(300);
+	@extend %text-hang;
+
+	letter-spacing: .01rem;
 
 	.fonts-loaded & {
 		font-family: $heading-web-font;
@@ -30,9 +33,21 @@
  * Heading sizes
  */
 
-// .tera-heading {}
-// .giga-heading {}
-// .mega-heading {}
+/* Hero */
+
+.hero-heading {
+	@extend %heading-settings;
+	@extend %text-kern;
+	@include responsive-text-size($text-hero);
+}
+
+/* Bg-link */
+
+.bg-text-heading {
+	@extend %heading-settings;
+	@extend %text-kern;
+	@include responsive-text-size($text-bg-text);
+}
 
 /* Alpha */
 

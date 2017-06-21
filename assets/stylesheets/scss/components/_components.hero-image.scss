@@ -1,0 +1,60 @@
+/* ==========================================================================
+   Hero (full page) image
+   ========================================================================== */
+
+.hero {
+	position: relative;
+	z-index: $z-index-hero;
+	min-height: 20rem;
+	height: 100%;
+}
+
+
+.hero__title,
+.hero__meta {
+	position: absolute;
+	display: block;
+	width: 100%;
+	text-align: center;
+	color:	$color-base-white;
+}
+
+.hero__title {
+	@extend .hero-heading;
+
+	z-index: $z-index-hero-title;
+	bottom: 44%;
+	padding-right: $contain-percentage;
+	padding-left: $contain-percentage;
+}
+
+.hero__meta {
+	@extend %text-small;
+
+	overflow: hidden;
+	bottom: 0;
+	padding-bottom: rhythm(1); // lenght of vertical line
+	margin-bottom: rhythm(.5);
+
+	&:after { // vertical line
+		position: absolute;
+		top: rhythm(.8);
+		bottom: 0;
+		left: calc(50% - #{rhythm(.05/2)});
+		content: '';
+		border-left: solid .05rem $color-base-white;
+	}
+
+	&:before { // arrow head
+		position: absolute;
+		bottom: rhythm(1);
+		bottom: 0;
+		left: calc(50% - #{rhythm(.2)});
+		content: '';
+		width: 0;
+		height: 0;
+		border-left: rhythm(.2) solid transparent;
+		border-right: rhythm(.2) solid transparent;
+		border-top: rhythm(.3) solid $color-base-white;
+	}
+}

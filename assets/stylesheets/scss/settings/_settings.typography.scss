@@ -25,12 +25,20 @@ $text-sizes: (
 	large:                      (22px, 1.6),
 );
 
-$text-temp: (                                                                   // temp message font size(s) and line height(s)
-	null:                       (1.8rem, 1.2),
-	medium:                     (2.25rem, 1),
+$text-hero: (                                                                  // hero heading font size(s) and line height(s)
+	null:                       (2.5rem, 1.136),
+	medium:                     (3rem),
 	// medium:                     (2.5rem, 1.125),
-	large:                      (2.6rem),
+	large:                      (5rem),
 	// large:                      (3rem, 1.05),
+);
+
+$text-bg-text: (                                                                // bg-link heading font size(s) and line height(s)
+	null:                       (2rem, 1.054),
+	compact:                    (2.5rem),
+	medium:                     (2rem),
+	large:                      (2.25rem),
+	wide:                       (2.5rem),
 );
 
 $text-alpha: (                                                                  // alpha heading font size(s) and line height(s)
@@ -42,10 +50,10 @@ $text-alpha: (                                                                  
 );
 
 $text-beta: (                                                                   // beta heading font size(s) and line height(s)
-	null:                       (1.625rem, 1.154),
-	medium:                     (2rem),
+	null:                       (1.5rem, 1.154),
+	medium:                     (1.75rem),
 	// medium:                     (2rem, 1.25),
-	large:                      (2.25rem),
+	large:                      (2rem),
 	// medium:                     (2.25rem, 1.25),
 );
 
@@ -60,8 +68,9 @@ $text-gamma: (                                                                  
 $text-delta: (                                                                  // delta heading font size(s) and line height(s)
 	null:                       (1.125rem),
 	// null:                       (1.125rem, 1.111),
-	medium:                     (1.125rem),
+	medium:                     (1.372rem),
 	// medium:                     (1.125rem, 1.222),
+	huge:                       (1.75rem),
 );
 
 $text-epsilon: (                                                                // epsilon heading font size(s) and line height(s)
@@ -79,7 +88,7 @@ $text-nano: (                                                                   
 );
 
 $text-pico: (                                                                   // pico heading font size(s) and line height(s)
-	null:                       (.7rem),
+	null:                       (.75rem),
 );
 
 

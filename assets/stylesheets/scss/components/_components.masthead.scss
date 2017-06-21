@@ -2,11 +2,18 @@
    Masthead (aka logo)
    ========================================================================== */
 
-// .masthead {
+.masthead {
 // 	@extend %grunt-logo;
 
-// 	display: block;
+	display: block;
 // 	float: left;
 // 	width: 144px;
 // 	height: 48px;
-// }
+
+	padding-top: rhythm(.5);
+	padding-bottom: rhythm(.5);
+
+	@include breakpoint(compact) {
+		flex: 0;
+	}
+}

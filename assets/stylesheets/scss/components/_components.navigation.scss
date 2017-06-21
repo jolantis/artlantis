@@ -16,13 +16,25 @@
  */
 
 .nav {
-	list-style: none;
+	// list-style: none;
+
+	// > li {
+	// 	&,
+	// 	> a {
+	// 		display: inline-block;
+	// 	}
+	// }
+
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 
 	> li {
-		&,
-		> a {
-			display: inline-block;
-		}
+		flex: 0;
+	}
+
+	@include breakpoint(small) {
+		flex-wrap: nowrap;
 	}
 }
 
@@ -39,16 +51,16 @@
  * </nav>
  */
 
-.nav--stacked {
+// .nav--stacked {
 
-	> li {
-		display: list-item;
+// 	> li {
+// 		display: list-item;
 
-		> a {
-			display:block;
-		}
-	}
-}
+// 		> a {
+// 			display:block;
+// 		}
+// 	}
+// }
 
 // .nav__item {}
 
@@ -66,72 +78,92 @@
  * </div>
  */
 
-// /* Nav main (wrapper) */
+/* Nav main (wrapper) */
 
-// .nav-main {
-// 	@include rgb-alpha(background-color, $color-base-black, .96);
+.nav-main {
+	// @include rgb-alpha(background-color, $color-base-black, .96);
 
-// 	position: relative;
-// 	margin-top: rhythm(1.5);
-// 	width: 100%;
+	// position: relative;
+	// margin-top: rhythm(1.5);
+	// width: 100%;
 
-// 	.ctm & {
-// 		position: fixed;
-// 		top: 0;
-// 		z-index: $z-index-hidden;
-// 		opacity: 0;
-// 		margin-top: 0;
-// 		height: 100%;
-// 		transform: scale(1.32);
-// 	}
-// 	.ctm.is-open-main-nav & {
-// 		z-index: $z-index-nav-main;
-// 		overflow-y: auto;
-// 		transition: opacity .32s, transform .32s;
-// 		transform: scale(1);
-// 		opacity: 100;
-// 		-webkit-overflow-scrolling: touch; /* Adds momentum scrolling on iOS! */
-// 	}
-// 	.ctm.is-closing-main-nav & {
-// 		transition: opacity .32s, transform .32s;
-// 		transform: scale(1.32);
-// 		opacity: 0;
-// 	}
-// }
+	// .ctm & {
+	// 	position: fixed;
+	// 	top: 0;
+	// 	z-index: $z-index-hidden;
+	// 	opacity: 0;
+	// 	margin-top: 0;
+	// 	height: 100%;
+	// 	transform: scale(1.32);
+	// }
+	// .ctm.is-open-main-nav & {
+	// 	z-index: $z-index-nav-main;
+	// 	overflow-y: auto;
+	// 	transition: opacity .32s, transform .32s;
+	// 	transform: scale(1);
+	// 	opacity: 100;
+	// 	-webkit-overflow-scrolling: touch; /* Adds momentum scrolling on iOS! */
+	// }
+	// .ctm.is-closing-main-nav & {
+	// 	transition: opacity .32s, transform .32s;
+	// 	transform: scale(1.32);
+	// 	opacity: 0;
+	// }
 
-// /* Main nav (list) */
+	// margin-top: rhythm(.75);
 
-// .nav-main__list {
-// 	padding: rhythm(1.5) $contain-percentage;
+	@include breakpoint(compact) {
+		flex: 0;
+	}
+}
 
-// 	.ctm & {
-// 		padding-top: rhythm(2);
-// 		padding-bottom: rhythm(2);
-// 		min-height: 100%;
-// 		max-width: 100%;
-// 	}
-// 	// .is-open-main-nav & {}
-// }
+/* Main nav (list) */
+
+.nav-main__list {
+	// padding: rhythm(1.5) $contain-percentage;
+
+	// .ctm & {
+	// 	padding-top: rhythm(2);
+	// 	padding-bottom: rhythm(2);
+	// 	min-height: 100%;
+	// 	max-width: 100%;
+	// }
+	// .is-open-main-nav & {}
+
+	margin-left: rhythm(-.5);
+	margin-right: rhythm(-.5);
+}
 
 // /* Stacked (vertical) nav */
 
-// .nav-main__item {
+.nav-main__item {
+	padding-top: rhythm(.5);
+	padding-left: rhythm(.5);
+	padding-bottom: rhythm(.5);
+	padding-right: rhythm(.5);
+	// margin-top: .5em;
+
 // 	display: list-item;
 // 	border-bottom: .1em solid $color-gray-m-dark;
 
 // 	&:last-child {
 // 		border: none;
 // 	}
-// 	> a {
-// 		display: block;
-// 		padding-top: rhythm(.5);
-// 		padding-bottom: rhythm(.5);
-// 		color: $color-base-white;
 
-// 		&:hover {
-// 			color: $color-gray-light;
-// 		}
-// 	}
+	> a {
+		// display: block;
+		// padding-top: rhythm(.5);
+		// padding-bottom: rhythm(.5);
+		// color: $color-base-white;
+
+		&:hover {
+			color: $color-link;
+
+			.template-blog-post & {
+				color: $color-link-inverse;
+			}
+		}
+	}
 
 // 	// @include breakpoint(medium) {
 // 	// 	margin-bottom: 0;
@@ -144,7 +176,7 @@
 // 	// 		padding-left: rhythm(1);
 // 	// 	}
 // 	// }
-// }
+}
 
 // /**
 //  * Prevent double scrollbars when `.nav-main` is open

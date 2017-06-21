@@ -80,25 +80,25 @@
 // [6] Components
 // --------------------------------------------------------------------------
 // Discrete, complete chunks of UI (e.g. .accordion {}).
-// This is the one layer that inuitcss doesn't get involved with.
 // --------------------------------------------------------------------------
 
 // @import "components/components.accordion";
 // @import "components/components.alerts";
 // @import "components/components.backdrop";
-// @import "components/components.banner";
+@import "components/components.banner";
 @import "components/components.bg-image";
+@import "components/components.bg-text.scss";
 @import "components/components.breadcrumb";
-// @import "components/components.contentinfo";
-@import "components/components.cover";
+@import "components/components.contentinfo";
+// @import "components/components.cover";
 @import "components/components.figure-image";
+@import "components/components.hero-image";
 @import "components/components.imageset.scss";
-// @import "components/components.masthead";
+@import "components/components.masthead";
 @import "components/components.navigation";
 // @import "components/components.oldie-message";
 // @import "components/components.pagination";
-@import "components/components.template";
-@import "components/components.temp-message";
+// @import "components/components.template";
 // @import "components/components.tooltips";
 
 // --------------------------------------------------------------------------
@@ -110,10 +110,11 @@
 // --------------------------------------------------------------------------
 // [8] Trumps
 // --------------------------------------------------------------------------
-// High-specificity, very explicit selectors. Overrides and helper
+// High-specificity, very explicit selectors. Overrides any helper
 // classes (e.g. .is-hidden-visually {}).
 // --------------------------------------------------------------------------
 
+@import "trumps/trumps.aligner";
 @import "trumps/trumps.clearfix";
 @import "trumps/trumps.contain";
 @import "trumps/trumps.spacing";

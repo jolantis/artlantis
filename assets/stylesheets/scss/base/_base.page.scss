@@ -27,6 +27,14 @@ html {
 	min-height: 100%; // [6]
 	color: $color-base-black;
 	background-color: $background-color;
+
+	&.template-blog-post {
+
+		&,
+		body {
+			height: 100%;
+		}
+	}
 }
 
 html.fonts-loaded {

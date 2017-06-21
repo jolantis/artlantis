@@ -3,10 +3,21 @@
    ========================================================================== */
 
 .banner {
-	@extend %clearfix;
-
-	position: relative;
-	z-index: $z-index-banner;
+	width: 100%;
 	padding-top: rhythm(1);
 	padding-bottom: rhythm(1);
+	text-align: center;
+
+	@include breakpoint(compact) {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		justify-content: space-between;
+	}
+
+	.template-blog-post & {
+		position: absolute;
+		z-index: $z-index-banner;
+		color: rgba($color-base-white,.6);
+	}
 }

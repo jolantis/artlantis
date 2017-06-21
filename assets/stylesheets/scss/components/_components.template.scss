@@ -4,12 +4,12 @@
 
 .template {
 
-	&-temp {
-		height: 100%;
-		background-color: $color-base-black;
+	// &-blog-post {
 
-		body {
-			min-height: 100%;                                                   // To make 'vertically centered` elements work
-		}
-	}
+	// 	.banner {
+	// 		position: absolute;
+	// 		z-index: $z-index-banner;
+	// 		color: rgba($color-base-white,.6);
+	// 	}
+	// }
 }
