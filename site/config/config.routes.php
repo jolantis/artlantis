@@ -30,4 +30,42 @@ c::set('routes', array(
 			return go('sitemap.xml');
 		}
 	),
+	array(
+		'pattern' => 'blog/(:any)',
+		'action'  => function($category) {
+
+			$data = array('category' => $category);
+
+			// If page actually exists then return it
+			$page = page('blog/' . $category);
+			if($page) return site()->visit($page->uri());
+
+			// Otherwise probably a category
+			return array('blog', $data);
+
+			// If category does not exist: 404..
+		}
+	),
+	array(
+		'pattern' => 'blog/(:any)/(:any)',
+		'action'  => function($category, $project) {
+
+			$data = array('category' => $category);
+
+			if(isset($project)) {
+				$page = page('blog/' . $project);
+				if(!$page) $page = site()->errorPage();
+				return array('blog/'. $project, $data);
+			}
+
+			// If page actually exists then return it
+			$page = page('blog/' . $category);
+			if($page) return site()->visit($page->uri());
+
+			// Otherwise probably a category
+			return array('blog', $data);
+
+			// If category does not exist: 404..
+		}
+	)
 ));
