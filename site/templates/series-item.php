@@ -1,6 +1,5 @@
 <?php snippet_detect('html-head', array(
 	// 'criticalcss' => 'other_than_default',
-	'prev_next' => true
 )); ?>
 
 	<?php snippet('banner'); ?>

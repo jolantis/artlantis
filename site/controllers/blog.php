@@ -1,36 +1,45 @@
 <?php
-return function($site, $pages, $page, $data) {
+return function($site, $pages, $page, $args) {
 
-	// fetch the basic set of pages
-	$blog_posts = $page->children()->visible()->flip();
+	$page_items     = $page->children()->visible()->flip();
+	$page_num       = (isset($args['page_num'])) ? ($args['page_num']) : '1';
+	$pagination     = (c::get('pagination.' . $page->intendedTemplate()) == false) ? false : true;
+	$categories     = $page_items->pluck('categories', ',', true); sort($categories);
+	$category       = (isset($args['category'])) ? ($args['category']) : false;
+	$cat_pagination = (c::get('pagination.category') == true) ? true : false;
 
-	// add the category filter
-	if(count($data) > 0) {
-		$categoryparam = $data;
-		$blog_posts = $blog_posts->filterBy('categories', $data['category'], ',');
+	# Check if there's a category in the url
+	if($pagination) {
+		if($category) {
+			if($cat_pagination) {
+				$page_items = $page_items->filterBy('categories', '==', tagunslug($category), ',')->paginate(c::get('pagination.' . $page->intendedTemplate(), 10), array('page' => $page_num));
+			}
+			else {
+				$page_items = $page_items->filterBy('categories', '==', tagunslug($category), ',');
+			}
+
+			if($page_items->count() == 0) go(site()->errorPage()->url(), 404);
+		}
+		else {
+			$page_items = $page_items->paginate(c::get('pagination.' . $page->intendedTemplate(), 10), array('page' => $page_num));
+		}
 	}
 	else {
-		$categoryparam = false;
-	}
-
-	// fetch all categories
-	$categories = $site->find('blog')->children()->visible()->pluck('categories', ',', true);
-	sort($categories);
-
-	// apply pagination
-	if(isset($data['category']) && !param('page')) {
-		$key = (key($data) == 'tag' ? 'tags' : key($data));
-		$tag = tagunslug($data['category']);
-		// $blog_posts = $page->children()->visible()->filterBy($key, ($tag), ',')->flip();
-		$blog_posts = $page->children()->visible()->filterBy('categories', ($tag), ',')->flip(); // Set 'categories' as key, because we need to change the content file!
+		if($category) {
+			$page_items = $page_items->filterBy('categories', '==', tagunslug($category), ',');
+		}
 		$pagination = false;
 	}
-	else {
-		$pagination = (c::get('pagination.' . $page->intendedTemplate()) == false) ? false : true;
-		$blog_posts = ($pagination) ? $page->children()->visible()->flip()->paginate(c::get('pagination.' . $page->intendedTemplate())) : $page->children()->visible()->flip();
-	}
 
-	return compact('blog_posts', 'categories', 'categoryparam', 'pagination', 'key', 'tag');
+	# Filter by date to exclude future posts
+	$page_items = $page_items->filterBy('date', '<', time());
+
+	# Set pagination
+	$pagination = $page_items->pagination();
+
+	// dump($pagination);
+
+	return compact('page_items', 'page_num', 'pagination', 'categories', 'category', 'args');
 
 };
 ?>

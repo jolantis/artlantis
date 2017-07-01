@@ -1,6 +1,5 @@
 <?php snippet_detect('html-head', array(
 	// 'criticalcss' => 'other_than_default',
-	'categoryparam' => $categoryparam
 )); ?>
 
 	<?php snippet('banner'); ?>
@@ -11,39 +10,37 @@
 
 		<?php /* echo $page->intro()->kirbytext(); */ ?>
 
-		<?php /*
 		<div class="filters">
 			<ul class="filterlist" id="filters">
-				<?php if($categoryparam['category'] != ''): ?>
+				<?php if($category): ?>
 					<li class="filterlist__item">Blog / <a href="<?php echo url($page->url()); ?>" class="filterlist__button">Filter</a></li>
 				<?php else: ?>
 					<li class="filterlist__item">Blog / All services</li>
 				<?php endif; ?>
-				<?php foreach($categories as $category): ?>
-					<?php if(isset($categoryparam['category']) && $categoryparam['category'] == tagslug($category)): ?>
-						<li class="filterlist__item"><?php echo html($category) . ' / ' . tagunslug($category); ?></li>
+				<?php foreach($categories as $cat): ?>
+					<?php if($category && $category == tagslug($cat)): ?>
+						<li class="filterlist__item"><?php echo html($cat) . ' / ' . tagunslug($cat); ?></li>
 					<?php else: ?>
-						<li class="filterlist__item"><a href="<?php echo url($page->url() . '/' . tagslug($category)) ?>" class="filterlist__button"><?php echo html($category); ?></a></li>
+						<li class="filterlist__item"><a href="<?php echo url($page->url() . '/category/' . tagslug($cat)) ?>" class="filterlist__button"><?php echo html($cat); ?></a></li>
 					<?php endif; ?>
 				<?php endforeach; ?>
 			</ul>
 		</div>
-		*/ ?>
 
 		<div class="grid grid--gutter">
-			<?php foreach ($blog_posts as $blog_post) : ?>
+			<?php foreach ($page_items as $page_item) : ?>
 
-				<?php $blog_post_url   = ($categoryparam) ? $page->url() . '/' . tagslug($categoryparam['category']) . '/' . $blog_post->slug() : $blog_post->url(); ?>
-				<?php $blog_post_image = ($blog_post->images()->filterBy('filename','*=','main')->first()) ? $blog_post->images()->filterBy('filename','*=','main')->first() : $blog_post->images()->sortBy('sort', 'asc')->first(); ?>
+				<?php $page_item_url   = ($category) ? $page->url() . '/category/' . tagslug($category) . '/' . $page_item->slug() : $page_item->url(); ?>
+				<?php $page_item_image = ($page_item->images()->filterBy('filename','*=','main')->first()) ? $page_item->images()->filterBy('filename','*=','main')->first() : $page_item->images()->sortBy('sort', 'asc')->first(); ?>
 
-				<article class="grid__cell medium-1of2" id="<?php echo $blog_post->slug(); ?>">
-					<a href="<?php echo $blog_post_url; ?>" class="bg-image bg-image--link aligner">
-						<?php // echo $blog_post_image->imageset('grid'); ?>
-						<?php echo $blog_post_image->imageset('grid', ['output' => 'bgimage']); ?>
+				<article class="grid__cell medium-1of2" id="<?php echo $page_item->slug(); ?>">
+					<a href="<?php echo $page_item_url; ?>" class="bg-image bg-image--link aligner">
+						<?php // echo $page_item_image->imageset('grid'); ?>
+						<?php echo $page_item_image->imageset('grid', ['output' => 'bgimage']); ?>
 						<span class="bg-text aligner">
 							<span class="aligner__item">
-								<h2 class="bg-text__title"><?php echo $blog_post->title()->smartypants(); ?></h2>
-								<p class="bg-text__meta"><?php snippet('datetime', ['relative' => true, 'page' => $blog_post]); ?></p>
+								<h2 class="bg-text__title"><?php echo $page_item->title()->smartypants(); ?></h2>
+								<p class="bg-text__meta"><?php snippet('datetime', ['relative' => true, 'page' => $page_item]); ?></p>
 							</span>
 						</span>
 					</a>
@@ -53,5 +50,7 @@
 		</div>
 
 	</main>
+
+	<?php snippet('nav-pagination'); ?>
 
 <?php snippet_detect('footer'); ?>

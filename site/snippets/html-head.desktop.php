@@ -34,12 +34,6 @@ $language_locale = (c::get('language.multi', false)) ? $site->language()->locale
 // `snippet_detect('html-head', array('criticalcss' => 'another_criticalss_file'));`
 $criticalcss = (isset($criticalcss)) ? $criticalcss : 'default';
 
-// Variable to set next and previous rel="next/prev" links (e.g. news item,
-// project detail, blogpost, etc.). To enable add a 'prev_next' array to the
-// include snippet (at top of the template), like this:
-// 'snippet_detect('html-head', array('prev_next' => true));'
-$prev_next = (isset($prev_next)) ? $prev_next : false;
-
 // Variable to set page template name to html element for styling purpose.
 $page_template = ($page->intendedTemplate()) ? ' template-' . $page->intendedTemplate() : '';
 
@@ -80,11 +74,11 @@ $fontobserver = (isset($_COOKIE['fonts-loaded']) && $_COOKIE['fonts-loaded'] == 
 	<link rel="icon" href="<?php echo url('/assets/images/favicon.png'); ?>"><?php // For Firefox, Chrome, Safari, IE 11+ and Opera, 192x192 pixels in size ?>
 	<link rel="mask-icon" href="<?php echo url('/assets/images/pinned-icon.svg'); ?>" color="<?php echo ($site->theme_color()->isNotEmpty()) ? $site->theme_color() : '#141414' ; ?>"><?php // For Safari 9+ pinned tab (http://j.mp/2gpNiw9) ?>
 
-	<?php // Next, previous and canonical rel links for all pages ?>
-	<?php meta_prevnextcanonical_general($page); ?>
+	<?php // Canonical rel link ?>
+	<?php echo $page->canonical_rel($category, $page_num); ?>
 
-	<?php // Next and previous rel links on specific pages (to use set $prev_next varibale in template) ?>
-	<?php if($prev_next): meta_prevnextcanonical_single($page); endif; ?>
+	<?php // Prev and next rel links ?>
+	<?php echo $page->prevnext_rel($category, $pagination, $page_num); ?>
 
 	<?php // Alternate language rel link(s) for matching languages in config and available text files (e.g. blogarticle.md, blogarticle.en.md) ?>
 	<?php if(c::get('language.multi', false)): foreach($site->languages() as $language): if($site->languages()->count() > 1 && $site->language() != $language && isset($page->inventory()['content'][$language->code()])): ?><link rel="alternate" href="<?php echo $page->url($language->code()); ?>" hreflang="<?php echo $language->locale(); ?>"><?php endif; endforeach; endif; ?>
