@@ -63,11 +63,18 @@
 		// }
 
 		> .figure-image.full-width {
+			padding-right: $contain-percentage;
+			padding-left: $contain-percentage;
 
-			@include breakpoint(compact, max) {
-				padding-right: $contain-percentage;
-				padding-left: $contain-percentage;
+			@include breakpoint(compact) {
+				padding-left: rhythm($grid-gutter-rhythm-unit) !important;
+				padding-right: rhythm($grid-gutter-rhythm-unit) !important;
 			}
+
+			// @include breakpoint(compact, max) {
+			// 	padding-right: $contain-percentage;
+			// 	padding-left: $contain-percentage;
+			// }
 		}
 
 		// > hr {

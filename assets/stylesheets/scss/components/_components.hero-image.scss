@@ -5,8 +5,24 @@
 .hero {
 	position: relative;
 	z-index: $z-index-hero;
-	min-height: 20rem;
 	height: 100%;
+	min-height: 20rem;
+	max-height: 178vw; // More or less the ratio of an iPhone 6 screen!!
+
+	@include breakpoint(compact) {
+		padding: rhythm($grid-gutter-rhythm-unit);
+
+		.bg-image__placeholder {
+			top: rhythm($grid-gutter-rhythm-unit);
+			left: rhythm($grid-gutter-rhythm-unit);
+			right: rhythm($grid-gutter-rhythm-unit);
+			bottom: rhythm($grid-gutter-rhythm-unit);
+		}
+	}
+
+	@include breakpoint(medium) {
+		max-height: 108vw;
+	}
 }
 
 

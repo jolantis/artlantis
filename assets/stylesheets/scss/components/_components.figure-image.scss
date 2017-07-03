@@ -30,7 +30,7 @@
 
 .figure-image {
 	position: relative;
-	overflow: hidden;
+	// overflow: hidden;
 
 	// a {
 	// 	position: absolute !important;
@@ -51,6 +51,10 @@
 		margin-right: 0;
 		margin-left: auto;
 	}
+
+	// > span { // CHECK IF NOT CLASS NAME!!!
+	// 	box-shadow: 0 .1rem .5rem rgba($color-base-black,.4); // MAKE VARIABLE!!!
+	// }
 
 	figcaption {
 		@include responsive-text-size($text-pico); // (Re)set font-size (it has been set to `0` by wrapping `.grid` element!)
