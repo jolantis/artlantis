@@ -78,10 +78,10 @@ $fontobserver = (isset($_COOKIE['fonts-loaded']) && $_COOKIE['fonts-loaded'] == 
 	<link rel="mask-icon" href="<?php echo url('/assets/images/pinned-icon.svg'); ?>" color="<?php echo ($site->theme_color()->isNotEmpty()) ? $site->theme_color() : '#141414' ; ?>"><?php // For Safari 9+ pinned tab (http://j.mp/2gpNiw9) ?>
 
 	<?php // Canonical rel link ?>
-	<?php echo $page->canonical_rel($category, $page_num); ?>
+	<?php echo $page->canonical_rel($filter_value, $page_num); ?>
 
 	<?php // Prev and next rel links ?>
-	<?php echo $page->prevnext_rel($category, $pagination, $page_num); ?>
+	<?php echo $page->prevnext_rel($filter_key, $filter_value, $pagination, $page_num); ?>
 
 	<?php // Alternate language rel link(s) for matching languages in config and available text files (e.g. blogarticle.md, blogarticle.en.md) ?>
 	<?php if(c::get('language.multi', false)): foreach($site->languages() as $language): if($site->languages()->count() > 1 && $site->language() != $language && isset($page->inventory()['content'][$language->code()])): ?><link rel="alternate" href="<?php echo $page->url($language->code()); ?>" hreflang="<?php echo $language->locale(); ?>"><?php endif; endforeach; endif; ?>

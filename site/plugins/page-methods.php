@@ -1,28 +1,28 @@
 <?php
 
-page::$methods['canonical_rel'] = function($page, $category, $page_num) {
+page::$methods['canonical_rel'] = function($page, $filter_value, $page_num) {
 	return '<link rel="canonical" href="' . $page->url() . (($page_num && $page_num != 1) ? '/page/' . $page_num : '') . '">' . "\n";
 };
 
-page::$methods['prevnext_rel'] = function($page, $category, $pagination, $page_num) {
+page::$methods['prevnext_rel'] = function($page, $filter_key, $filter_value, $pagination, $page_num) {
 
 	if($pagination && $pagination->hasPages()) {
 		if($page_num == 1 and $pagination->hasNextPage()) {
-			return '<link rel="next" href="' . url(kirby()->request()->path()->first() . (($category) ? '/category/' . $category : '') . '/page/2') . '">'  . "\n";
+			return '<link rel="next" href="' . url(kirby()->request()->path()->first() . (($filter_value) ? '/' . $filter_key . '/' . $filter_value : '') . '/page/2') . '">'  . "\n";
 		}
 		if($page_num == 2 and $pagination->hasNextPage()) {
-			return '<link rel="prev" href="' . url(kirby()->request()->path()->first() . (($category) ? '/category/' . $category : '')) . '">
-					<link rel="next" href="' . url(kirby()->request()->path()->first() . (($category) ? '/category/' . $category : '') . '/page/' . ($page_num + 1)) . '">'  . "\n";
+			return '<link rel="prev" href="' . url(kirby()->request()->path()->first() . (($filter_value) ? '/' . $filter_key . '/' . $filter_value : '')) . '">
+					<link rel="next" href="' . url(kirby()->request()->path()->first() . (($filter_value) ? '/' . $filter_key . '/' . $filter_value : '') . '/page/' . ($page_num + 1)) . '">'  . "\n";
 		}
 		if($pagination->hasPrevPage() and $pagination->hasNextPage()) {
-			return '<link rel="prev" href="' . url(kirby()->request()->path()->first() . (($category) ? '/category/' . $category : '') . '/page/' . ($page_num - 1)) . '">
-					<link rel="next" href="' . url(kirby()->request()->path()->first() . (($category) ? '/category/' . $category : '') . '/page/' . ($page_num + 1)) . '">'  . "\n";
+			return '<link rel="prev" href="' . url(kirby()->request()->path()->first() . (($filter_value) ? '/' . $filter_key . '/' . $filter_value : '') . '/page/' . ($page_num - 1)) . '">
+					<link rel="next" href="' . url(kirby()->request()->path()->first() . (($filter_value) ? '/' . $filter_key . '/' . $filter_value : '') . '/page/' . ($page_num + 1)) . '">'  . "\n";
 		}
 		if($page_num == 2 and !$pagination->hasNextPage()) {
-			return '<link rel="prev" href="' . url(kirby()->request()->path()->first() . (($category) ? '/category/' . $category : '')) . '">'  . "\n";
+			return '<link rel="prev" href="' . url(kirby()->request()->path()->first() . (($filter_value) ? '/' . $filter_key . '/' . $filter_value : '')) . '">'  . "\n";
 		}
 		if($pagination->hasPrevPage() and !$pagination->hasNextPage()) {
-			return '<link rel="prev" href="' . url(kirby()->request()->path()->first() . (($category) ? '/category/' . $category : '') . '/page/' . ($page_num - 1)) . '">'   . "\n";
+			return '<link rel="prev" href="' . url(kirby()->request()->path()->first() . (($filter_value) ? '/' . $filter_key . '/' . $filter_value : '') . '/page/' . ($page_num - 1)) . '">'   . "\n";
 		}
 	}
 };

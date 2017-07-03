@@ -1,7 +1,7 @@
 <?php
 
 /* -----------------------------------------------------------------------------
-Pagination
+Archive pagination
 --------------------------------------------------------------------------------
 
  The number of items on a `target` page. To have all items listed
@@ -18,11 +18,11 @@ Pagination
 c::set('pagination.blog', 4);
 
 /* -----------------------------------------------------------------------------
-Category (filtered archive) pagination
+Filtered archive pagination
 --------------------------------------------------------------------------------
 
-Enable (or disable) filtered archive (by category) pagination.
+Enable (or disable) pagination for a filtered archive (e.g. by `/filter-value/filter-key`).
 
 */
 
-c::set('pagination.category', false);
+c::set('pagination.filtered', false);

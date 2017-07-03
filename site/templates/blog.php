@@ -10,27 +10,12 @@
 
 		<?php /* echo $page->intro()->kirbytext(); */ ?>
 
-		<div class="filters">
-			<ul class="filterlist" id="filters">
-				<?php if($category): ?>
-					<li class="filterlist__item">Blog / <a href="<?php echo url($page->url()); ?>" class="filterlist__button">Filter</a></li>
-				<?php else: ?>
-					<li class="filterlist__item">Blog / All services</li>
-				<?php endif; ?>
-				<?php foreach($categories as $cat): ?>
-					<?php if($category && $category == tagslug($cat)): ?>
-						<li class="filterlist__item"><?php echo html($cat) . ' / ' . tagunslug($cat); ?></li>
-					<?php else: ?>
-						<li class="filterlist__item"><a href="<?php echo url($page->url() . '/category/' . tagslug($cat)) ?>" class="filterlist__button"><?php echo html($cat); ?></a></li>
-					<?php endif; ?>
-				<?php endforeach; ?>
-			</ul>
-		</div>
+		<?php snippet('filter-cloud', array('filter_key' => 'tags')); ?>
 
 		<div class="grid grid--gutter">
 			<?php foreach ($page_items as $page_item) : ?>
 
-				<?php $page_item_url   = ($category) ? $page->url() . '/category/' . tagslug($category) . '/' . $page_item->slug() : $page_item->url(); ?>
+				<?php $page_item_url   = ($filter_value) ? $page->url() . '/' . (($filter_key == 'tags') ? 'tag' : $filter_key) .'/' . tagslug($filter_value) . '/' . $page_item->slug() : $page_item->url(); ?>
 				<?php $page_item_image = ($page_item->images()->filterBy('filename','*=','main')->first()) ? $page_item->images()->filterBy('filename','*=','main')->first() : $page_item->images()->sortBy('sort', 'asc')->first(); ?>
 
 				<article class="grid__cell medium-1of2" id="<?php echo $page_item->slug(); ?>">

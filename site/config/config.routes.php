@@ -10,14 +10,20 @@ Additional route setup for Kirby's internal router.
 
 c::set('routes', array(
 
-	array(                                                                      // Redirect sitemap to sitemap.xml
+	/**
+	 * Redirect `/sitemap` to `/sitemap.xml`
+	 */
+	array(
 		'pattern' => 'sitemap',
 		'action'  => function() {
 			return go('sitemap.xml');
 		}
 	),
 
-	array(                                                                      // Redirect `/target/page` and `/target/page/1` to page `/target`
+	/**
+	 * Redirect `/target/page` and `/target/page/1` to page `/target`
+	 */
+	array(
 		'pattern' => array('(:any)/page', '(:any)/page/1'),
 		'action'  => function($target) {
 
@@ -27,25 +33,32 @@ c::set('routes', array(
 		}
 	),
 
-	array(                                                                      // Redirect `/target/category/category/page` and `/target/category/category/page/1` to page `/target/category`
-		'pattern' => array('(:any)/category/(:any)/page', '(:any)/category/(:any)/page/1'),
-		'action'  => function($target, $category) {
+	/**
+	 * Redirect `/target/filter-key/filter-value/page` and
+	 * `/target/filter-key/filter-value/page/1` to page `/target/filter-key`
+	 */
+	array(
+		'pattern' => array('(:any)/(:any)/(:any)/page', '(:any)/(:any)/(:any)/page/1'),
+		'action'  => function($target, $filter_key, $filter_value) {
 
 			$target_page = page($target);
 
-			return go($target_page . (($category) ? '/' . $category : ''));
+			return go($target_page . (($filter_value) ? '/' . $filter_key . '/' . $filter_value : ''));
 		}
 	),
 
-	array(                                                                      // Archive pagination (e.g. /target/page/2, /target/page/3, etc.)
+	/**
+	 * Archive pagination (e.g. /target/page/2, /target/page/3, etc.)
+	 */
+	array(
 		'pattern' => '(:any)/page/(:num)',
-		'action'  => function($target, $num) {
+		'action'  => function($target, $page_num) {
 
-			$args        = array('category' => null, 'page_num' => $num);
+			$args        = array('filter_key' => null, 'filter_value' => null, 'page_num' => $page_num);
 			$target_page = page($target);
 
 			if(!$target_page) {
-				go(site()->errorPage()->url(), 404);
+				return site()->visit(site()->errorPage(), 404);
 			}
 			else {
 				return array($target, $args);
@@ -53,38 +66,45 @@ c::set('routes', array(
 		}
 	),
 
-	array(                                                                      // Filter archive pages by category (e.g. /target/category/category)
-		'pattern' => '(:any)/category/(:any)',
-		'action'  => function($target, $category) {
+	/**
+	 * Filter archive pages by filter-value (e.g. /target/filter-key/filter-value)
+	 */
+	array(
+		'pattern' => '((?!thumbs)[a-zA-Z0-9\.\-_%=]+)/(:any)/(:any)',
+		'action'  => function($target, $filter_key, $filter_value) {
 
-			$args        = array('category' => $category, 'page_num' => null);
-			$page        = page($target . '/'. $category);
+			$args        = array('filter_key' => $filter_key, 'filter_value' => $filter_value, 'page_num' => null);
+			$page        = page($target . '/' . $filter_key . ':' . $filter_value);
 			$target_page = page($target);
 
 			if(!$target_page) {
-				go(site()->errorPage()->url(), 404);
+				return site()->visit(site()->errorPage(), 404);
 			}
 			else {
 				if($page) {
 					// If page actually exists then return it
 					return site()->visit($page->uri());
 				} else {
-					// Otherwise probably a category
+					// Otherwise probably a filter-value
 					return array($target, $args);
 				}
 			}
 		}
 	),
 
-	array(                                                                      /// Filtered archive pages pagination (e.g. /target/category/category/page/2, /target/category/category/page/3, etc.)
-		'pattern' => '(:any)/category/(:any)/page/(:num)',
-		'action'  => function($target, $category, $num) {
+	/**
+	 * Filtered archive pages pagination (e.g. /target/filter-key/filter-value/page/2,
+	 * /target/filter-key/filter-value/page/3, etc.)
+	 */
+	array(
+		'pattern' => '(:any)/(:any)/(:any)/page/(:num)',
+		'action'  => function($target, $filter_key, $filter_value, $page_num) {
 
-			$args        = array('category' => $category, 'page_num' => $num);
+			$args        = array('filter_key' => $filter_key, 'filter_value' => $filter_value, 'page_num' => $page_num);
 			$target_page = page($target);
 
 			if(!$target_page) {
-				go(site()->errorPage()->url(), 404);
+				return site()->visit(site()->errorPage(), 404);
 			}
 			else {
 				return array($target, $args);
@@ -92,12 +112,14 @@ c::set('routes', array(
 		}
 	),
 
-	array(                                                                      // Post item within category (e.g. /blog/category/category/post)
-		'pattern' => '(:any)/category/(:any)/(:any)',
-		'action'  => function($target, $category, $post) {
+	/**
+	 * Post item within filter-value (e.g. /target/filter-key/filter-value/post)
+	 */
+	array(
+		'pattern' => '((?!thumbs)[a-zA-Z0-9\.\-_%=]+)/(:any)/(:any)/(:any)',
+		'action'  => function($target, $filter_key, $filter_value, $post) {
 
-			$args = array('category' => $category, 'page_num' => null);
-			// $args = page($target . '/category/' . $category);
+			$args        = array('filter_key' => $filter_key, 'filter_value' => $filter_value, 'page_num' => null);
 			$target_page = page($target);
 
 			if(isset($post)) {
@@ -109,7 +131,7 @@ c::set('routes', array(
 			// If page actually exists then return it
 			if($page) return site()->visit($page->uri());
 
-			// Otherwise probably a category
+			// Otherwise probably a filter-value
 			return array($target, $args);
 		}
 	),
