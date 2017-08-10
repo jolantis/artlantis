@@ -38,9 +38,8 @@
 // Low-specificity, far-reaching rulesets (e.g. resets).
 // --------------------------------------------------------------------------
 
-@import "generic/generic.reset";
-@import "generic/generic.normalize";
 @import "generic/generic.box-sizing";
+@import "generic/generic.foundation";
 @import "generic/generic.text-selection";
 @import "generic/generic.viewport";
 
@@ -54,7 +53,7 @@
 @import "base/base.headings";
 @import "base/base.images";
 @import "base/base.page";
-// @import "base/base.quotes";
+@import "base/base.quotes";
 // @import "base/base.ruler";
 
 // --------------------------------------------------------------------------
@@ -67,7 +66,7 @@
 // @import "objects/objects.block-link";
 @import "objects/objects.buttons";
 // @import "objects/objects.fluid-embed";
-// @import "objects/objects.forms";
+@import "objects/objects.forms";
 @import "objects/objects.grid";
 // @import "objects/objects.icons";
 @import "objects/objects.links";

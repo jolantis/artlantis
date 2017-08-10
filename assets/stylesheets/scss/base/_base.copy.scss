@@ -45,12 +45,13 @@
 		> time,
 		> table,
 		> form,
+		> .blockquote,
 		// > .figure-image.full-width figcaption,
 		> .figure-image.text-width {
 			max-width: $text-max-width + (2 * rhythm($contain-rhythm-unit)); // Text max width
 		}
 
-		> .blockquote,
+		// > .blockquote,
 		> .figure-image.full-width figcaption,
 		> .figure-image:not([class*="-width"]),
 		> .figure-grid:not([class*="-width"]) {
@@ -136,7 +137,7 @@
 	> .figure-image + .figure-image > span,
 	> .figure-image + .figure-image .grid__cell,
 	> *:not(.figure-image) + .figure-image .grid__cell {
-		margin-top: rhythm(2 * $grid-gutter-rhythm-unit);
+		margin-top: rhythm(4 * $grid-gutter-rhythm-unit);
 	}
 
 	/**
@@ -144,7 +145,7 @@
 	 */
 
 	> *:not(.figure-image) + .figure-image .grid {
-		margin-top: rhythm(-2 * $grid-gutter-rhythm-unit);
+		margin-top: rhythm(-4 * $grid-gutter-rhythm-unit);
 	}
 
 	/**
@@ -177,15 +178,26 @@
 	 * and `full-width` figure blocks from compact and above.
 	 */
 
-	> .figure-image:not(.full-width) + .full-width,
-	> .full-width + .figure-image:not(.full-width) > span,
-	> .full-width + .figure-image .grid__cell {
+	 > .figure-image:not(.text-width):not(.full-width) + .text-width,
+	> .text-width + .figure-image:not(.text-width),
+	> .figure-image:not(.full-width) + .full-width {
 
 		@include breakpoint(compact) {
 			margin-top: rhythm(1.5);
 		}
 		@include breakpoint(medium) {
 			margin-top: rhythm(3);
+		}
+	}
+
+	> .full-width + .figure-image:not(.full-width) > span,
+	> .full-width + .figure-image:not(.full-width) .grid__cell {
+
+		@include breakpoint(compact) {
+			margin-top: rhythm(1.5 + (2 * $grid-gutter-rhythm-unit));
+		}
+		@include breakpoint(medium) {
+			margin-top: rhythm(3 + (2 * $grid-gutter-rhythm-unit));
 		}
 	}
 
@@ -303,8 +315,6 @@
 	// 	@extend %text-time;
 	// }
 
-	/* Addresses styling not present in IE7/8/9 */
-
 	mark {
 		background-color: rgb(248,248,0);
 		color: $color-base-black;
@@ -320,11 +330,13 @@
 	del {
 		background-color: rgb(248,0,0);
 		color: $color-base-black;
+		// text-decoration: line-through;
 	}
 
-	/* Addresses styling not present in IE7/8/9, S5, Chrome */
-
 	abbr {
+		border-bottom: none;
+		text-decoration: underline;
+		text-decoration: underline dotted;
 		text-transform: lowercase;
 		letter-spacing: .05em;
 		font-variant: small-caps; // https://developer.mozilla.org/en-US/docs/CSS/font-variant
