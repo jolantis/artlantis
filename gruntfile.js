@@ -55,12 +55,12 @@ module.exports = function(grunt) {
 					// '<%= project.scripts_plugins %>/domdelegate/domdelegate.js',
 					'<%= project.scripts_plugins %>/domready/domready.js',
 					'<%= project.scripts_plugins %>/fontfaceobserver/fontfaceobserver.js',
+					// '<%= project.scripts_plugins %>/gumshoe/gumshoe.js',
 					'<%= project.scripts_plugins %>/imageset/imageset.js',      // Out-comment when using imageset's lazyload
 					'<%= project.scripts_plugins %>/imageset/ls.bgset.js',     // Out-comment when using imageset's lazyload + background images with a width descriptor, similar to how `srcset` works (e.g. for Safari 10.x)
 					'<%= project.scripts_plugins %>/imageset/ls.parent-fit.js', // Out-comment when using imageset's lazyload + background images; when `bgset` plugin (background images) is used in combination with data-sizes="auto" and `background-size: cover|contain` (e.g. for Edge, IE11 and older, iOS 9, etc.)
 					// '<%= project.scripts_plugins %>/transitionend/transitionend.js',
 					// '<%= project.scripts_plugins %>/smooth-scroll/smooth-scroll.js',
-					// '<%= project.scripts_plugins %>/gumshoe/gumshoe.js',
 				],
 				polyfills: [
 					'<%= project.scripts_polyfills %>/classlist.js',
