@@ -1,0 +1,124 @@
+/* ==========================================================================
+   Filter
+   ========================================================================== */
+
+.filters {
+	width: 100%;
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: baseline;
+	// flex-direction: row;
+
+	button {
+		background: none;
+		border: none;
+		outline: none;
+		font: inherit;
+		cursor: pointer;
+		margin: 0;
+		padding-top: rhythm(.1);
+		// padding-right: rhythm(.5);
+		padding-right: 0;
+		padding-bottom: 0;
+		padding-left: rhythm(.5);
+		white-space: nowrap;
+		line-height: rhythm(1.6);
+		opacity: 0;
+		animation: fade-in .5s ease-in .15s normal forwards;
+		// -webkit-font-smoothing: antialiased; // [2] To prevent flickering of text in Safari (default is subpixel-rendering)
+	}
+
+	.no-touchevents & {
+
+		button {
+			// padding-right: rhythm(.4);
+			padding-left: rhythm(.4);
+			line-height: rhythm(1.15);
+		}
+	}
+	&.is-closed {
+
+		button {
+			flex: 0;
+			order: 1;
+			z-index: $z-index-more-button;
+		}
+	}
+}
+
+.filterlist {
+	display: flex;
+	flex-basis: 100%;
+	flex: 1;
+	order: 0;
+	position: relative;
+	overflow: hidden;
+	height: rhythm(1.71); // line-height rhythm(1.6) + padding-top rhythm(.11)!!!
+
+	.no-touchevents & {
+		height: rhythm(1.26); // line-height rhythm(1.15) + padding-top rhythm(.11)!!!
+	}
+
+	&:after {
+		@include linear-gradient(to left, $color-gradient-white-transparent);
+
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		content: "";
+		width: rhythm(5);
+		width: 16vw;
+		pointer-events: none; // To make events "pass through" the element
+	}
+
+	.is-visible &,
+	.is-open &,
+	.no-js & {
+
+		&:after {
+			content: none;
+		}
+	}
+	.is-open &,
+	.no-js & {
+		flex-wrap: wrap;
+		height: auto;
+	}
+}
+
+.filterlist__item {
+	white-space: nowrap;
+
+	.no-js & {
+		display: inline-block;
+	}
+}
+
+.filterlist__button {
+	display: block;
+	padding-top: rhythm(.11);
+	padding-right: rhythm(.5);
+	padding-left: rhythm(.5);
+	margin-right: rhythm(.05);
+	margin-bottom: rhythm(.05);
+	line-height: rhythm(1.6);
+	background-color: $color-gray-x-light;
+	border-radius: rhythm(.05);
+
+	.no-touchevents & {
+		padding-right: rhythm(.4);
+		padding-left: rhythm(.4);
+		line-height: rhythm(1.15);
+	}
+
+	&:hover {
+		transition: background-color .24s ease-out, color .24s ease-out;
+	}
+
+	&:hover,
+	.is-active & {
+		background-color: $color-base-black;
+		color: $color-base-white;
+	}
+}

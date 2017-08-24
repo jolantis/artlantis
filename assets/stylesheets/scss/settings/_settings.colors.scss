@@ -80,6 +80,12 @@ $color-tangerine-dark:         shade($color-base-tangerine, 32%);
 // Gradients
 // --------------------------------------------------------------------------
 
+$color-gradient-white-transparent: (
+	rgba(255,255,255,1) 0%,
+	rgba(255,255,255,.8) 50%,
+	rgba(255,255,255,0) 100%
+);
+
 $color-gradient-saturated: (
 	$color-base-red 0%,                                                         // Gradient color + color stop 1
 	$color-base-blue 32%,                                                       // Gradient color + color stop 2

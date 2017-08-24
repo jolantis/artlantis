@@ -6,11 +6,9 @@
 
 	<main role="main" class="contain-padding">
 
-		<h1 class="is-hidden-visually"><?php echo $page->title()->smartypants(); ?></h1>
+		<h1 class="beta-heading is-hidden-visually"><?php echo $page->title()->smartypants(); ?></h1>
 
-		<?php /* echo $page->intro()->kirbytext(); */ ?>
-
-		<?php snippet('filter-cloud', array('filter_key' => 'tags')); ?>
+		<?php snippet('filters', array('filter_key' => 'tags')); ?>
 
 		<div class="grid grid--gutter">
 			<?php foreach ($page_items as $page_item) : ?>

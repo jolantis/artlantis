@@ -46,36 +46,41 @@ module.exports = function(grunt) {
 		jsfiles: {
 			head: [
 				'<%= project.scripts_plugins %>/enhance/enhance.js',
-				// '<%= project.scripts_plugins %>/modernizr/modernizr.dev.js',
-				'<%= project.scripts_plugins %>/modernizr/modernizr.min.js',    // ALWAYS use custom build modernizr in production!
+				'<%= project.scripts_plugins %>/modernizr/modernizr.dev.js',
+				// '<%= project.scripts_plugins %>/modernizr/modernizr.min.js',    // ALWAYS use custom build modernizr in production!
 				'<%= project.scripts %>/head.scripts.js',
 			],
 			main: {
 				plugins: [
+					'<%= project.scripts_plugins %>/debounce/debounce.js',      // Out-comment when using filters module!
 					// '<%= project.scripts_plugins %>/domdelegate/domdelegate.js',
-					'<%= project.scripts_plugins %>/domready/domready.js',
+					'<%= project.scripts_plugins %>/domready/domready.js',      // ALWAYS out-comment. It is used in the `main` and `mobile` scripts files!
 					'<%= project.scripts_plugins %>/fontfaceobserver/fontfaceobserver.js',
 					// '<%= project.scripts_plugins %>/gumshoe/gumshoe.js',
 					'<%= project.scripts_plugins %>/imageset/imageset.js',      // Out-comment when using imageset's lazyload
-					'<%= project.scripts_plugins %>/imageset/ls.bgset.js',     // Out-comment when using imageset's lazyload + background images with a width descriptor, similar to how `srcset` works (e.g. for Safari 10.x)
+					'<%= project.scripts_plugins %>/imageset/ls.bgset.js',      // Out-comment when using imageset's lazyload + background images with a width descriptor, similar to how `srcset` works (e.g. for Safari 10.x)
 					'<%= project.scripts_plugins %>/imageset/ls.parent-fit.js', // Out-comment when using imageset's lazyload + background images; when `bgset` plugin (background images) is used in combination with data-sizes="auto" and `background-size: cover|contain` (e.g. for Edge, IE11 and older, iOS 9, etc.)
-					// '<%= project.scripts_plugins %>/transitionend/transitionend.js',
+					// '<%= project.scripts_plugins %>/transitionend/transitionend.js', // Out-comment when using alerts or navmain module!
 					// '<%= project.scripts_plugins %>/smooth-scroll/smooth-scroll.js',
+					// '<%= project.scripts_plugins %>/debounce/throttle.js',
 				],
 				polyfills: [
-					'<%= project.scripts_polyfills %>/classlist.js',
+					'<%= project.scripts_polyfills %>/classlist.js',            // Adds cross-browser full `element.classList` support (IE11)
 					// '<%= project.scripts_polyfills %>/promise.js',
 					// '<%= project.scripts_polyfills %>/respimage.js',            // Out-comment when using imageset's lazyload, to add support for the `srcset` and `picture` element to browsers that do not provide native support (e.g. for IE11 and older, iOS 9.2 and older, Opera Mini, etc.)!!1
+					'<%= project.scripts_polyfills %>/ls.respimg.js',           // Only partial `respimage` polyfill (see: https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/respimg)
 				],
 				utils: [
 					// '<%= project.scripts_utils %>/ajax.util.js',
 					// '<%= project.scripts_utils %>/cookie.util.js',              // Out-comment when enhance (and thus enhance.cookie) is not used
 					'<%= project.scripts_utils %>/domparents.util.js',
-					'<%= project.scripts_utils %>/extend.util.js',
+					// '<%= project.scripts_utils %>/extend.util.js',              // Out-comment when using alerts module!
+					'<%= project.scripts_utils %>/isvisible.util.js',           // Out-comment when using filters module!
 				],
 				modules: [
 					// '<%= project.scripts_modules %>/alerts.module.js',
 					// '<%= project.scripts_modules %>/expand.module.js',
+					'<%= project.scripts_modules %>/filters.module.js',
 					'<%= project.scripts_modules %>/fontobserver.module.js',
 					// '<%= project.scripts_modules %>/navmain.module.js',
 					// '<%= project.scripts_modules %>/popup.module.js',
@@ -85,17 +90,20 @@ module.exports = function(grunt) {
 			},
 			mobile: {
 				plugins: [
+					'<%= project.scripts_plugins %>/domready/domready.js',      // ALWAYS out-comment! It is used in the `main` and `mobile` scripts files!
 					// '<%= project.scripts_plugins %>/domdelegate/domdelegate.js',
-					'<%= project.scripts_plugins %>/domready/domready.js',
+					'<%= project.scripts_plugins %>/domready/domready.js',      // Used in main.scripts.js!
 					'<%= project.scripts_plugins %>/fontfaceobserver/fontfaceobserver.js',
 					'<%= project.scripts_plugins %>/imageset/imageset.js',      // Out-comment when using imageset's lazyload
 					'<%= project.scripts_plugins %>/imageset/ls.bgset.js',     // Out-comment when using imageset's lazyload + background images with a width descriptor, similar to how `srcset` works (e.g. for Safari 10.x)
 					'<%= project.scripts_plugins %>/imageset/ls.parent-fit.js', // Out-comment when using imageset's lazyload + background images; when `bgset` plugin (background images) is used in combination with data-sizes="auto" and `background-size: cover|contain` (e.g. for Edge, IE11 and older, iOS 9, etc.)
+					'<%= project.scripts_plugins %>/resize-end/resize-end.js',
 					// '<%= project.scripts_plugins %>/transitionend/transitionend.js',
 					// '<%= project.scripts_plugins %>/smooth-scroll/smooth-scroll.js',
+					// '<%= project.scripts_plugins %>/debounce/throttle.js',
 				],
 				polyfills: [
-					'<%= project.scripts_polyfills %>/classlist.js',
+					'<%= project.scripts_polyfills %>/classlist.js',            // Adds cross-browser full `element.classList` support (IE11)
 					// '<%= project.scripts_polyfills %>/promise.js',
 					// '<%= project.scripts_polyfills %>/respimage.js',            // Out-comment when using imageset's lazyload, to add support for the `srcset` and `picture` element to browsers that do not provide native support (e.g. for IE11 and older, iOS 9.2 and older, Opera Mini, etc.)!!1
 				],
@@ -103,11 +111,13 @@ module.exports = function(grunt) {
 					// '<%= project.scripts_utils %>/ajax.util.js',
 					// '<%= project.scripts_utils %>/cookie.util.js',              // Out-comment when enhance (and thus enhance.cookie) is not used
 					'<%= project.scripts_utils %>/domparents.util.js',
-					'<%= project.scripts_utils %>/extend.util.js',
+					// '<%= project.scripts_utils %>/extend.util.js',              // Out-comment when using alerts module!
+					'<%= project.scripts_utils %>/isvisible.util.js',           // Out-comment when using filters module!
 				],
 				modules: [
 					// '<%= project.scripts_modules %>/alerts.module.js',
 					// '<%= project.scripts_modules %>/expand.module.js',
+					'<%= project.scripts_modules %>/filters.module.js',
 					'<%= project.scripts_modules %>/fontobserver.module.js',
 					// '<%= project.scripts_modules %>/navmain.module.js',
 				// Main
