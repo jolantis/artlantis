@@ -21,32 +21,32 @@ body:before {
 
 	@if map-get($breakpoints, "small") != null {
 		@media (min-width: map-get($breakpoints, "small")) {
-			content: 'Breakpoint "small"'
+			content: "Breakpoint “small”"
 		}
 	}
 	@if map-get($breakpoints, "compact") != null {
 		@media (min-width: map-get($breakpoints, "compact")) {
-			content: 'Breakpoint "compact"'
+			content: "Breakpoint “compact”"
 		}
 	}
 	@if map-get($breakpoints, "medium") != null {
 		@media (min-width: map-get($breakpoints, "medium")) {
-			content: 'Breakpoint "medium"'
+			content: "Breakpoint “medium”"
 		}
 	}
 	@if map-get($breakpoints, "large") != null {
 		@media (min-width: map-get($breakpoints, "large")) {
-			content: 'Breakpoint "large"'
+			content: "Breakpoint “large”"
 		}
 	}
 	@if map-get($breakpoints, "wide") != null {
 		@media (min-width: map-get($breakpoints, "wide")) {
-			content: 'Breakpoint "wide"'
+			content: "Breakpoint “wide”"
 		}
 	}
 	@if map-get($breakpoints, "huge") != null {
 		@media (min-width: map-get($breakpoints, "huge")) {
-			content: 'Breakpoint "huge"'
+			content: "Breakpoint “huge”"
 		}
 	}
 }
