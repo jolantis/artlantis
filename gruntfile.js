@@ -54,7 +54,7 @@ module.exports = function(grunt) {
 				plugins: [
 					'<%= project.scripts_plugins %>/debounce/debounce.js',      // Out-comment when using filters module!
 					'<%= project.scripts_plugins %>/domready/domready.js',      // ALWAYS out-comment. It is used in the `main` and `mobile` scripts files!
-					'<%= project.scripts_plugins %>/fontfaceobserver/fontfaceobserver.js',
+					'<%= project.scripts_plugins %>/fontfaceobserver/fontfaceobserver.js', // Out-comment when loading fonts
 					// '<%= project.scripts_plugins %>/gumshoe/gumshoe.js',
 					'<%= project.scripts_plugins %>/imageset/imageset.js',      // Out-comment when using imageset's lazyload
 					'<%= project.scripts_plugins %>/imageset/ls.bgset.js',      // Out-comment when using imageset's lazyload + background images with a width descriptor, similar to how `srcset` works (e.g. for Safari 10.x)
@@ -89,9 +89,9 @@ module.exports = function(grunt) {
 			},
 			mobile: {
 				plugins: [
+					'<%= project.scripts_plugins %>/debounce/debounce.js',      // Out-comment when using filters module!
 					'<%= project.scripts_plugins %>/domready/domready.js',      // ALWAYS out-comment! It is used in the `main` and `mobile` scripts files!
-					'<%= project.scripts_plugins %>/domready/domready.js',      // Used in main.scripts.js!
-					'<%= project.scripts_plugins %>/fontfaceobserver/fontfaceobserver.js',
+					'<%= project.scripts_plugins %>/fontfaceobserver/fontfaceobserver.js', // Out-comment when loading fonts
 					'<%= project.scripts_plugins %>/imageset/imageset.js',      // Out-comment when using imageset's lazyload
 					'<%= project.scripts_plugins %>/imageset/ls.bgset.js',     // Out-comment when using imageset's lazyload + background images with a width descriptor, similar to how `srcset` works (e.g. for Safari 10.x)
 					'<%= project.scripts_plugins %>/imageset/ls.parent-fit.js', // Out-comment when using imageset's lazyload + background images; when `bgset` plugin (background images) is used in combination with data-sizes="auto" and `background-size: cover|contain` (e.g. for Edge, IE11 and older, iOS 9, etc.)
