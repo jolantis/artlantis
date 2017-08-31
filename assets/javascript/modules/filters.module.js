@@ -13,7 +13,6 @@ var Filters = (function () {
 		if(expandparent.classList.contains('is-closed')) {
 			expandparent.removeChild(button);
 			button.textContent = 'Less −';
-			// button.classList.add('js-exapndbutton');
 			expandtarget.appendChild(button);
 			expandparent.classList.remove('is-closed');
 			expandparent.classList.add('is-open');
@@ -32,9 +31,8 @@ var Filters = (function () {
 
 		if(expandtarget) {
 			var expandparent = expandtarget.parentNode;
-			// var button = expandtarget.parentNode.getElementsByClassName('js-exapndbutton')[0];
-			var button = expandtarget.parentNode.getElementsByTagName('button')[0];
-			var lastItem = expandtarget.lastElementChild;
+			var button       = expandtarget.parentNode.getElementsByTagName('button')[0];
+			var lastItem     = expandtarget.lastElementChild;
 
 			if(expandparent.classList.contains('is-open')) {
 				expandtarget.removeChild(button);
