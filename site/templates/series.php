@@ -13,17 +13,17 @@
 		</div>
 
 		<div class="grid grid--gutter">
-			<?php foreach ($series as $series_item) : ?>
+			<?php foreach ($page_items as $page_item) : ?>
 
-				<?php $series_item_image = ($series_item->images()->filterBy('filename','*=','main')->first()) ? $series_item->images()->filterBy('filename','*=','main')->first() : $series_item->images()->sortBy('sort', 'asc')->first(); ?>
+				<?php $page_item_image = ($page_item->images()->filterBy('filename','*=','main')->first()) ? $page_item->images()->filterBy('filename','*=','main')->first() : $page_item->images()->sortBy('sort', 'asc')->first(); ?>
 
-				<article class="grid__cell medium-1of2 wide-1of3 huge-1of5" id="<?php echo $series_item->slug(); ?>">
-					<a href="<?php echo $series_item->url(); ?>">
-						<h2 class="grid__title" href="<?php echo $series_item->url(); ?>"><a href="<?php echo $series_item->url(); ?>"><?php echo $series_item->title()->smartypants(); ?></a></h2>
-						<?php if($series_item_image): ?>
+				<article class="grid__cell medium-1of2 wide-1of3 huge-1of5" id="<?php echo $page_item->slug(); ?>">
+					<a href="<?php echo $page_item->url(); ?>">
+						<h2 class="grid__title" href="<?php echo $page_item->url(); ?>"><a href="<?php echo $page_item->url(); ?>"><?php echo $page_item->title()->smartypants(); ?></a></h2>
+						<?php if($page_item_image): ?>
 							<figure>
-								<?php echo $series_item_image->imageset('grid'); ?>
-								<?php //echo $series_item_image; ?>
+								<?php echo $page_item_image->imageset('grid'); ?>
+								<?php //echo $page_item_image; ?>
 							</figure>
 						<?php endif; ?>
 					</a>
