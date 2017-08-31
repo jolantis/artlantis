@@ -53,7 +53,6 @@ module.exports = function(grunt) {
 			main: {
 				plugins: [
 					'<%= project.scripts_plugins %>/debounce/debounce.js',      // Out-comment when using filters module!
-					// '<%= project.scripts_plugins %>/domdelegate/domdelegate.js',
 					'<%= project.scripts_plugins %>/domready/domready.js',      // ALWAYS out-comment. It is used in the `main` and `mobile` scripts files!
 					'<%= project.scripts_plugins %>/fontfaceobserver/fontfaceobserver.js',
 					// '<%= project.scripts_plugins %>/gumshoe/gumshoe.js',
@@ -91,7 +90,6 @@ module.exports = function(grunt) {
 			mobile: {
 				plugins: [
 					'<%= project.scripts_plugins %>/domready/domready.js',      // ALWAYS out-comment! It is used in the `main` and `mobile` scripts files!
-					// '<%= project.scripts_plugins %>/domdelegate/domdelegate.js',
 					'<%= project.scripts_plugins %>/domready/domready.js',      // Used in main.scripts.js!
 					'<%= project.scripts_plugins %>/fontfaceobserver/fontfaceobserver.js',
 					'<%= project.scripts_plugins %>/imageset/imageset.js',      // Out-comment when using imageset's lazyload
