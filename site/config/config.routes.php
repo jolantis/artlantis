@@ -112,28 +112,28 @@ c::set('routes', array(
 		}
 	),
 
-	/**
-	 * Post item within filter-value (e.g. /target/filter-key/filter-value/post)
-	 */
-	array(
-		'pattern' => '((?!thumbs)[a-zA-Z0-9\.\-_%=]+)/(:any)/(:any)/(:any)',
-		'action'  => function($target, $filter_key, $filter_value, $post) {
+	// /**
+	//  * Post items within filter-value (e.g. /target/filter-key/filter-value/post)
+	//  */
+	// array(
+	// 	'pattern' => '((?!thumbs)[a-zA-Z0-9\.\-_%=]+)/(:any)/(:any)/(:any)',
+	// 	'action'  => function($target, $filter_key, $filter_value, $post) {
 
-			$args        = array('filter_key' => $filter_key, 'filter_value' => $filter_value, 'page_num' => null);
-			$target_page = page($target);
+	// 		$args        = array('filter_key' => $filter_key, 'filter_value' => $filter_value, 'page_num' => null);
+	// 		$target_page = page($target);
 
-			if(isset($post)) {
-				$page = page($target . '/' . $post);
-				if(!$page) $page = go(site()->errorPage(), 404);
-				return array($target . '/'. $post, $args);
-			}
+	// 		if(isset($post)) {
+	// 			$page = page($target . '/' . $post);
+	// 			if(!$page) $page = go(site()->errorPage(), 404);
+	// 			return array($target . '/'. $post, $args);
+	// 		}
 
-			// If page actually exists then return it
-			if($page) return site()->visit($page->uri());
+	// 		// If page actually exists then return it
+	// 		if($page) return site()->visit($page->uri());
 
-			// Otherwise probably a filter-value
-			return array($target, $args);
-		}
-	),
+	// 		// Otherwise probably a filter-value
+	// 		return array($target, $args);
+	// 	}
+	// ),
 
 ));
