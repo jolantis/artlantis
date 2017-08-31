@@ -14,11 +14,12 @@
 		<ul>
 			<?php if($next): ?>
 				<li class="pagination__item pagination__item--next">
-					<?php if($filter_value):?>
+					<?php /* if($filter_value):?>
 						<a href="<?php echo url($next->parent() . '/' . (($filter_key == 'tags') ? 'tag' : $filter_key) . '/' . $filter_value . '/' . $next->uid()); ?>">Newer post <span>(<?php echo $next->title(); ?>)</span></a>
 					<?php else: ?>
 						<a href="<?php echo $next->url(); ?>">Newer post <span>(<?php echo $next->title(); ?>)</span></a>
-					<?php endif; ?>
+					<?php endif; */ ?>
+					<a href="<?php echo $next->url(); ?>">Newer post <span>(<?php echo $next->title(); ?>)</span></a>
 				</li>
 			<?php endif ?>
 
@@ -30,11 +31,12 @@
 
 			<?php if($prev): ?>
 				<li class="pagination__item pagination__item--prev">
-					<?php if($filter_value): ?>
+					<?php /* if($filter_value): ?>
 						<a href="<?php echo url($prev->parent() . '/' . (($filter_key == 'tags') ? 'tag' : $filter_key) . '/' . $filter_value . '/' . $prev->uid()); ?>">Older post <span>(<?php echo $prev->title(); ?>)</span></a>
 					<?php else: ?>
 						<a href="<?php echo $prev->url(); ?>">Older post <span>(<?php echo $prev->title(); ?>)</span></a>
-					<?php endif; ?>
+					<?php endif; */ ?>
+					<a href="<?php echo $prev->url(); ?>">Older post <span>(<?php echo $prev->title(); ?>)</span></a>
 				</li>
 			<?php endif ?>
 		</ul>
