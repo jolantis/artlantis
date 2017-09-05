@@ -32,7 +32,7 @@
 		<?php else: ?>
 
 			<?php /* foreach ($page->images()->sortBy('sort', 'asc')->not($main_image) as $image): */ ?>
-			<?php foreach ($page->images()->sortBy('sort', 'asc') as $image) : ?>
+			<?php foreach ($page->images()->filterBy('filename','!*=','main')->sortBy('sort', 'asc') as $image) : ?>
 				<figure class="figure-image">
 					<?php echo $image->imageset('default'); ?>
 					<?php if($image->caption()->isNotEmpty()): ?>
