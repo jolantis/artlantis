@@ -3,44 +3,45 @@
    ========================================================================== */
 
 .pagination {
-	display: block;
 	margin-top: rhythm(1);
 }
 
-.pagination__count {
-	margin-bottom: rhythm(.5);
-	text-align: center;
-}
-
-.pagination__nav {
-	display: block;
-	margin-bottom: rhythm(.5);
-	text-align: center;
+.pagination__list {
+	display: flex;
+	// justify-content: space-between;
+	flex-wrap: wrap;
+	align-items: center;
 }
 
 .pagination__item {
-	display: inline-block;
-	margin-left: rhythm(1);
-	color: $color-gray-light;
-
-	&:first-child {
-		margin-left: 0;
-	}
+	color: $color-link-light;
 
 	a {
-		color: $color-base-black;
+		display: flex;
+		// flex-wrap: nowrap; // nowrap is default!
+		align-items: center;
+		color: $color-link-dark;
+		padding: rhythm(.25) 0;
+
+		> svg {
+			margin-top: -.1em;
+			width: 1em;
+			height: 1em;
+		}
 	}
-}
 
-.pagination-range {
-	display: inline-block;
-}
+	&--next {
+		margin-left: auto;
 
-.pagination-range__item {
-	display: inline-block;
-	margin-left: rhythm(1);
+		svg {
+			margin-left: rhythm(.15);
+		}
+	}
 
-	&.is-active {
-		font-weight: 700;
+	&--prev {
+
+		svg {
+			margin-right: rhythm(.15);
+		}
 	}
 }
