@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+	<symbol id="arrow-right" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+		<title>Right arrow</title>
+		<desc>An arrow pointing right</desc>
+		<line x1="4" y1="12" x2="20" y2="12"/>
+		<polyline points="14 6 20 12 14 18"/>
+	</symbol>
+	<symbol id="arrow-left" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+		<title>Left arrow</title>
+		<desc>An arrow pointing left</desc>
+		<line x1="20" y1="12" x2="4" y2="12"/>
+		<polyline points="10 18 4 12 10 6"/>
+	</symbol>
+	<symbol id="cross" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">\
+		<title>Cross</title>
+		<desc>A cross or close icon</desc>
+		<line x1="18" y1="6" x2="6" y2="18"/>
+		<line x1="6" y1="6" x2="18" y2="18"/>
+	</symbol>
+</svg>
