@@ -9,7 +9,7 @@
 
 	<div class="hero bg-image bg-image--cover">
 		<?php echo $main_image->imageset('hero', ['output' => 'bgimage']); ?>
-		<span class="hero__title"><?php echo $page->title()->smartypants(); ?></span>
+		<span class="hero__title"><?php echo $page->title()->smartypants()->widont(); ?></span>
 		<span class="hero__meta"><?php echo $page->images()->count(); ?> photos</span>
 	</div>
 
