@@ -22,9 +22,9 @@ return function($site, $pages, $page, $args) {
 	$page_items   = ($filter_key && $filter_value) ? $page->siblings()->visible()->filterBy($filter_key, tagunslug($filter_value), ',') : $page->siblings()->visible();
 	// $index      = $page_items->indexOf($page);
 
-	// Set next and prev page
-	$prev = $page->get_prev($page_items);
-	$next = $page->get_next($page_items);
+	// Set next and prev (sibling) pages
+	$prev = $page->prev_sibling($page_items);
+	$next = $page->next_sibling($page_items);
 
 	// // Go to error page
 	// if($filter_key && $filter_value) {

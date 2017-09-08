@@ -27,7 +27,7 @@ page::$methods['prevnext_rel'] = function($page, $filter_key, $filter_value, $pa
 	}
 };
 
-page::$methods['get_next'] = function($page, Children $siblings, $sort = array(), $visibility = 'visible') {
+page::$methods['next_sibling'] = function($page, Children $siblings, $sort = array(), $visibility = 'visible') {
 
 	if($sort) $siblings = call(array($siblings, 'sortBy'), $sort);
 
