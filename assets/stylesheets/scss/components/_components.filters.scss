@@ -7,7 +7,10 @@
 	display: flex;
 	flex-wrap: nowrap;
 	align-items: baseline;
-	// flex-direction: row;
+
+	/**
+	 * The (show) more (and less) button
+	 */
 
 	button {
 		background: none;
@@ -17,7 +20,6 @@
 		cursor: pointer;
 		margin: 0;
 		padding-top: rhythm(.1);
-		// padding-right: rhythm(.5);
 		padding-right: 0;
 		padding-bottom: 0;
 		padding-left: rhythm(.5);
@@ -31,7 +33,6 @@
 	.no-touchevents & {
 
 		button {
-			// padding-right: rhythm(.4);
 			padding-left: rhythm(.4);
 			line-height: rhythm(1.15);
 		}
@@ -39,9 +40,9 @@
 	&.is-closed {
 
 		button {
-			flex: 0;
 			order: 1;
 			z-index: $z-index-more-button;
+			margin-left: auto; // Always align next pagination item to the right (on very small screens)!
 		}
 	}
 }
@@ -53,10 +54,10 @@
 	order: 0;
 	position: relative;
 	overflow: hidden;
-	height: rhythm(1.71); // line-height rhythm(1.6) + padding-top rhythm(.11)!!!
+	height: rhythm(1.7); // line-height rhythm(1.6) + padding-top rhythm(.1)!!!
 
 	.no-touchevents & {
-		height: rhythm(1.26); // line-height rhythm(1.15) + padding-top rhythm(.11)!!!
+		height: rhythm(1.25); // line-height rhythm(1.15) + padding-top rhythm(.1)!!!
 	}
 
 	&:after {
@@ -96,8 +97,8 @@
 }
 
 .filterlist__button {
-	display: block;
-	padding-top: rhythm(.11);
+	display: flex;
+	padding-top: rhythm(.1);
 	padding-right: rhythm(.5);
 	padding-left: rhythm(.5);
 	margin-right: rhythm(.05);

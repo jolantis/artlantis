@@ -13,7 +13,7 @@
 	padding-top: rhythm(.5);
 	padding-bottom: rhythm(.5);
 
-	@include breakpoint(compact) {
-		flex: 0;
-	}
+	// @include breakpoint(compact) {
+	// 	flex: 0;
+	// }
 }

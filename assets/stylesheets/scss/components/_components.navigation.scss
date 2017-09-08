@@ -20,9 +20,9 @@
 	flex-wrap: wrap;
 	justify-content: center;
 
-	> li {
-		flex: 0;
-	}
+	// > li {
+	// 	flex: 0;
+	// }
 
 	@include breakpoint(small) {
 		flex-wrap: nowrap;
@@ -72,9 +72,11 @@
 /* Nav main (wrapper) */
 
 .nav-main {
+	overflow: hidden;
 
 	@include breakpoint(compact) {
-		flex: 0;
+		// flex: 0;
+		margin-left: auto; // Always align next pagination item to the right (on very small screens)!
 	}
 }
 
