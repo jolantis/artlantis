@@ -77,12 +77,8 @@ $fontobserver = (isset($_COOKIE['fonts-loaded']) && $_COOKIE['fonts-loaded'] == 
 	<link rel="icon" href="<?php echo url('/assets/images/favicon-192x192.png'); ?>"><?php // For Firefox, Chrome, Safari, IE 11+ and Opera, 192x192 pixels in size ?>
 	<link rel="mask-icon" href="<?php echo url('/assets/images/pinned-icon.svg'); ?>" color="<?php echo ($site->theme_color()->isNotEmpty()) ? $site->theme_color() : '#141414' ; ?>"><?php // For Safari 9+ pinned tab (http://j.mp/2gpNiw9) ?>
 
-	<?php // Canonical rel link ?>
-	<?php echo $page->canonical_rel($filter_value, $page_num); ?>
-
-	<?php // Prev and next rel links ?>
-	<?php echo $page->prevnext_rel($filter_key, $filter_value, $pagination, $page_num); ?>
-
+	<link rel="canonical" href="<?php echo $page->rel_canonical($filter_value, $page_num); ?>">
+	<?php echo $page->rel_prevnext($filter_key, $filter_value, $pagination, $page_num); ?>
 	<?php echo $page->rel_alternate(); ?>
 
 	<?php // Social meta tags ?>

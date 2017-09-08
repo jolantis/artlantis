@@ -1,7 +1,5 @@
 <?php
 
-page::$methods['canonical_rel'] = function($page, $filter_value, $page_num) {
-	return '<link rel="canonical" href="' . $page->url() . (($page_num && $page_num != 1) ? '/page/' . $page_num : '') . '">' . "\n";
 /**
  * HTML head page title
  *
@@ -72,9 +70,25 @@ page::$methods['meta_description'] = function($page) {
 	return $description->excerpt(155);
 };
 
+/**
+ * Cononical link
+ *
+ * Include following line in HTML head:
+ * `<link rel="canonical" href="<?php echo $page->rel_canonical($filter_value, $page_num); ?>">`
+ */
+
+page::$methods['rel_canonical'] = function($page, $filter_value, $page_num) {
+	return $page->url() . (($page_num && $page_num != 1) ? '/page/' . $page_num : '');
 };
 
-page::$methods['prevnext_rel'] = function($page, $filter_key, $filter_value, $pagination, $page_num) {
+/**
+ * Next and previous links
+ *
+ * Include following line in HTML head:
+ * `<?php echo $page->rel_prevnext($filter_key, $filter_value, $pagination, $page_num); ?>`
+ */
+
+page::$methods['rel_prevnext'] = function($page, $filter_key, $filter_value, $pagination, $page_num) {
 
 	if($pagination && $pagination->hasPages()) {
 		if($page_num == 1 and $pagination->hasNextPage()) {
@@ -121,6 +135,13 @@ page::$methods['rel_alternate'] = function($page) {
 	}
 };
 
+/**
+ * Get next sibling
+ *
+ * Usage example:
+ * `$page-next_sibling($page->siblings()->visible());`
+ */
+
 page::$methods['next_sibling'] = function($page, Children $siblings, $sort = array(), $visibility = 'visible') {
 
 	if($sort) $siblings = call(array($siblings, 'sortBy'), $sort);
@@ -139,7 +160,14 @@ page::$methods['next_sibling'] = function($page, Children $siblings, $sort = arr
 	}
 };
 
-page::$methods['get_prev'] = function($page, Children $siblings, $sort = array(), $visibility = 'visible') {
+/**
+ * Get previous sibling
+ *
+ * Usage example:
+ * `$page->prev_sibling($page->siblings()->visible());`
+ */
+
+page::$methods['prev_sibling'] = function($page, Children $siblings, $sort = array(), $visibility = 'visible') {
 
 	if($sort) $siblings = call(array($siblings, 'sortBy'), $sort);
 
