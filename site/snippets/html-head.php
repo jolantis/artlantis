@@ -12,14 +12,12 @@ $assets_js = f::read(server::get('document_root') . $root_url . 'assets/javascri
 // Set assets based on environment
 if(c::get('environment') == 'local'):
 	$env_suffix = 'dev';
-	// $mobile_css = 'mobile.dev';
 	$mobile_css = 'main.dev';
 	$print_css = 'print.dev';
 	$head_js = 'head.scripts.dev';
 	$mobile_js = 'mobile.scripts.dev';
 else:
 	$env_suffix = 'min';
-	// $mobile_css = json_decode($assets_css)->mobile;
 	$mobile_css = json_decode($assets_css)->main;
 	$print_css = json_decode($assets_css)->print;
 	$head_js = json_decode($assets_js)->head;
@@ -45,11 +43,9 @@ $fontobserver = (isset($_COOKIE['fonts-loaded']) && $_COOKIE['fonts-loaded'] == 
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 
-	<?php // Prefetch DNS for external assets (Typekit, Google APIs, etc). ?>
 	<?php /* <link rel="dns-prefetch" href="https://maps.googleapis.com"> */ ?>
 	<link rel="dns-prefetch" href="https://www.google-analytics.com">
 
-	<?php // Preload assets (fonts, stylesheets, etc.) ?>
 	<link rel="preload" href="<?php echo $site->url(); ?>/assets/fonts/kawak/kawak-bold.woff2" as="font" type="font/woff2" crossorigin>
 	<link rel="preload" href="<?php echo $site->url(); ?>/assets/fonts/kawak/kawak-light.woff2" as="font" type="font/woff2" crossorigin>
 
@@ -74,10 +70,8 @@ $fontobserver = (isset($_COOKIE['fonts-loaded']) && $_COOKIE['fonts-loaded'] == 
 	<?php echo $page->rel_prevnext($filter_key, $filter_value, $pagination, $page_num); ?>
 	<?php echo $page->rel_alternate(); ?>
 
-	<?php // Social meta tags ?>
 	<?php snippet('social-meta-tags') ?>
 
-	<!-- Scripts and Stylesheets -->
 	<meta name="fullcss" content="<?php echo url('/assets/stylesheets/' . $env_suffix . '/' . $mobile_css . '.css'); ?>">
 	<meta name="fulljs" content="<?php echo url('/assets/javascript/'. $env_suffix .'/' . $mobile_js . '.js'); ?>">
 	<script><?php include_once(server::get('document_root') . '/assets/javascript/'. $env_suffix .'/' . $head_js . '.js'); ?></script>
