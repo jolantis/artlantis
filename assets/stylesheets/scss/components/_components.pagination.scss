@@ -23,16 +23,5 @@
 
 	&--next {
 		margin-left: auto; // Always align next pagination item to the right (on very small screens)!
-
-		svg {
-			margin-left: rhythm(.15);
-		}
-	}
-
-	&--prev {
-
-		svg {
-			margin-right: rhythm(.15);
-		}
 	}
 }

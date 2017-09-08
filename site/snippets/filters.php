@@ -9,7 +9,15 @@
 	<h2 class="is-hidden-visually">Filter blog posts by&hellip;</h2>
 	<ul class="filterlist js-expandtarget">
 		<?php if($filter_value): ?>
-			<li class="filterlist__item is-active"><a href="<?php echo url($page->url()); ?>" class="filterlist__button" title="Remove filter: &lsquo;<?php echo tagunslug($filter_value); ?>&rsquo;"><span class="is-hidden-visually">Remove filter: </span><?php echo tagunslug($filter_value); ?></a></li>
+			<li class="filterlist__item is-active">
+				<a href="<?php echo url($page->url()); ?>" class="filterlist__button icon icon--right" title="Remove filter: &lsquo;<?php echo tagunslug($filter_value); ?>&rsquo;">
+					<span class="is-hidden-visually">Remove filter: </span>
+					<?php echo tagunslug($filter_value); ?>
+					<svg role="presentation" title="Left arrow">
+						<use xlink:href="/assets/images/sprite.svg#cross"/>
+					</svg>
+				</a>
+			</li>
 		<?php /*
 		<?php else: ?>
 			<li class="filterlist__item is-active"><span class="filterlist__button">All</span></li>

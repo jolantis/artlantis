@@ -17,5 +17,6 @@ domready(function () {
 	// Invoke plugins
 	// smoothScroll.init();                                                        // Init smoothscroll
 	// gumshoe.init();                                                             // Init gumshoe (scrollspy)
+	// svg4everybody();                                                            // Init svg external content support (e.g. for IE11)
 
 });

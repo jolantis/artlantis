@@ -11,9 +11,9 @@
 			<?php if($pagination->hasPrevPage()): ?>
 				<li class="pagination__item pagination__item--prev">
 					<?php if($page_num == 2): ?>
-						<a href="<?php echo url(kirby()->request()->path()->first() . (($filter_value) ? '/' . (($filter_key == 'tags') ? 'tag' : $filter_key) . '/' . $filter_value : '')); ?>" class="icon">
+						<a href="<?php echo url(kirby()->request()->path()->first() . (($filter_value) ? '/' . (($filter_key == 'tags') ? 'tag' : $filter_key) . '/' . $filter_value : '')); ?>" class="icon icon--left">
 					<?php else: ?>
-						<a href="<?php echo url(kirby()->request()->path()->first() . (($filter_value) ? '/' . $filter_value : '') . '/page/' . ($page_num - 1)); ?>" class="icon">
+						<a href="<?php echo url(kirby()->request()->path()->first() . (($filter_value) ? '/' . $filter_value : '') . '/page/' . ($page_num - 1)); ?>" class="icon icon--left">
 					<?php endif; ?>
 							<svg role="presentation" width="24" height="24" title="Left arrow">
 								<use xlink:href="/assets/images/sprite.svg#arrow-left"/>
@@ -25,7 +25,7 @@
 
 			<?php if($pagination->hasNextPage()): ?>
 				<li class="pagination__item pagination__item--next">
-					<a href="<?php echo url(kirby()->request()->path()->first() . (($filter_value) ? '/' . (($filter_key == 'tags') ? 'tag' : $filter_key) . '/' . $filter_value : '') . '/page/' . ($page_num + 1)); ?>" class="icon">
+					<a href="<?php echo url(kirby()->request()->path()->first() . (($filter_value) ? '/' . (($filter_key == 'tags') ? 'tag' : $filter_key) . '/' . $filter_value : '') . '/page/' . ($page_num + 1)); ?>" class="icon icon--right">
 						Next page
 						<svg role="presentation" width="24" height="24" title="Right arrow">
 							<use xlink:href="/assets/images/sprite.svg#arrow-right"/>
