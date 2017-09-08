@@ -97,6 +97,30 @@ page::$methods['prevnext_rel'] = function($page, $filter_key, $filter_value, $pa
 	}
 };
 
+/**
+ * Alternate link(s) (for multiple languages)
+ *
+ * Usage example:
+ * `<?php echo $page->rel_alternate(); ?>`
+ */
+
+page::$methods['rel_alternate'] = function($page) {
+
+	if(c::get('language.multi', false)) {
+
+		$alternate = '';
+
+		foreach(site()->languages() as $language) {
+
+			if(site()->languages()->count() > 1 && site()->language() != $language && isset($page->inventory()['content'][$language->code()])) {
+				$alternate .= '<link rel="alternate" href="' . $page->url($language->code()) . '" hreflang="' . $language->locale() . '">'  . "\n";
+			}
+		}
+
+		return $alternate;
+	}
+};
+
 page::$methods['next_sibling'] = function($page, Children $siblings, $sort = array(), $visibility = 'visible') {
 
 	if($sort) $siblings = call(array($siblings, 'sortBy'), $sort);

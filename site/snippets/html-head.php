@@ -83,8 +83,7 @@ $fontobserver = (isset($_COOKIE['fonts-loaded']) && $_COOKIE['fonts-loaded'] == 
 	<?php // Prev and next rel links ?>
 	<?php echo $page->prevnext_rel($filter_key, $filter_value, $pagination, $page_num); ?>
 
-	<?php // Alternate language rel link(s) for matching languages in config and available text files (e.g. blogarticle.md, blogarticle.en.md) ?>
-	<?php if(c::get('language.multi', false)): foreach($site->languages() as $language): if($site->languages()->count() > 1 && $site->language() != $language && isset($page->inventory()['content'][$language->code()])): ?><link rel="alternate" href="<?php echo $page->url($language->code()); ?>" hreflang="<?php echo $language->locale(); ?>"><?php endif; endforeach; endif; ?>
+	<?php echo $page->rel_alternate(); ?>
 
 	<?php // Social meta tags ?>
 	<?php snippet('social-meta-tags') ?>
