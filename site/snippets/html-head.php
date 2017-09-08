@@ -60,8 +60,8 @@ $fontobserver = (isset($_COOKIE['fonts-loaded']) && $_COOKIE['fonts-loaded'] == 
 	<link rel="preload" href="<?php echo $site->url(); ?>/assets/fonts/kawak/kawak-bold.woff2" as="font" type="font/woff2" crossorigin>
 	<link rel="preload" href="<?php echo $site->url(); ?>/assets/fonts/kawak/kawak-light.woff2" as="font" type="font/woff2" crossorigin>
 
-	<?php // Page title and (meta) description ?>
-	<?php snippet('page-title-description') ?>
+	<title><?php echo $page->page_title(); ?></title>
+	<meta name="description" content="<?php echo $page->meta_description(); ?>">
 
 	<meta name="robots" content="<?php if(c::get('environment') == 'local' || c::get('environment') == 'stage'): echo 'noindex, nofollow'; else: echo 'index, follow'; endif; ?>">
 	<?php if($site->app_name()->isNotEmpty()): ?><meta name="apple-mobile-web-app-title" content="<?php echo $site->app_name()->smartypants(); ?>"><?php endif; ?><?php // Custom iOS bookmark title ?>

@@ -2,6 +2,76 @@
 
 page::$methods['canonical_rel'] = function($page, $filter_value, $page_num) {
 	return '<link rel="canonical" href="' . $page->url() . (($page_num && $page_num != 1) ? '/page/' . $page_num : '') . '">' . "\n";
+/**
+ * HTML head page title
+ *
+ * Field requirements:
+ * - $site->title() *
+ * - $site->tagline() *      ---> (part of) home page's title (and used to generate fallback for meta description)
+ * - $page->long-title()     ---> page's title
+ * - $page->title() *        ---> page's title, used to generate fallback for page's long title
+
+Fields marked with an asterisk (*) are required and need to be filled in to
+make it work. If any of the other fields are missing it should still work.
+
+Include following line in HTML head:
+`<title><?php echo $page->page_title(); ?></title>`
+ */
+
+page::$methods['page_title'] = function($page) {
+
+	if($page->isHomePage()) {
+		if(site()->tagline()->exits() && site()->tagline()->isNotEmpty()) {
+			$page_title = site()->title() . ': ' . site()->tagline()->smartypants()->titlecase();
+		}
+		else {
+			$page_title = site()->title();
+		}
+	}
+	else {
+		if($page->long_title()->exits() && $page->long_title()->isNotEmpty()) {
+			$page_title = site()->title() . ': ' . $page->long_title()->smartypants()->titlecase();
+		}
+		else {
+			$page_title = site()->title() . ': ' . $page->title()->smartypants()->titlecase();
+		}
+	}
+	return $page_title;
+};
+
+/**
+ * Meta description
+ *
+ * Field requirements:
+ * - $page->description()    ---> page's meta description
+ * - $page->intro()          ---> page's main text content, used to generate fallback for meta description
+ * - $page->text()           ---> page's main text content, used to generate fallback for meta description
+ * - $site->tagline() *      ---> (part of) home page's title, last resort fallback for meta description
+
+Fields marked with an asterisk (*) are required and need to be filled in to
+make it work. If any of the other fields are missing it should still work.
+
+Include following line in HTML head:
+`<meta name="description" content="<?php echo $page->meta_description(); ?>">`
+ */
+
+page::$methods['meta_description'] = function($page) {
+
+	if($page->description()->exits() && $page->description()->isNotEmpty()) {
+		$description = $page->description()->smartypants();
+	}
+	elseif($page->intro()->exits() && $page->intro()->isNotEmpty() ) {
+		$description = $page->intro()->smartypants();
+	}
+	elseif($page->text()->exits() && $page->text()->isNotEmpty() ) {
+		$description = $page->text()->smartypants();
+	}
+	else {
+		$description = $site->tagline()->smartypants();
+	}
+	return $description->excerpt(155);
+};
+
 };
 
 page::$methods['prevnext_rel'] = function($page, $filter_key, $filter_value, $pagination, $page_num) {
