@@ -17,13 +17,6 @@ module.exports = function(grunt) {
 				'<%= project.scripts_min %>/*.js',
 			],
 		},
-		grunticon: {
-			src: [
-				'<%= project.styles_scss %>/grunticon/grunticon.loader.js',
-				'<%= project.styles_scss %>/grunticon/preview.html',
-				'<%= project.styles_scss %>/grunticon/tmp',
-			],
-		},
 	});
 
 };

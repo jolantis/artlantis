@@ -13,12 +13,6 @@ module.exports = function(grunt) {
 				message: 'Sass and Uglify finished running', // required
 			},
 		},
-		icons: {
-			options: {
-				title: "Task Complete (Artlantis)", // optional; defaults to the name in package.json, or will use project directory's name
-				message: 'Grunticon finished running', // required
-			},
-		},
 		release: {
 			options: {
 				title: "Task Complete (Artlantis)", // optional; defaults to the name in package.json, or will use project directory's name

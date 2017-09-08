@@ -52,10 +52,6 @@ assets/stylesheets/dev/*.css
 # Scripts
 assets/javascript/dev/*.js
 
-# Grunticon
-assets/stylesheets/scss/grunticon/preview.html
-assets/stylesheets/scss/grunticon/grunticon.loader.txt
-
 
 # ----------------------------------------------------------------------
 # Ignore project folders/files
