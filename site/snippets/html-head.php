@@ -29,13 +29,6 @@ endif;
 // Variabel to set language locale on html element
 $language_locale = (c::get('language.multi', false)) ? $site->language()->locale() : c::get('language.locale', 'en');
 
-// Variable to set 'critical' css file name to link to on a template basis.
-// By default the varibale is set to 'default'. To link to another 'critical'
-// css file, add name of another file to the include snippet (at the top
-// of the template), like this:
-// `snippet_detect('html-head', array('criticalcss' => 'another_criticalss_file'));`
-$criticalcss = (isset($criticalcss)) ? $criticalcss : 'default';
-
 // Variable to set page template name to html element for styling purpose.
 $page_template = ($page->intendedTemplate()) ? ' template-' . $page->intendedTemplate() : '';
 
@@ -91,7 +84,7 @@ $fontobserver = (isset($_COOKIE['fonts-loaded']) && $_COOKIE['fonts-loaded'] == 
 	<?php if(isset($_COOKIE['fullcss']) && $_COOKIE['fullcss'] == 'true'): ?>
 		<link rel="stylesheet" href="<?php echo url('/assets/stylesheets/' . $env_suffix . '/' . $mobile_css . '.css'); ?>">
 	<?php else: ?>
-		<style><?php if(c::get('environment') == 'local' || c::get('environment') == 'stage'): echo '/* ' . $criticalcss . ' css */' . "\n"; endif; include_once(server::get('document_root') . '/assets/stylesheets/critical/' . $criticalcss . '_mobile.css'); ?></style>
+		<style><?php if(c::get('environment') == 'local' || c::get('environment') == 'stage'): echo '/* ' . ((isset($criticalcss)) ? $criticalcss : 'default') . ' css */' . "\n"; endif; include_once(server::get('document_root') . '/assets/stylesheets/critical/' . ((isset($criticalcss)) ? $criticalcss : 'default') . '_mobile.css'); ?></style>
 		<noscript><link rel="stylesheet" href="<?php echo url('/assets/stylesheets/' . $env_suffix . '/' . $mobile_css . '.css'); ?>"></noscript>
 	<?php endif; ?>
 	<link rel="stylesheet" href="<?php echo url('/assets/stylesheets/' . $env_suffix . '/' . $print_css . '.css'); ?>" media="print">
