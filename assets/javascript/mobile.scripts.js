@@ -15,8 +15,8 @@ domready(function () {
 	// NavMain.init();                                                             // Init main navigation
 
 	// Invoke plugins
-	// smoothScroll.init();                                                        // Init smoothscroll
 	// gumshoe.init();                                                             // Init gumshoe (scrollspy)
+	// smoothScroll.init();                                                        // Init smoothscroll
 	// svg4everybody();                                                            // Init svg external content support (e.g. for IE11)
 
 });
