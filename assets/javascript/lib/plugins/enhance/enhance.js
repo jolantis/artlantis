@@ -4,7 +4,7 @@
 	// Enable JS strict mode
 	"use strict";
 
-  var setTimeout = window.setTimeout;
+  	var setTimeout = window.setTimeout;
 
 	var enhance = {};
 
@@ -25,20 +25,17 @@
 	/* Some commonly used functions - delete anything you don't need! */
 
 	// loadJS: load a JS file asynchronously. Included from https://github.com/filamentgroup/loadJS/
-	function loadJS( src ){
+	var loadJS = enhance.loadJS = function( src ){
 		var ref = window.document.getElementsByTagName( "script" )[ 0 ];
 		var script = window.document.createElement( "script" );
 		script.src = src;
 		script.async = true;
 		ref.parentNode.insertBefore( script, ref );
 		return script;
-	}
-
-	// expose it
-	enhance.loadJS = loadJS;
+	};
 
 	// loadCSS: load a CSS file asynchronously. Included from https://github.com/filamentgroup/loadCSS/
-	function loadCSS( href, before, media ){
+	var loadCSS = enhance.loadCSS = function( href, before, media ){
 		// Arguments explained:
 		// `href` is the URL for your CSS file.
 		// `before` optionally defines the element we'll use as a reference for injecting our <link>
@@ -74,14 +71,11 @@
 
 		toggleMedia();
 		return ss;
-	}
-
-	// expose it
-	enhance.loadCSS = loadCSS;
+	};
 
 	// getMeta function: get a meta tag by name
 	// NOTE: meta tag must be in the HTML source before this script is included in order to guarantee it'll be found
-	function getMeta( metaname ){
+	var getMeta = enhance.getMeta = function( metaname ){
 		var metas = window.document.getElementsByTagName( "meta" );
 		var meta;
 		for( var i = 0; i < metas.length; i ++ ){
@@ -91,13 +85,10 @@
 			}
 		}
 		return meta;
-	}
-
-	// expose it
-	enhance.getMeta = getMeta;
+	};
 
 	// cookie function from https://github.com/filamentgroup/cookie/
-	function cookie( name, value, days ){
+	var cookie = enhance.cookie = function( name, value, days ){
 	var expires;
 		// if value is undefined, get the cookie value
 		if( value === undefined ){
@@ -123,10 +114,7 @@
 			}
 			window.document.cookie = name + "=" + value + expires + "; path=/";
 		}
-	}
-
-	// expose it
-	enhance.cookie = cookie;
+	};
 
 	/* Enhancements for all browsers - qualified or not */
 
