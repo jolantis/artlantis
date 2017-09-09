@@ -15,19 +15,16 @@
  * </nav>
  */
 
-.nav {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
+// .nav {
+// 	list-style: none;
 
-	// > li {
-	// 	flex: 0;
-	// }
-
-	@include breakpoint(small) {
-		flex-wrap: nowrap;
-	}
-}
+// 	> li {
+// 		&,
+// 		> a {
+// 			display: inline-block;
+// 		}
+// 	}
+// }
 
 /**
  * Simple stacked (vertical) navigation
@@ -69,7 +66,7 @@
  * </div>
  */
 
-/* Nav main (wrapper) */
+/* Nav main */
 
 .nav-main {
 	overflow: hidden;
@@ -83,8 +80,15 @@
 /* Main nav (list) */
 
 .nav-main__list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 	margin-left: rhythm(-.5);
 	margin-right: rhythm(-.5);
+
+	@include breakpoint(small) {
+		flex-wrap: nowrap;
+	}
 }
 
 .nav-main__item {
