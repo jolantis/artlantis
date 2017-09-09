@@ -50,7 +50,7 @@ $fontobserver = (isset($_COOKIE['fonts-loaded']) && $_COOKIE['fonts-loaded'] == 
 	<link rel="preload" href="<?php echo $site->url(); ?>/assets/fonts/kawak/kawak-bold.woff2" as="font" type="font/woff2" crossorigin>
 	<link rel="preload" href="<?php echo $site->url(); ?>/assets/fonts/kawak/kawak-light.woff2" as="font" type="font/woff2" crossorigin>
 
-	<title><?php echo $page->page_title(); ?></title>
+	<title><?php echo $page->window_title(); ?></title>
 	<meta name="description" content="<?php echo $page->meta_description(); ?>">
 
 	<meta name="robots" content="<?php if(c::get('environment') == 'local' || c::get('environment') == 'stage'): echo 'noindex, nofollow'; else: echo 'index, follow'; endif; ?>">

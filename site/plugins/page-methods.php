@@ -1,7 +1,7 @@
 <?php
 
 /**
- * HTML head page title
+ * Window title
  *
  * Field requirements:
  * - $site->title() *
@@ -16,7 +16,7 @@ Include following line in HTML head:
 `<title><?php echo $page->page_title(); ?></title>`
  */
 
-page::$methods['page_title'] = function($page) {
+page::$methods['window_title'] = function($page) {
 
 	if($page->isHomePage()) {
 		if(site()->tagline()->exits() && site()->tagline()->isNotEmpty()) {
