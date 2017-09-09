@@ -1,20 +1,26 @@
 <svg xmlns="http://www.w3.org/2000/svg">
-	<symbol id="arrow-right" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+	<symbol id="arrow-right" viewBox="0 0 24 24">
 		<title>Right arrow</title>
 		<desc>An arrow pointing right</desc>
-		<line x1="4" y1="12" x2="20" y2="12"/>
-		<polyline points="14 6 20 12 14 18"/>
+		<g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+			<line x1="4" y1="12" x2="20" y2="12"/>
+			<polyline points="14 6 20 12 14 18"/>
+		</g>
 	</symbol>
-	<symbol id="arrow-left" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+	<symbol id="arrow-left" viewBox="0 0 24 24">
 		<title>Left arrow</title>
 		<desc>An arrow pointing left</desc>
-		<line x1="20" y1="12" x2="4" y2="12"/>
-		<polyline points="10 18 4 12 10 6"/>
+		<g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+			<line x1="20" y1="12" x2="4" y2="12"/>
+			<polyline points="10 18 4 12 10 6"/>
+		</g>
 	</symbol>
-	<symbol id="cross" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">\
+	<symbol id="cross" viewBox="0 0 24 24">
 		<title>Cross</title>
 		<desc>A cross or close icon</desc>
-		<line x1="17" y1="7" x2="7" y2="17"/>
-		<line x1="7" y1="7" x2="17" y2="17"/>
+		<g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+			<line x1="17" y1="7" x2="7" y2="17"/>
+			<line x1="7" y1="7" x2="17" y2="17"/>
+		</g>
 	</symbol>
 </svg>
