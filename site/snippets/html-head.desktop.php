@@ -82,13 +82,6 @@ $fontobserver = (isset($_COOKIE['fonts-loaded']) && $_COOKIE['fonts-loaded'] == 
 		<noscript><link rel="stylesheet" href="<?php echo url('/assets/stylesheets/' . $env_suffix . '/' . $main_css . '.css'); ?>"></noscript>
 	<?php endif; ?>
 
-	<!--[if (gte IE 7) & (lte IE 8)]>
-	<script src="<?php echo url('/assets/javascript/lib/plugins/html5shiv/html5shiv.min.js'); ?>"></script>
-	<script src="<?php echo url('/assets/javascript/lib/plugins/html5shiv/html5shiv-printshiv.min.js'); ?>"></script>
-	<script src="<?php echo url('/assets/javascript/lib/plugins/nwmatcher/nwmatcher.min.js'); ?>"></script>
-	<script src="<?php echo url('/assets/javascript/lib/plugins/selectivizr/selectivizr.min.js'); ?>"></script>
-	<![endif;]-->
-
 	<?php // Initialize JS variables for use later on ?>
 	<?php // <script>var push_message = [];</script> ?>
 
