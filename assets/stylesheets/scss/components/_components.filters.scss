@@ -54,10 +54,10 @@
 	order: 0;
 	position: relative;
 	overflow: hidden;
-	height: rhythm(1.7); // line-height rhythm(1.6) + padding-top rhythm(.1)!!!
+	height: rhythm(1.75); // line-height rhythm(1.6) + margin-bottom rhythm(.05) + padding-top rhythm(.1)!!!
 
 	.no-touchevents & {
-		height: rhythm(1.25); // line-height rhythm(1.15) + padding-top rhythm(.1)!!!
+		height: rhythm(1.3); // line-height rhythm(1.15) + margin-bottom rhythm(.05) + padding-top rhythm(.1)!!!
 	}
 
 	&:after {
@@ -98,6 +98,7 @@
 
 .filterlist__button {
 	display: flex;
+	align-items: center;
 	padding-top: rhythm(.1);
 	padding-right: rhythm(.5);
 	padding-left: rhythm(.5);
