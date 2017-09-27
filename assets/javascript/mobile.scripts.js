@@ -16,13 +16,12 @@ domready(function () {
 
 	// Invoke plugins
 	// gumshoe.init();                                                             // Init gumshoe (scrollspy)
-	svg4everybody({nosvg: true,polyfill: true});                                // Init svg4everybody (e.g. for IE11)
 	// smoothScroll.init();                                                        // Init smoothscroll
 
 	// Run svg4everybody polyfill (e.g. for IE11)
 	// svg4everybody({
 	// 	nosvg: false,                                                           // Shiv <svg> and <use> elements and use image fallbacks
-	// 	polyfill: true                                                          // Polyfill <use> elements for External Content
+	// 	polyfill: true                                                          // Polyfill <use> elements for external content
 	// });
 
 });
