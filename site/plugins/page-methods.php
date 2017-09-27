@@ -65,7 +65,7 @@ page::$methods['meta_description'] = function($page) {
 		$description = $page->text()->smartypants();
 	}
 	else {
-		$description = $site->tagline()->smartypants();
+		$description = site()->tagline()->smartypants();
 	}
 	return $description->excerpt(155);
 };
