@@ -15,7 +15,7 @@ Archive pagination
 
  */
 
-c::set('pagination.blog', 4);
+c::set('pagination.blog', 8);
 
 /* -----------------------------------------------------------------------------
 Filtered archive pagination
