@@ -9,7 +9,7 @@
 		<?php /* <h2 class="is-hidden-visually">Page navigation</h2> */ ?>
 		<ul class="pagination__list">
 			<?php if($pagination->hasPrevPage()): ?>
-				<li class="pagination__item pagination__item--prev">
+				<li class="pagination__item pagination__item--newer">
 					<?php if($page_num == 2): ?>
 						<a href="<?php echo url(kirby()->request()->path()->first() . (($filter_value) ? '/' . (($filter_key == 'tags') ? 'tag' : $filter_key) . '/' . $filter_value : '')); ?>" class="icon icon--left">
 					<?php else: ?>
@@ -24,7 +24,7 @@
 			<?php endif; ?>
 
 			<?php if($pagination->hasNextPage()): ?>
-				<li class="pagination__item pagination__item--next">
+				<li class="pagination__item pagination__item--older">
 					<a href="<?php echo url(kirby()->request()->path()->first() . (($filter_value) ? '/' . (($filter_key == 'tags') ? 'tag' : $filter_key) . '/' . $filter_value : '') . '/page/' . ($page_num + 1)); ?>" class="icon icon--right">
 						Next page
 						<svg role="presentation" width="24" height="24" title="Right arrow">
