@@ -21,7 +21,12 @@
 		padding: rhythm(.25) 0;
 	}
 
-	&--next {
+	&--newer {
+		padding-right: rhythm(.25);
+	}
+
+	&--older {
 		margin-left: auto; // Always align next pagination item to the right (on very small screens)!
+		padding-left: rhythm(.25);
 	}
 }
