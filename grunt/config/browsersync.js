@@ -7,7 +7,7 @@ module.exports = function(grunt) {
 					'<%= project.styles_dev %>/main.dev.css',
 					'<%= project.scripts_dev %>/head.scripts.dev.js',
 					'<%= project.scripts_dev %>/main.scripts.dev.js',
-					'<%= project.scripts_dev %>/mobile.scripts.dev.js',
+					// '<%= project.scripts_dev %>/mobile.scripts.dev.js',
 					'site/templates/*.php',
 					'site/snippets/*.php',
 				]

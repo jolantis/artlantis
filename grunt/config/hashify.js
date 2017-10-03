@@ -16,15 +16,10 @@ module.exports = function(grunt) {
 					dest: '<%= project.styles_min %>/{{hash}}.css', // {{hash}} will be replaced with md5 of the contents of the source
 					key: 'main', // key to use in the hashmap
 				},
-				{
-					src: '<%= project.styles_min %>/mobile.min.css',
-					dest: '<%= project.styles_min %>/{{hash}}.css',
-					key: 'mobile',
-				},
 				// {
-				// 	src: '<%= project.styles_min %>/oldie.min.css',
+				// 	src: '<%= project.styles_min %>/mobile.min.css',
 				// 	dest: '<%= project.styles_min %>/{{hash}}.css',
-				// 	key: 'oldie',
+				// 	key: 'mobile',
 				// },
 				{
 					src: '<%= project.styles_min %>/print.min.css',
@@ -48,11 +43,11 @@ module.exports = function(grunt) {
 					dest: '<%= project.scripts_min %>/{{hash}}.js',
 					key: 'main',
 				},
-				{
-					src: '<%= project.scripts_min %>/mobile.scripts.min.js',
-					dest: '<%= project.scripts_min %>/{{hash}}.js',
-					key: 'mobile',
-				},
+				// {
+				// 	src: '<%= project.scripts_min %>/mobile.scripts.min.js',
+				// 	dest: '<%= project.scripts_min %>/{{hash}}.js',
+				// 	key: 'mobile',
+				// },
 			],
 		},
 	});

@@ -37,18 +37,12 @@ module.exports = function(grunt) {
 				message: 'Critical CSS created', // required
 			},
 		},
-		mobile: {
-			options: {
-				title: "Task Complete (Artlantis)", // optional; defaults to the name in package.json, or will use project directory's name
-				message: 'Mobile stylesheet created', // required
-			},
-		},
-		oldie: {
-			options: {
-				title: "Task Complete (Artlantis)", // optional; defaults to the name in package.json, or will use project directory's name
-				message: 'Oldie stylesheet created', // required
-			},
-		},
+		// mobile: {
+		// 	options: {
+		// 		title: "Task Complete (Artlantis)", // optional; defaults to the name in package.json, or will use project directory's name
+		// 		message: 'Mobile stylesheet created', // required
+		// 	},
+		// },
 	});
 
 };

@@ -7,12 +7,11 @@ module.exports = function(grunt) {
 		grunt.task.run(
 			'bump-only:minor', // Version bumped from 0.0.x to 0.1.0
 			'styles',
-			// 'oldie',
 			'styles-minify',
 			'criticalcss',
 			'scripts',
 			'scripts-minify',
-			'hashify', // Generating an 'oldie' stylesheet? Make sure to enable the 'oldie' part in the hashify.js config!
+			'hashify',
 			'notify:release'
 		);
 	});

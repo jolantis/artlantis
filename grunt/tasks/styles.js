@@ -3,7 +3,6 @@ module.exports = function(grunt) {
 	grunt.registerTask('sass-concat', [], function () {
 		grunt.loadNpmTasks('grunt-sass');
 		grunt.task.run(
-			// 'sass:dist'
 			'sass:main',
 			// 'sass:mobile',
 			'sass:print'
