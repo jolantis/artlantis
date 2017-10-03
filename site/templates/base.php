@@ -1,4 +1,4 @@
-<?php snippet_detect('html-head', array(
+<?php snippet('html-head', array(
 	'criticalcss' => 'base',
 )); ?>
 
@@ -201,4 +201,4 @@
 
 	</main>
 
-<?php snippet_detect('footer'); ?>
+<?php snippet('footer'); ?>
