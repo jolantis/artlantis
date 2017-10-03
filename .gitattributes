@@ -20,9 +20,12 @@
 # Grunt
 gruntfile.js         export-ignore
 package.json         export-ignore
-.jshintrc            export-ignore
 grunt/               export-ignore
 node_modules/        export-ignore
+
+# Validation
+.jshintrc            export-ignore
+.eslintrc            export-ignore
 
 # Editor
 .editorconfig        export-ignore
@@ -44,7 +47,7 @@ design/              export-ignore
 # JavaScript files and folders
 assets/javascript/head.scripts.js           export-ignore
 assets/javascript/main.scripts.js           export-ignore
-assets/javascript/mobile.scripts.js         export-ignore
+# assets/javascript/mobile.scripts.js         export-ignore
 assets/javascript/dev/                      export-ignore
 assets/javascript/lib/                      export-ignore
 assets/javascript/modules/                  export-ignore

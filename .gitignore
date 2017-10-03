@@ -33,7 +33,7 @@
 .tmproj
 .tm_properties
 .vscode
-.eslintrc.json
+.eslintrc
 
 intermediate
 publish

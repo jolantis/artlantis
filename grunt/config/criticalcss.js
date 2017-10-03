@@ -56,17 +56,28 @@ module.exports = function(grunt) {
 				buffer: 800*1024,
 			},
 		},
-		base_mobile : {
+		blog : {
 			options: {
-				url: 'http://artlantis.dev/base',
-				width: 420, // iPhone 6 Plus is 414 points wide
-				height: 960, //iPhone 6 Plus is 736 points high
-				outputfile: '<%= project.styles_critical %>/base_mobile.css',
-				filename:'<%= project.styles_dev %>/main.dev.css',
+				url: 'http://artlantis.dev/blog',
+				width: 1440,
+				height: 900,
+				outputfile: '<%= project.styles_critical %>/blog.css',
+				filename: '<%= project.styles_dev %>/main.dev.css',
 				forceInclude: [], // An array of selectors that you want to guarantee will make it from the CSS file into your CriticalCSS output.
 				buffer: 800*1024,
 			},
 		},
+		// blog_post : {
+		// 	options: {
+		// 		url: 'http://artlantis.dev/blog/xxxxxxxxx',
+		// 		width: 1440,
+		// 		height: 900,
+		// 		outputfile: '<%= project.styles_critical %>/blog_post.css',
+		// 		filename: '<%= project.styles_dev %>/main.dev.css',
+		// 		forceInclude: [], // An array of selectors that you want to guarantee will make it from the CSS file into your CriticalCSS output.
+		// 		buffer: 800*1024,
+		// 	},
+		// },
 	});
 
 };

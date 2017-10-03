@@ -1,5 +1,5 @@
 <?php snippet('html-head', array(
-	// 'criticalcss' => 'other_than_default',
+	'criticalcss' => 'blog',
 )); ?>
 
 	<?php snippet('banner'); ?>
