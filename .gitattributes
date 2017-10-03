@@ -23,12 +23,12 @@ package.json         export-ignore
 grunt/               export-ignore
 node_modules/        export-ignore
 
-# Validation
-.jshintrc            export-ignore
-.eslintrc            export-ignore
-
 # Editor
 .editorconfig        export-ignore
+
+# Linters
+.eslintrc            export-ignore
+.jshintrc            export-ignore
 
 # Readme (text files)
 # readme.txt           export-ignore
