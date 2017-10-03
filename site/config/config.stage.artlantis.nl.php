@@ -76,8 +76,8 @@ Cache
 */
 
 c::set('cache', false);
-c::set('cache.driver', 'file');
-// c::set('cache.options', array('prefix' => 'artlantis_'));
+c::set('cache.driver', 'memcached');
+c::set('cache.options', array('prefix' => 'artlantis_stage_'));
 
 
 /* -----------------------------------------------------------------------------
