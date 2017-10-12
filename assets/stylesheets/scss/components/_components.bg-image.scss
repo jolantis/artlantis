@@ -24,8 +24,15 @@
 	&--link {
 
 		.bg-image__image {
-			max-height:72vh;
+			max-height: 72vh;
 			min-height: 14rem;
+
+			.template-work & {
+
+				@include breakpoint(huge, max) {
+					max-height: 64vh;
+				}
+			}
 		}
 
 		.bg-image__placeholder {

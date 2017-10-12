@@ -27,20 +27,30 @@ $text-sizes: (
 	// huge:                       (26px),
 );
 
-$text-hero: (                                                                  // hero heading font size(s) and line height(s)
+$text-bg-title-hero: (                                                          // hero heading font size(s) and line height(s)
 	null:                       (2.5rem, 1.136),
 	medium:                     (3rem),
-	// medium:                     (2.5rem, 1.125),
 	large:                      (5rem),
-	// large:                      (3rem, 1.05),
+	// wide:                      (3rem),
 );
 
-$text-bg-text: (                                                                // bg-link heading font size(s) and line height(s)
-	null:                       (2rem, 1.054),
-	compact:                    (2.5rem),
-	medium:                     (2rem),
-	large:                      (2.25rem),
-	wide:                       (2.5rem),
+$text-bg-title-plus: (                                                          // hero heading font size(s) and line height(s)
+	null:                       (2rem, 1.136),
+	// compact:                    (2.5rem),
+	medium:                     (2.5rem),
+	// medium:                     (2.5rem, 1.125),
+	large:                      (3rem),
+	wide:                       (3.75rem),
+	huge:                       (3rem),
+);
+
+$text-bg-title: (                                                                // bg-link heading font size(s) and line height(s)
+	null:                       (1.5rem, 1.136),
+	compact:                    (1.75rem),
+	medium:                     (1.25rem),
+	large:                      (1.5rem),
+	wide:                       (1.75rem),
+	huge:                       (2.5rem),
 );
 
 $text-alpha: (                                                                  // alpha heading font size(s) and line height(s)
@@ -70,7 +80,7 @@ $text-gamma: (                                                                  
 $text-delta: (                                                                  // delta heading font size(s) and line height(s)
 	null:                       (1.125rem),
 	// null:                       (1.125rem, 1.111),
-	medium:                     (1.372rem),
+	medium:                     (1.375rem),
 	// medium:                     (1.125rem, 1.222),
 	huge:                       (1.75rem),
 );
@@ -92,5 +102,3 @@ $text-nano: (                                                                   
 $text-pico: (                                                                   // pico heading font size(s) and line height(s)
 	null:                       (.75rem),
 );
-
-

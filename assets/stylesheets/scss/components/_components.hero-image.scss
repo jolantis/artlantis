@@ -4,7 +4,6 @@
 
 .hero {
 	position: relative;
-	z-index: $z-index-hero;
 	height: 100%;
 	min-height: 20rem;
 	max-height: 178vw; // More or less the ratio of an iPhone 6 screen!!
@@ -25,52 +24,64 @@
 	}
 }
 
+.hero__text {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+}
 
 .hero__title,
+.hero__tags,
 .hero__meta {
-	position: absolute;
-	display: block;
-	width: 100%;
 	text-align: center;
 	color:	$color-base-white;
 }
 
 .hero__title {
-	@extend .hero-heading;
+	@extend %heading-settings;
+	@extend %text-kern;
+	@include responsive-text-size($text-bg-title-hero);
 
-	z-index: $z-index-hero-title;
-	bottom: 44%;
 	padding-right: $contain-percentage;
 	padding-left: $contain-percentage;
 }
 
+.hero__tags,
 .hero__meta {
 	@extend %text-small;
+}
 
+.hero__meta {
+	display: block;
+	position: absolute;
 	overflow: hidden;
+	width: 100%;
 	bottom: 0;
-	padding-bottom: rhythm(1); // lenght of vertical line
-	margin-bottom: rhythm(.5);
+	padding-bottom: rhythm(2); // lenght of vertical line
+	// margin-bottom: rhythm(.5);
 
 	&:after { // vertical line
 		position: absolute;
 		top: rhythm(.8);
 		bottom: 0;
-		left: calc(50% - #{rhythm(.05/2)});
+		left: 50%;
+		left: calc(50% - #{rhythm(.05 / 2)});
 		content: "";
 		border-left: solid .05rem $color-base-white;
 	}
 
-	&:before { // arrow head
-		position: absolute;
-		bottom: rhythm(1);
-		bottom: 0;
-		left: calc(50% - #{rhythm(.2)});
-		content: "";
-		width: 0;
-		height: 0;
-		border-left: rhythm(.2) solid transparent;
-		border-right: rhythm(.2) solid transparent;
-		border-top: rhythm(.3) solid $color-base-white;
-	}
+	// &:before { // arrow head
+	// 	position: absolute;
+	// 	bottom: rhythm(1);
+	// 	bottom: 0;
+	// 	left: calc(50% - #{rhythm(.2)});
+	// 	content: "";
+	// 	width: 0;
+	// 	height: 0;
+	// 	border-left: rhythm(.2) solid transparent;
+	// 	border-right: rhythm(.2) solid transparent;
+	// 	border-top: rhythm(.3) solid $color-base-white;
+	// }
 }

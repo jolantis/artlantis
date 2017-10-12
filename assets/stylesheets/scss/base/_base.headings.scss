@@ -33,22 +33,6 @@
  * Heading sizes
  */
 
-/* Hero */
-
-.hero-heading {
-	@extend %heading-settings;
-	@extend %text-kern;
-	@include responsive-text-size($text-hero);
-}
-
-/* Bg-link */
-
-.bg-text-heading {
-	@extend %heading-settings;
-	@extend %text-kern;
-	@include responsive-text-size($text-bg-text);
-}
-
 /* Alpha */
 
 .alpha-heading {
