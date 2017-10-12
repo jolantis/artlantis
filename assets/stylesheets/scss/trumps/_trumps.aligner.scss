@@ -4,19 +4,25 @@
 
 .aligner {
 	display: flex;
-	align-items: center;
-	justify-content: center;
-	// text-align: center;
+	flex-direction: column; // stack items witin flex container
 }
 
-.aligner__item {
+.aligner--center {
+	align-items: center;
+	justify-content: center;
 	text-align: center;
 }
 
-.aligner__item--top {
-	align-self: flex-start;
+.aligner--top {
+	justify-content: flex-start;
+	// justify-content: space-between;
+	text-align: left;
+	align-items: flex-start;
 }
 
-.aligner__item--bottom {
-	align-self: flex-end;
+.aligner--bottom {
+	justify-content: flex-end;
+	// justify-content: space-between;
+	text-align: left;
+	align-items: flex-start;
 }
