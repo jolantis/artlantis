@@ -19,11 +19,9 @@
 					<a href="<?php echo $page_item->url(); ?>" class="bg-image bg-image--link aligner">
 						<?php // echo $page_item_image->imageset('grid'); ?>
 						<?php echo $page_item_image->imageset('grid', ['output' => 'bgimage']); ?>
-						<span class="bg-text aligner">
-							<span class="aligner__item">
-								<h2 class="bg-text__title"><?php echo $page_item->title()->smartypants()->widont(); ?></h2>
-								<p class="bg-text__meta"><?php snippet('datetime', ['relative' => true, 'page' => $page_item]); ?></p>
-							</span>
+						<span class="bg-text aligner aligner--bottom">
+							<h2 class="bg-text__title"><?php echo $page_item->title()->smartypants()->widont(); ?></h2>
+							<p class="bg-text__meta"><?php snippet('datetime', ['relative' => true, 'page' => $page_item]); ?> &nbsp;&mdash;&nbsp; <?php echo $page_item->images()->count(); ?> photos</p>
 						</span>
 					</a>
 				</article>

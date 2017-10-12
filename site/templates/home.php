@@ -27,10 +27,10 @@
 					<article class="grid__cell">
 						<a href="<?php echo $blog_post->url(); ?>" class="bg-image bg-image--link default-1by1 medium-3by2">
 							<?php echo $blog_post_image->imageset('grid', ['output' => 'bgimage']); ?>
-							<span class="bg-text aligner">
+							<span class="bg-text aligner aligner--center">
 								<span class="aligner__item">
-									<h2 class="bg-text__title hero-heading"><?php echo $blog_post->title()->smartypants()->widont(); ?></h2>
-									<p class="bg-text__meta"><?php snippet('datetime', ['relative' => true, 'page' => $blog_post]); ?></p>
+									<h2 class="bg-text__title-hero">Photography</h2>
+									<p class="bg-text__meta">Portrait &mdash; Wedding &mdash; Real Estatet &mdash; Events</p>
 								</span>
 							</span>
 						</a>
@@ -39,7 +39,7 @@
 					<article class="grid__cell medium-1of2">
 						<a href="<?php echo $blog_post->url(); ?>" class="bg-image bg-image--link default-1by1 aligner">
 							<?php echo $blog_post_image->imageset('grid', ['output' => 'bgimage']); ?>
-							<span class="bg-text aligner">
+							<span class="bg-text aligner aligner--bottom">
 								<span class="aligner__item">
 									<h2 class="bg-text__title"><?php echo $blog_post->title()->smartypants()->widont(); ?></h2>
 									<p class="bg-text__meta"><?php snippet('datetime', ['relative' => true, 'page' => $blog_post]); ?></p>

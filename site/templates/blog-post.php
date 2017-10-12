@@ -9,17 +9,28 @@
 
 	<div class="hero bg-image bg-image--cover">
 		<?php echo $main_image->imageset('hero', ['output' => 'bgimage']); ?>
-		<span class="hero__title"><?php echo $page->title()->smartypants()->widont(); ?></span>
+		<span class="hero__text aligner aligner--center">
+			<span class="hero__title"><?php echo $page->title()->smartypants()->widont(); ?></span>
+		</span>
 		<span class="hero__meta"><?php echo $page->images()->count(); ?> photos</span>
 	</div>
 
-	<main class="copy copy--contain">
+	<main class="copy copy--contain" >
 
 		<h1 class="is-hidden-visually"><?php echo $page->title()->smartypants()->widont(); ?></h1>
 
 		<?php if($page->date($format=true)): ?>
 			<p><small>
 				Published on <?php snippet('datetime', ['format' => 'j F Y']); ?>
+			</small></p>
+		<?php endif; ?>
+
+		<?php if($page->tags()->isNotEmpty()): ?>
+			<p><small>
+				Tagged with:
+				<?php $i = 0; foreach($tags = str::split($page->tags(),',') as $tag): ?>
+					<a href="<?php echo $page->parent()->url() . '/tags/' . tagslug($tag); ?>"><?php echo $tag; ?></a><?php if($i < (count($tags) -1)): echo '<span>,</span> '; endif; ?>
+				<?php $i++; endforeach; ?>
 			</small></p>
 		<?php endif; ?>
 
