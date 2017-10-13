@@ -14,7 +14,7 @@
 	overflow: hidden;
 	padding-top: rhythm(1);
 	padding-right: rhythm(1);
-	padding-bottom: rhythm(1);
+	padding-bottom: rhythm(.75);
 	padding-left: rhythm(1);
 	color: $color-base-white;
 	pointer-events: none; // To make events "pass through" the element
