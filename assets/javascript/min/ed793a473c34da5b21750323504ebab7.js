@@ -1,5 +1,5 @@
 /**
- * Artlantis — Jonathan van Wunnik — v0.0.5 — 2017-10-12
+ * Artlantis — Jonathan van Wunnik — v0.0.6 — 2017-10-13
  * http://artlantis.nl
  * Copyright (c) 2017 Jonathan van Wunnik
  */
