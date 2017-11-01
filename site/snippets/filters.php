@@ -13,7 +13,7 @@
 				<a href="<?php echo url($page->url()); ?>" class="filterlist__button icon icon--right" title="Remove filter: &lsquo;<?php echo tagunslug($filter_value); ?>&rsquo;">
 					<span class="is-hidden-visually">Remove filter: </span>
 					<?php echo tagunslug($filter_value); ?>
-					<svg role="presentation" title="Left arrow">
+					<svg role="presentation" title="Cross">
 						<use xlink:href="/assets/images/sprite.svg#cross"/>
 					</svg>
 				</a>
