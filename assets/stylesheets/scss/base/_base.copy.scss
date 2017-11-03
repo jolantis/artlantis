@@ -180,7 +180,7 @@
 	 * and `full-width` figure blocks from compact and above.
 	 */
 
-	 > .figure-image:not(.text-width):not(.full-width) + .text-width,
+	> .figure-image:not(.text-width):not(.full-width) + .text-width,
 	> .text-width + .figure-image:not(.text-width),
 	> .figure-image:not(.full-width) + .full-width {
 
