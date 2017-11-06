@@ -4,10 +4,13 @@
 
 /**
  * Clearfix
- * Micro clearfix, as per:
- * http://cssmojo.com/the-very-latest-clearfix-reloaded/
+ * Native "clearfix", with micro clearfix fallback
  *
- * Extend the clearfix placeholder class `%clearfix` with Sass to avoid
+ * See:
+ * - https://helloanselm.com/2017/flow-root-supports/
+ * - http://cssmojo.com/the-very-latest-clearfix-reloaded/
+ *
+ * Extend the clearfix placeholder class `%clearfix` to avoid
  * the `.clearfix` class appearing over and over in your markup.
  */
 
@@ -20,4 +23,11 @@
 		clear: both;
 	}
 
+	@supports (display: flow-root) {
+		display: flow-root;
+
+		&:after {
+			content: none;
+		}
+	}
 }
