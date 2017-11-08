@@ -5,7 +5,7 @@ My photos.
 
 ## URL
 
-[http://artlantis.nl](http://artlantis.nl)
+[https://artlantis.nl](https://artlantis.nl)
 
 ## License
 
