@@ -8,44 +8,44 @@ module.exports = function(grunt) {
 		},
 		styles: {
 			options: {
-				hashmap: '<%= project.styles_min %>/hash.css.json', // location to put hashmap
+				hashmap: '<%= project.styles %>/hash.css.json', // location to put hashmap
 			},
 			files: [
 				{
-					src: '<%= project.styles_min %>/main.min.css', // md5 of the contents goes in hashmap
-					dest: '<%= project.styles_min %>/{{hash}}.css', // {{hash}} will be replaced with md5 of the contents of the source
+					src: '<%= project.styles %>/main.min.css', // md5 of the contents goes in hashmap
+					dest: '<%= project.styles %>/{{hash}}.css', // {{hash}} will be replaced with md5 of the contents of the source
 					key: 'main', // key to use in the hashmap
 				},
 				// {
-				// 	src: '<%= project.styles_min %>/mobile.min.css',
-				// 	dest: '<%= project.styles_min %>/{{hash}}.css',
+				// 	src: '<%= project.styles %>/mobile.min.css',
+				// 	dest: '<%= project.styles %>/{{hash}}.css',
 				// 	key: 'mobile',
 				// },
 				{
-					src: '<%= project.styles_min %>/print.min.css',
-					dest: '<%= project.styles_min %>/{{hash}}.css',
+					src: '<%= project.styles %>/print.min.css',
+					dest: '<%= project.styles %>/{{hash}}.css',
 					key: 'print',
 				},
 			],
 		},
 		scripts: {
 			options: {
-				hashmap: '<%= project.scripts_min %>/hash.js.json', // location to put hashmap
+				hashmap: '<%= project.scripts %>/hash.js.json', // location to put hashmap
 			},
 			files: [
 				{
-					src: '<%= project.scripts_min %>/head.scripts.min.js',
-					dest: '<%= project.scripts_min %>/{{hash}}.js',
+					src: '<%= project.scripts %>/head.min.js',
+					dest: '<%= project.scripts %>/{{hash}}.js',
 					key: 'head',
 				},
 				{
-					src: '<%= project.scripts_min %>/main.scripts.min.js',
-					dest: '<%= project.scripts_min %>/{{hash}}.js',
+					src: '<%= project.scripts %>/main.min.js',
+					dest: '<%= project.scripts %>/{{hash}}.js',
 					key: 'main',
 				},
 				// {
-				// 	src: '<%= project.scripts_min %>/mobile.scripts.min.js',
-				// 	dest: '<%= project.scripts_min %>/{{hash}}.js',
+				// 	src: '<%= project.scripts %>/mobile.min.js',
+				// 	dest: '<%= project.scripts %>/{{hash}}.js',
 				// 	key: 'mobile',
 				// },
 			],

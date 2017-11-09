@@ -9,20 +9,7 @@ $root_url = ((c::get('ssl') == false && (c::get('url') != false) && c::get('url'
 $assets_css = f::read(server::get('document_root') . $root_url . 'assets/stylesheets/min/hash.css.json');
 $assets_js = f::read(server::get('document_root') . $root_url . 'assets/javascript/min/hash.js.json');
 
-// Set assets based on environment
-if(c::get('environment') == 'local'):
-	$env_suffix = 'dev';
-	$main_css = 'main.dev';
-	$print_css = 'print.dev';
-	$head_js = 'head.scripts.dev';
-	$main_js = 'main.scripts.dev';
-else:
-	$env_suffix = 'min';
-	$main_css = json_decode($assets_css)->main;
-	$print_css = json_decode($assets_css)->print;
-	$head_js = json_decode($assets_js)->head;
-	$main_js = json_decode($assets_js)->main;
-endif;
+$env_suffix = (c::get('environment', '.min') == 'local') ? '' : '.min';
 
 // Variabel to set language locale on html element
 $language_locale = (c::get('language.multi', false)) ? $site->language()->locale() : c::get('language.locale', 'en');
@@ -71,15 +58,15 @@ $fontobserver = (isset($_COOKIE['fonts-loaded']) && $_COOKIE['fonts-loaded'] == 
 
 	<?php snippet('social-meta-tags') ?>
 
-	<meta name="fullcss" content="<?php echo url('/assets/stylesheets/' . $env_suffix . '/' . $main_css . '.css'); ?>">
-	<meta name="fulljs" content="<?php echo url('/assets/javascript/'. $env_suffix .'/' . $main_js . '.js'); ?>">
-	<script><?php include_once(server::get('document_root') . '/assets/javascript/'. $env_suffix .'/' . $head_js . '.js'); ?></script>
+	<meta name="fullcss" content="<?php echo css('/assets/stylesheets/main' . $env_suffix . '.css', null, true); ?>">
+	<meta name="fulljs" content="<?php echo js('/assets/javascript/main' . $env_suffix . '.js', null, true); ?>">
+	<script><?php include_once(server::get('document_root') . '/assets/javascript/head' . $env_suffix . '.js'); ?></script>
 	<?php if(isset($_COOKIE['fullcss']) && $_COOKIE['fullcss'] == 'true'): ?>
-		<link rel="stylesheet" href="<?php echo url('/assets/stylesheets/' . $env_suffix . '/' . $main_css . '.css'); ?>">
-		<link rel="stylesheet" href="<?php echo url('/assets/stylesheets/' . $env_suffix . '/' . $print_css . '.css'); ?>" media="print">
+		<link rel="stylesheet" href="<?php echo css('/assets/stylesheets/main' . $env_suffix . '.css', null, true); ?>">
+		<link rel="stylesheet" href="<?php echo css('/assets/stylesheets/print' . $env_suffix . '.css', null, true); ?>" media="print">
 	<?php else: ?>
 		<style><?php if(c::get('environment') == 'local' || c::get('environment') == 'stage'): echo '/* ' . ((isset($criticalcss)) ? $criticalcss : 'default') . ' css */' . "\n"; endif; include_once(server::get('document_root') . '/assets/stylesheets/critical/' . ((isset($criticalcss)) ? $criticalcss : 'default') . '.css'); ?></style>
-		<noscript><link rel="stylesheet" href="<?php echo url('/assets/stylesheets/' . $env_suffix . '/' . $main_css . '.css'); ?>"></noscript>
+		<noscript><link rel="stylesheet" href="<?php echo css('/assets/stylesheets/' . $env_suffix . '/main.css', null, true); ?>"></noscript>
 	<?php endif; ?>
 
 	<?php // Initialize JS variables for use later on ?>

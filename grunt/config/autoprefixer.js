@@ -11,16 +11,16 @@ module.exports = function(grunt) {
 			options: {
 				map: true, // enable/disable source maps
 			},
-			src: '<%= project.styles_dev %>/main.concat.css',
-			dest: '<%= project.styles_dev %>/main.dev.css',
+			src: '<%= project.styles %>/main.css',
+			dest: '<%= project.styles %>/main.css',
 		},
 		// mobile: {
-		// 	src: '<%= project.styles_dev %>/mobile.concat.css',
-		// 	dest: '<%= project.styles_dev %>/mobile.dev.css',
+		// 	src: '<%= project.styles %>/mobile.css',
+		// 	dest: '<%= project.styles %>/mobile.css',
 		// },
 		print: {
-			src: '<%= project.styles_dev %>/print.concat.css',
-			dest: '<%= project.styles_dev %>/print.dev.css',
+			src: '<%= project.styles %>/print.css',
+			dest: '<%= project.styles %>/print.css',
 		},
 	});
 

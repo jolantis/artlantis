@@ -11,7 +11,7 @@ module.exports = function(grunt) {
 			'criticalcss',
 			'scripts',
 			'scripts-minify',
-			'hashify',
+			// 'hashify',
 			'notify:build'
 		);
 	});
