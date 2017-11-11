@@ -4,11 +4,7 @@
 // ----------------------------------------------------------
 /////////////////////////////////////////////////////////////
 
-// Read assets json
-$root_url = ((c::get('ssl') == false && (c::get('url') != false) && c::get('url') != '/') ? c::get('url') . '/' : '/');
-$assets_css = f::read(server::get('document_root') . $root_url . 'assets/stylesheets/min/hash.css.json');
-$assets_js = f::read(server::get('document_root') . $root_url . 'assets/javascript/min/hash.js.json');
-
+// Set variable to get minified assets based on environment
 $env_suffix = (c::get('environment', '.min') == 'local') ? '' : '.min';
 
 // Variabel to set language locale on html element
