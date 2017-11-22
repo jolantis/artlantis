@@ -5,7 +5,6 @@
 ////////////////////////////////////////////////////////// ?>
 
 <div class="filters">
-	<?php /*<a class="filterbutton js-expandbutton" href="#expandthis" title="Show more filter tags">More</a> */ ?>
 	<h2 class="is-hidden-visually">Filter blog posts by&hellip;</h2>
 	<ul class="filterlist js-expandtarget">
 		<?php if($filter_value): ?>

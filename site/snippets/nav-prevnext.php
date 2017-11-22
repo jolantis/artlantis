@@ -2,10 +2,6 @@
 // ----------------------------------------------------------
 // SNIPPET
 // ----------------------------------------------------------
-
-// $mod_class = (!isset($mod_class)) ? '' : ' ' . $mod_class; // modifier class(es)
-// $back_to_overview_url = (!isset($back_to_overview_url)) ? '' : $back_to_overview_url; // back url
-
 ////////////////////////////////////////////////////////// ?>
 
 <?php if($prev || $next): ?>
@@ -23,12 +19,6 @@
 				</li>
 			<?php endif ?>
 
-			<?php /*
-			<li>
-				<a href="<?php echo $back_to_overview_url; ?>"><span>Back to overview</span></a>
-			</li>
-			*/ ?>
-
 			<?php if($prev): ?>
 				<li class="pagination__item pagination__item--older">
 					<a href="<?php echo $prev->url(); ?>" class="icon icon--right">
@@ -42,4 +32,3 @@
 		</ul>
 	</div>
 <?php endif; ?>
-
