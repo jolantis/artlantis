@@ -8,12 +8,12 @@
  * - $site->tagline() *      ---> (part of) home page's title (and used to generate fallback for meta description)
  * - $page->long-title()     ---> page's title
  * - $page->title() *        ---> page's title, used to generate fallback for page's long title
-
-Fields marked with an asterisk (*) are required and need to be filled in to
-make it work. If any of the other fields are missing it should still work.
-
-Include following line in HTML head:
-`<title><?php echo $page->page_title(); ?></title>`
+ *
+ * Fields marked with an asterisk (*) are required and need to be filled in to
+ * make it work. If any of the other fields are missing it should still work.
+ *
+ * Include following line in HTML head:
+ * `<title><?php echo $page->page_title(); ?></title>`
  */
 
 page::$methods['window_title'] = function($page) {
@@ -45,12 +45,12 @@ page::$methods['window_title'] = function($page) {
  * - $page->intro()          ---> page's main text content, used to generate fallback for meta description
  * - $page->text()           ---> page's main text content, used to generate fallback for meta description
  * - $site->tagline() *      ---> (part of) home page's title, last resort fallback for meta description
-
-Fields marked with an asterisk (*) are required and need to be filled in to
-make it work. If any of the other fields are missing it should still work.
-
-Include following line in HTML head:
-`<meta name="description" content="<?php echo $page->meta_description(); ?>">`
+ *
+ * Fields marked with an asterisk (*) are required and need to be filled in to
+ * make it work. If any of the other fields are missing it should still work.
+ *
+ * Include following line in HTML head:
+ * `<meta name="description" content="<?php echo $page->meta_description(); ?>">`
  */
 
 page::$methods['meta_description'] = function($page) {
