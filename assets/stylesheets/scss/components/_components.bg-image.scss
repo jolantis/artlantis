@@ -118,7 +118,7 @@
 	padding-bottom: percentage(9/16) !important;
 }
 
-/* For large breakpoint and up */
+/* For medium breakpoint and up */
 
 @include breakpoint(medium) {
 	.medium-3by2 .bg-image__image:before { padding-bottom: percentage(2/3) !important; }
