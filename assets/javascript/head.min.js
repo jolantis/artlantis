@@ -1,5 +1,5 @@
 /**
- * Artlantis — Jonathan van Wunnik — v0.0.7 — 2017-11-09
+ * Artlantis — Jonathan van Wunnik — v0.0.8 — 2017-11-22
  * https://artlantis.nl
  * Copyright (c) 2017 Jonathan van Wunnik
  * License MIT
