@@ -24,8 +24,14 @@
 	&--link {
 
 		.bg-image__image {
-			max-height: 64vh;
+			max-height: 44vh;
 			min-height: 32vw;
+		}
+
+		@media screen and (orientation:landscape) {
+			.bg-image__image {
+				max-height: 68vh;
+			}
 		}
 
 		.bg-image__placeholder {
