@@ -79,6 +79,14 @@ c::set('cache', false);
 c::set('cache.driver', 'memcached');
 c::set('cache.options', array('prefix' => 'artlantis_stage_'));
 
+/* -----------------------------------------------------------------------------
+Fingerprint (assets files)
+--------------------------------------------------------------------------------
+
+*/
+
+c::set('fingerprint', true);
+
 
 /* -----------------------------------------------------------------------------
 Analytics, tracking, site stats
