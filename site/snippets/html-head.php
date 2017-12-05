@@ -13,10 +13,10 @@ $language_locale = (c::get('language.multi', false)) ? $site->language()->locale
 // Variable to set page template name to html element for styling purpose.
 $page_template = ($page->intendedTemplate()) ? ' template-' . $page->intendedTemplate() : '';
 
-// Check for the presence of Font Face Observer cookie (e.g. `fonts-loaded`)
+// Check for the presence of Font Face Observer cookie (e.g. `fonts_loaded`)
 // and if so adds `fonts-loaded` class to html element, to avoid re-downloading
 // web fonts over and over again.
-$fontobserver = (isset($_COOKIE['fonts-loaded']) && $_COOKIE['fonts-loaded'] == 'true') ? ' fonts-loaded' : '';
+$fontobserver = (isset($_COOKIE['fonts_loaded']) && $_COOKIE['fonts_loaded'] == 'true') ? ' fonts-loaded' : '';
 
 ////////////////////////////////////////////////////////// ?>
 
@@ -54,10 +54,10 @@ $fontobserver = (isset($_COOKIE['fonts-loaded']) && $_COOKIE['fonts-loaded'] == 
 
 	<?php snippet('social-meta-tags') ?>
 
-	<meta name="fullcss" content="<?php echo css('/assets/stylesheets/main' . $env_suffix . '.css', null, true); ?>">
-	<meta name="fulljs" content="<?php echo js('/assets/javascript/main' . $env_suffix . '.js', null, true); ?>">
+	<meta name="full_css" content="<?php echo css('/assets/stylesheets/main' . $env_suffix . '.css', null, true); ?>">
+	<meta name="full_js" content="<?php echo js('/assets/javascript/main' . $env_suffix . '.js', null, true); ?>">
 	<script><?php include_once(server::get('document_root') . '/assets/javascript/head' . $env_suffix . '.js'); ?></script>
-	<?php if(isset($_COOKIE['fullcss']) && $_COOKIE['fullcss'] == 'true'): ?>
+	<?php if(isset($_COOKIE['full_css']) && $_COOKIE['full_css'] == 'true'): ?>
 		<link rel="stylesheet" href="<?php echo css('/assets/stylesheets/main' . $env_suffix . '.css', null, true); ?>">
 		<link rel="stylesheet" href="<?php echo css('/assets/stylesheets/print' . $env_suffix . '.css', null, true); ?>" media="print">
 	<?php else: ?>
