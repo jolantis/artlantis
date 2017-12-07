@@ -11,6 +11,7 @@ module.exports = function(grunt) {
 					// '<%= project.scripts %>/mobile.js',
 					'site/templates/*.php',
 					'site/snippets/*.php',
+					'content/**/*.md',
 				]
 			},
 			options: {
