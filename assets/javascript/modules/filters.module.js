@@ -7,10 +7,10 @@ var Filters = (function () {
 	function toggle(event) {
 		event.preventDefault();
 		var button = event.target;
-		var expandtarget = document.getElementsByClassName('js-expandtarget')[0];
+		var expandtarget = document.querySelector('.js-filters');
 		var expandparent = expandtarget.parentNode;
 
-		if(expandparent.classList.contains('is-closed')) {
+		if (expandparent.classList.contains('is-closed')) {
 			expandparent.removeChild(button);
 			button.textContent = 'Less −';
 			expandtarget.appendChild(button);
@@ -27,32 +27,31 @@ var Filters = (function () {
 	}
 
 	function init() {
-		var expandtarget = document.getElementsByClassName('js-expandtarget')[0];
+		var expandtarget = document.querySelector('.js-filters');
 
-		if(expandtarget) {
+		if (expandtarget) {
 			var expandparent = expandtarget.parentNode;
-			var button       = expandtarget.parentNode.getElementsByTagName('button')[0];
-			var lastItem     = expandtarget.lastElementChild;
+			var button = expandtarget.parentNode.getElementsByTagName('button')[0];
+			var lastItem = expandtarget.lastElementChild;
 
-			if(expandparent.classList.contains('is-open')) {
+			if (expandparent.classList.contains('is-open')) {
 				expandtarget.removeChild(button);
 				expandparent.classList.remove('is-open');
 			}
 			else {
 
-				if(isVisible(lastItem)) {
+				if (isVisible(lastItem)) {
 					expandparent.classList.add('is-visible');
 
-					if(button) {
+					if (button) {
 						button.remove();
 						expandparent.classList.remove('is-closed');
 					}
 				}
 				else {
 
-					if(!button) {
+					if (!button) {
 						var newButton = document.createElement('button');
-						// newButton.classList.add('js-exapndbutton');
 						newButton.setAttribute('aria-hidden', true);
 						newButton.textContent = 'More +';
 						expandparent.classList.add('is-closed');
