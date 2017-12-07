@@ -3,14 +3,14 @@
    ========================================================================== */
 
 .icon {
-	display: flex;
-	// flex-wrap: nowrap; // nowrap is default!
+	display: inline-flex; // ‘Inline’ otherwise an anhor link with a ‘button’ class will be full width!
 	align-items: center;
 
 	> svg {
 		width: 1em;
 		height: 1em;
-		margin-top: -.1em;
+		// width: 24px;
+		// height: 24px;
 		// fill: currentColor; // Cascading svg fill color (https://css-tricks.com/cascading-svg-fill-color/)
 		// stroke: currentColor; // Cascading svg stroke color
 	}
@@ -18,14 +18,14 @@
 	&--left {
 
 		> svg {
-			margin-right: .4em;
+			margin-right: .3em;
 		}
 	}
 
 	&--right {
 
 		> svg {
-			margin-left: .4em;
+			margin-left: .3em;
 		}
 	}
 }

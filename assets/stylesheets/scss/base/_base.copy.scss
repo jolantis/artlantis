@@ -15,28 +15,33 @@
 
 		> *:not(.full-width),
 		> .full-width figcaption {
-			padding-right: $contain-percentage;
-			padding-left: $contain-percentage;
+			margin-right: $contain-percentage;
+			margin-left: $contain-percentage;
 
 			@include breakpoint(medium) {
-				padding-right: rhythm($contain-rhythm-unit);
-				padding-left: rhythm($contain-rhythm-unit);
+				margin-right: rhythm($contain-rhythm-unit);
+				margin-left: rhythm($contain-rhythm-unit);
 			}
-		}
-
-		> .figure-image:not(.full-width) {
 
 			@include breakpoint(huge) {
-				padding-right: 7.5vw;
-				padding-left: 7.5vw;
+				margin-right: 7.5vw;
+				margin-left: 7.5vw;
 			}
 		}
 
-		> *:not(.full-width),
-		> .figure-image figcaption {
-			margin-right: auto;
-			margin-left: auto;
-		}
+		// > .figure-image:not(.full-width) {
+
+		// 	@include breakpoint(huge) {
+		// 		padding-right: 7.5vw;
+		// 		padding-left: 7.5vw;
+		// 	}
+		// }
+
+		// > *:not(.full-width),
+		// > .figure-image figcaption {
+		// 	margin-right: auto;
+		// 	margin-left: auto;
+		// }
 
 		> h1, > h2, > h3, > h4, > h5, > h6,
 		> p,
@@ -47,12 +52,13 @@
 		> table,
 		> form,
 		> .blockquote,
+		> .intro,
 		// > .figure-image.full-width figcaption,
 		> .figure-image.text-width {
-			max-width: $text-max-width + (2 * rhythm($contain-rhythm-unit)); // Text max width
+			max-width: $text-max-width + (2 * strip-unit(rhythm($contain-rhythm-unit))) * 1em; // Text max width in em's
 		}
 
-		// // > .blockquote,
+		// > .blockquote,
 		// > .figure-image.full-width figcaption,
 		// > .figure-image:not([class*="-width"]),
 		// > .figure-grid:not([class*="-width"]) {
@@ -78,10 +84,6 @@
 			// 	padding-left: $contain-percentage;
 			// }
 		}
-
-		// > hr {
-		// 	max-width: $text-max-width - (2 * rhythm($contain-rhythm-unit)); // Padding has no effect on <hr>!!!
-		// }
 	}
 
 	/* Vertical spacing
@@ -107,7 +109,8 @@
 	> *:not(.figure-image) + p,
 	> *:not(.figure-image) + ul,
 	> *:not(.figure-image) + ol,
-	> *:not(.figure-image) + dl {
+	> *:not(.figure-image) + dl,
+	> *:not(.figure-image) + .intro {
 		margin-top: rhythm(.5) !important;
 	}
 
@@ -269,7 +272,8 @@
 
 	h1 { @extend .beta-heading; }
 	h2 { @extend .gamma-heading; }
-	h3 { @extend .delta-heading; }
+	h3,
+	.intro { @extend .delta-heading; }
 	h4 { @extend .epsilon-heading; }
 	h5,
 	h6 { @extend .zeta-heading; }
@@ -363,6 +367,7 @@
 	ul,
 	ol {
 		@extend .list;
+		@extend .list--plain;
 	}
 
 	/* Definition lists */

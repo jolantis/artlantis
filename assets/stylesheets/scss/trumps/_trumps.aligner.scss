@@ -4,14 +4,93 @@
 
 .aligner {
 	display: flex;
-	flex-direction: column; // stack items witin flex container
+	// flex-wrap: nowrap; // `nowrap` is default!
+	// align-items: center; // `stretch` is default!
+
+	/**
+	 * To align item to the right; don't use `justify-content: space-between;`
+	 * on containing (`aligner`) wrapper/container.
+	 */
+
+	&__item--right {
+		margin-left: auto;
+	}
 }
 
-.aligner--center {
-	align-items: center;
-	justify-content: center;
-	text-align: center;
+/**
+ * Start flex(box) from compact and up
+ */
+
+.compact-aligner {
+
+	@include breakpoint(compact) {
+		display: flex;
+
+		&__item--right {
+			margin-left: auto;
+		}
+
+		// &--baseline {
+		// 	align-items: baseline;
+		// }
+	}
 }
+
+/**
+ * Start flex(box) from compact and up
+ */
+
+.medium-aligner {
+
+	@include breakpoint(medium) {
+		display: flex;
+
+		&__item--right {
+			margin-left: auto;
+		}
+
+		// &--baseline {
+		// 	align-items: baseline;
+		// }
+	}
+}
+
+/**
+ * Wrap items onto multiple lines (from top to bottom) within `aligner` (flex) container.
+ */
+
+.aligner--wrap {
+	flex-wrap: wrap;
+}
+
+/**
+ * Align items such as their baselines align
+ */
+
+.aligner--baseline {
+	align-items: baseline;
+}
+
+/**
+ * (Stack or) vertical align item(s) witin `aligner` (flex) container.
+ */
+
+.aligner--stacked {
+	flex-direction: column;
+}
+
+/**
+ * (Center or) horizontally align item(s) witin `aligner` (flex) container.
+ */
+
+.aligner--center {
+	justify-content: center;
+	align-items: center;
+}
+
+/**
+ * Align item(s) to the top `aligner` (flex) container.
+ */
 
 .aligner--top {
 	justify-content: flex-start;
@@ -19,6 +98,10 @@
 	text-align: left;
 	align-items: flex-start;
 }
+
+/**
+ * Align item(s) to the bottom of the `aligner` (flex) container.
+ */
 
 .aligner--bottom {
 	justify-content: flex-end;

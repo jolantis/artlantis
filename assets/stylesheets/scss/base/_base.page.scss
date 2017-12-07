@@ -28,7 +28,9 @@ html {
 	color: $color-base-black;
 	background-color: $background-color;
 
-	&.template-blog-post {
+	&.template-home,
+	&.template-blog-post,
+	&.template-error {
 
 		&,
 		body {

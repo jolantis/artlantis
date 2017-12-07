@@ -5,18 +5,14 @@
 .banner {
 	width: 100%;
 	padding-top: rhythm(1);
-	padding-bottom: rhythm(1);
+	padding-bottom: rhythm(2);
 	text-align: center;
 
-	@include breakpoint(compact) {
-		display: flex;
-		flex-wrap: wrap;
-		align-items: baseline;
-	}
-
-	.template-blog-post & {
+	.template-home &,
+	.template-blog-post &,
+	.template-error & {
 		position: absolute;
 		z-index: $z-index-banner;
-		color: rgba($color-link-light,.6);
+		color: rgba($color-link-light,.7);
 	}
 }

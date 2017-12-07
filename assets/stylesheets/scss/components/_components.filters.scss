@@ -2,11 +2,12 @@
    Filter
    ========================================================================== */
 
+/**
+ * Filters wrapper
+ */
+
 .filters {
 	width: 100%;
-	display: flex;
-	flex-wrap: nowrap;
-	align-items: baseline;
 
 	/**
 	 * The (show) more (and less) button
@@ -47,13 +48,13 @@
 	}
 }
 
-.filterlist {
-	display: flex;
-	// flex-basis: 100%;
-	flex: 1;
-	order: 0;
+/**
+ * Filters list
+ */
+
+.filterslist {
 	position: relative;
-	overflow: hidden;
+	overflow-x: hidden;
 	height: rhythm(1.75); // line-height rhythm(1.6) + margin-bottom rhythm(.05) + padding-top rhythm(.1)!!!
 
 	.no-touchevents & {
@@ -88,39 +89,24 @@
 	}
 }
 
-.filterlist__item {
+/**
+ * Filters list item
+ */
+
+.filterslist__item {
 	white-space: nowrap;
+
+	a {
+		margin-right: rhythm(.05);
+		margin-bottom: rhythm(.05);
+	}
+
+	&-count {
+		color: $color-gray-light;
+		margin-left: .3em;
+	}
 
 	.no-js & {
 		display: inline-block;
-	}
-}
-
-.filterlist__button {
-	display: flex;
-	align-items: center;
-	padding-top: rhythm(.1);
-	padding-right: rhythm(.5);
-	padding-left: rhythm(.5);
-	margin-right: rhythm(.05);
-	margin-bottom: rhythm(.05);
-	line-height: rhythm(1.6);
-	background-color: $color-gray-x-light;
-	border-radius: rhythm(.05);
-
-	.no-touchevents & {
-		padding-right: rhythm(.4);
-		padding-left: rhythm(.4);
-		line-height: rhythm(1.15);
-	}
-
-	&:hover {
-		transition: background-color .24s ease-out, color .24s ease-out;
-	}
-
-	&:hover,
-	.is-active & {
-		background-color: $color-base-black;
-		color: $color-base-white;
 	}
 }

@@ -21,13 +21,13 @@
 	-webkit-font-smoothing: antialiased; // [2] To prevent flickering of text in Safari (default is subpixel-rendering)
 }
 
-.bg-text__title-hero {
-	@extend %heading-settings;
-	@extend %text-kern;
-	@include responsive-text-size($text-bg-title-hero);
-}
+// .bg-text__title-hero {
+// 	@extend %heading-settings;
+// 	@extend %text-kern;
+// 	@include responsive-text-size($text-bg-title-hero);
+// }
 
-.bg-text__title-plus {
+.bg-text__title-big {
 	@extend %heading-settings;
 	@extend %text-kern;
 	@include responsive-text-size($text-bg-title-plus);
@@ -39,14 +39,18 @@
 	@include responsive-text-size($text-bg-title);
 }
 
-.bg-text__meta {
-	@extend %text-small;
+// .bg-text__meta {
+// 	@extend %text-small;
 
-	// -webkit-font-smoothing: antialiased; // [2] To prevent flickering of text in Safari (default is subpixel-rendering)
-}
+// 	// -webkit-font-smoothing: antialiased; // [2] To prevent flickering of text in Safari (default is subpixel-rendering)
+// }
 
-.bg-text__title-hero,
-.bg-text__title-plus,
+// .bg-text__title-hero,
+.bg-text__title-big,
 .bg-text__title {
 	margin-bottom: rhythm(.25);
+}
+
+.bg-text__button {
+	pointer-events: auto;
 }

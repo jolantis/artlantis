@@ -11,7 +11,7 @@
 
 	li {
 		display: list-item;
-		margin-left: rhythm(1); // .75rem + .5 baseline (vertical rhythm)
+		margin-left: rhythm(1);
 
 		& > ul,
 		& > ol,
@@ -28,9 +28,7 @@
 			margin-left: 0; // reset left margin from medium and up
 		}
 	}
-}
 
-.list {
 	> li {
 		list-style-type: square; // e.g. disc, circle, square
 	}
@@ -49,7 +47,7 @@ ol.list {
 .list--plain {
 	margin-left: 0;
 
-	> li {
+	li {
 		list-style: none;
 	}
 }
@@ -93,6 +91,7 @@ ol.list {
 
 	&,
 	&.list--links {
+
 		> li {
 			list-style-type: decimal;
 		}

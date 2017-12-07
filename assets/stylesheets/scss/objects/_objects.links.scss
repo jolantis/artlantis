@@ -15,31 +15,48 @@
 		background-color: transparent; // Remove the gray background on active links in IE 10.
 		text-decoration: underline;
 		text-decoration-skip: ink; // See: https://css-tricks.com/more-control-over-text-decoration/
-		color: $color-base-blue;
+		// color: $color-blue-dark;
+		color: $color-base-black;
+		// color: rgba($color-link-dark,.6);
 	}
 
 	&:visited {
-		color: $color-blue-light;
+		color: $color-gray-light;
 	}
 	&:hover,
 	&:focus {
-		color: $color-blue-dark;
+		color: $color-gray-light;
 	}
 	&:active {
-		color: $color-blue-light;
+		color: $color-base-black;
 		// transition: none; // Check out article about UI feedback: http://bfred.it/notes/?p=46
 	}
-}
 
-/* No visited link color (browser history) */
+	&--simple {
 
-.link--no-history {
-	&:visited {
-		color: $color-base-blue;
+		&:link {
+			text-decoration: none;
+			// color: $color-base-gray;
+			color: rgba($color-link-dark,.6);
+		}
 	}
-	&:hover,
-	&:focus,
-	&:active {
-		color: inherit;
+
+	&--lowercase {
+		text-transform: lowercase;
+	}
+
+	/**
+	* No visited link color (browser history)
+	*/
+
+	&--no-history {
+		&:visited {
+			color: $color-base-black;
+		}
+		&:hover,
+		&:focus,
+		&:active {
+			color: inherit;
+		}
 	}
 }

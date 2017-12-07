@@ -2,121 +2,66 @@
 	 Nav
 	 ========================================================================== */
 
-/**
- * Simple navigation
- * When used on an `ol` or `ul`, it throws the list into horizontal mode
- *
- * Example HTML:
- * <nav role="navigation" class="nav">
- *   <ul>
- *     <li class="nav__item"><a href="">link item 1</a></li>
- *     <li class="nav__item"><a href="">link item 2</a></li>
- *   </ul>
- * </nav>
- */
-
-// .nav {
-// 	list-style: none;
-
-// 	> li {
-// 		&,
-// 		> a {
-// 			display: inline-block;
-// 		}
-// 	}
-// }
-
-/**
- * Simple stacked (vertical) navigation
- *
- * Example HTML:
- * <nav role="navigation">
- *   <ul class="nav nav--stacked">
- *     <li><a href="">link item 1</a></li>
- *     <li><a href="">link item 2</a></li>
- *     <li><a href="">link item 3</a></li>
- *   </ul>
- * </nav>
- */
-
-// .nav--stacked {
-
-// 	> li {
-// 		display: list-item;
-
-// 		> a {
-// 			display:block;
-// 		}
-// 	}
-// }
-
-// .nav__item {}
-
-/**
- * Responsive horizontal/stacked (main) navigation
- *
- * Example HTML:
- * <div class="nav-main"
- *   <nav role="navigation" class="nav-main__list">
- *     <ul>
- *       <li class="nav-main__item"><a href="">link item 1</a></li>
- *       <li class="nav-main__item"><a href="">link item 2</a></li>
- *     </ul>
- *   </nav>
- * </div>
- */
-
 /* Nav main */
 
 .nav-main {
 	overflow: hidden;
 
-	@include breakpoint(compact) {
-		// flex: 0;
-		margin-left: auto; // Always align next pagination item to the right (on very small screens)!
+	&__list {
+		margin-left: rhythm(-.5);
+		margin-right: rhythm(-.5);
 	}
-}
 
-/* Main nav (list) */
+	&__item {
+		padding-top: rhythm(.5);
+		padding-right: rhythm(.5);
+		padding-bottom: rhythm(.5);
+		padding-left: rhythm(.5);
 
-.nav-main__list {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	margin-left: rhythm(-.5);
-	margin-right: rhythm(-.5);
-
-	@include breakpoint(small) {
-		flex-wrap: nowrap;
-	}
-}
-
-.nav-main__item {
-	padding-top: rhythm(.5);
-	padding-left: rhythm(.5);
-	padding-bottom: rhythm(.5);
-	padding-right: rhythm(.5);
-
-	> a {
-		color: rgba($color-link-dark,.6);
-
-		&:hover {
-			color: $color-link-dark;
+		@include breakpoint(medium) {
+			padding-top: rhythm(.5);
+			padding-right: rhythm(.5);
+			padding-bottom: rhythm(.5);
+			padding-left: rhythm(.5);
 		}
 
-		.template-blog-post & {
-			color: rgba($color-link-light,.6);
-
-			&:hover {
-				color: $color-link-light;
-			}
-		}
-	}
-
-	&[aria-current="page"] {
 
 		a {
-			color: $color-link-dark;
+			color: rgba($color-link-dark,.6);
+
+			&:hover {
+				color: $color-link-dark;
+			}
+		}
+
+		&[aria-current="page"] {
+
+			a {
+				color: $color-link-dark;
+			}
+		}
+
+		header & {
+
+			.template-home &,
+			.template-blog-post &,
+			.template-error & {
+
+				a {
+					color: rgba($color-link-light,.7);
+
+					&:hover {
+						color: $color-link-light;
+					}
+				}
+
+				&[aria-current="page"] {
+
+					a {
+						color: $color-link-light;
+					}
+				}
+			}
 		}
 	}
 }

@@ -3,12 +3,11 @@
    ========================================================================== */
 
 .contentinfo {
-	margin-top: 0;
+	margin-top: rhythm(2);
+	// text-align: center;
 
-	.ctm & {
-		margin-top: rhythm(1);
-	}
 	footer {
-		padding: rhythm(1) rhythm(0);
+		padding-top: rhythm(1);
+		padding-bottom: rhythm(1);
 	}
 }

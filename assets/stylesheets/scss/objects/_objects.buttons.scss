@@ -22,85 +22,151 @@
 .button {
 	position: relative;
 	display: inline-block;
-	padding: rhythm(.5) rhythm(1);
+	// padding: rhythm(.5) rhythm(1);
+	padding: 0;
+	margin: 0;
 	border: none;
-	border-radius: 0; /* To remove rounded corners in Safari on iOS 5+ */
-	background: $color-base-black;
-	color: $color-base-white;
-	line-height: inherit; /* For anchor button to behave nicely */
-	// cursor: pointer; // Already in normalize.css
-	-webkit-tap-highlight-color: rgba(0,0,0,0); /* Hide transparent highlight color that appears when tapping on iOS/Android */
-}
+	// border-radius: 0; // To remove rounded corners in Safari on iOS 5+
+	background: transparent;
+	// color: $color-base-black;
+	line-height: inherit; // For anchor button to behave nicely
+	// min-width: 44pt;
+	// min-height: 44pt;
+	-webkit-tap-highlight-color: rgba(0,0,0,0); // Hide transparent highlight color that appears when tapping on iOS/Android
 
-/* Button states */
+	&--primary,
+	&--simple,
+	&--border-dark,
+	&--border-light {
+		padding-top: rhythm(.1);
+		padding-right: rhythm(.5);
+		// padding-bottom: rhythm(.2);
+		padding-left: rhythm(.5);
+		line-height: rhythm(1.6);
+		// border-radius: rhythm(.05);
 
-.button:hover,
-.button:focus,
-.button:active {
-	text-decoration: none;
-}
+		.no-touchevents & {
+			transition: background-color .24s ease-out, color .24s ease-out;
+			padding-right: rhythm(.4);
+			padding-left: rhythm(.4);
+			line-height: rhythm(1.15);
+		}
 
-.button:active {
-	top: 1px;
-	outline: none;
-	// transition: none; // Check out article about UI feedback: http://bfred.it/notes/?p=46
-}
+		&:hover,
+		&:focus,
+		&:active,
+		&.is-active {
+			text-decoration: none;
+		}
 
-.button:disabled,
-.button.is-disabled {
-	&,
-	&:hover,
-	&:focus,
-	&:active {
-		top: 0 !important;
-		background: $color-gray-x-light !important;
-		color: $color-gray-light !important;
-		cursor: default !important;
+		&:active {
+			transform: scale(.98,.98);
+			outline: none;
+			// transition: none; // Check out article about UI feedback: http://bfred.it/notes/?p=46
+		}
 	}
-}
 
-/**
- * Primary button
- */
+	/**
+	 * Primary (blue)
+	 */
 
-.button--primary {
-	background: $color-base-blue;
-	color: $color-base-white;
-
-	&:hover {
-		background: $color-blue-dark;
-	}
-	&:active {
+	&--primary {
 		background: $color-base-blue;
+		color: $color-base-white;
+
+		&:hover {
+			background: $color-blue-dark;
+		}
+		&:active {
+			background: $color-base-blue;
+		}
 	}
-}
 
-/**
- * Secondary button
- */
+	/**
+	 * Simple (gray)
+	 */
 
-// .button--secondary {}
+	&--simple {
+		background-color: $color-gray-x-light;
 
-/**
- * Button size modifiers
- */
+		&:hover,
+		&:active,
+		&.is-active {
+			background-color: $color-base-black;
+			color: $color-base-white;
+		}
+	}
 
-.button--small {
-	// margin-bottom: rhythm(.5);
-	padding: rhythm(.25) rhythm(.5);
-}
+	/**
+	 * Light & Dark (border)
+	 */
 
-.button--large {
-	// margin-bottom: rhythm(.5);
-	padding: rhythm(.75) rhythm(1.25);
-}
+	&--border-dark,
+	&--border-light {
+		background-color: transparent; //rgba($color-base-white,.1);
+		border-width: 1px;
+		border-style: solid;
 
-/* Full width button */
+		&:hover,
+		&:active {
+			background-color: transparent;
+		}
+	}
 
-.button--full {
-	display: block;
-	padding-right: 0;
-	padding-left: 0;
-	width: 100%;
-	text-align: center;
+	&--border-light {
+		border-color: rgba($color-base-white,1);
+	}
+
+	&--border-dark {
+		border-color: rgba($color-base-black,1);
+
+		// &:hover,
+		// &:active {
+		// 	color: $color-base-black;
+		// }
+	}
+
+	/**
+	 * Size modifiers
+	 */
+
+	&--small {
+		// margin-bottom: rhythm(.5);
+		padding: rhythm(.25) rhythm(.5);
+	}
+
+	&--large {
+		// margin-bottom: rhythm(.5);
+		padding: rhythm(.75) rhythm(1.25);
+	}
+
+	/**
+	 * Full width
+	 */
+
+	&--full {
+		display: block;
+		padding-right: 0;
+		padding-left: 0;
+		width: 100%;
+		text-align: center;
+	}
+
+	/**
+	 * Button states
+	 */
+
+	&:disabled,
+	&.is-disabled {
+
+		&,
+		&:hover,
+		&:focus,
+		&:active {
+			top: 0 !important;
+			background: $color-gray-x-light !important;
+			color: $color-gray-light !important;
+			cursor: default !important;
+		}
+	}
 }

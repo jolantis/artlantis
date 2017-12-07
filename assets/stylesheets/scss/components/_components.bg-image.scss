@@ -25,12 +25,12 @@
 
 		.bg-image__image {
 			max-height: 44vh;
-			min-height: 32vw;
+			min-height: 30vw;
 		}
 
 		@media screen and (orientation:landscape) {
 			.bg-image__image {
-				max-height: 68vh;
+				max-height: 64vh;
 			}
 		}
 
@@ -39,7 +39,7 @@
 			&,
 			.no-js &,
 			.js &.lazyloaded {
-				opacity: .5;
+				opacity: .6;
 				animation: none; // disable animation
 				transition: opacity .65s .25s ease-out; // visibility 0s (.5s + .05s + .25s);
 

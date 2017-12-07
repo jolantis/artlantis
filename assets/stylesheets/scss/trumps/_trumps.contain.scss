@@ -17,6 +17,11 @@
 		padding-right: rhythm($contain-rhythm-unit) !important;
 		padding-left: rhythm($contain-rhythm-unit) !important;
 	}
+
+	@include breakpoint(huge) {
+		padding-right: 7.5vw !important;
+		padding-left: 7.5vw !important;
+	}
 }
 
 /**
@@ -28,7 +33,8 @@
 	@extend %contain-padding;
 
 	// max-width: $figure-max-width + (2 * rhythm($contain-rhythm-unit)) !important;  // Figure max width
-	max-width: $text-max-width + (2 * rhythm($contain-rhythm-unit)) !important; // Text max width
-	margin-right: auto !important;
-	margin-left: auto !important;
+	// max-width: $text-max-width + (2 * rhythm($contain-rhythm-unit)) !important; // Text max width
+	max-width: $text-max-width + (2 * strip-unit(rhythm($contain-rhythm-unit))) * 1em; // Text max width in em's
+	padding-right: auto !important;
+	padding-left: auto !important;
 }
