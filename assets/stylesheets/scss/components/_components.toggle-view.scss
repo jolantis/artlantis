@@ -1,0 +1,23 @@
+/* ==========================================================================
+   Toggle
+   ========================================================================== */
+
+.toggle {
+	margin-left: rhythm(-.25);
+
+	button {
+		// padding-top: rhythm(.5);
+		padding-right: rhythm(.25);
+		// padding-bottom: rhythm(.5);
+		padding-left: rhythm(.25);
+	}
+}
+
+
+.toggle__item {
+	color: $color-gray-light;
+
+	&--active {
+		color: $color-base-black;
+	}
+}

@@ -14,6 +14,7 @@ domready(function () {
 	FontObserverHandler.init();                                                 // Init font(face)observer
 	// NavMain.init();                                                             // Init main navigation
 	// Popup.init();                                                               // Init popup
+	// ToggleView.init();                                                          // Init toggle (grid or list) view
 
 	// Invoke plugins
 	// gumshoe.init();                                                             // Init gumshoe (scrollspy)
