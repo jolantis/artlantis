@@ -6,22 +6,24 @@
 	position: relative;
 	height: 100%;
 	min-height: 20rem;
-	max-height: 178vw; // More or less the ratio of an iPhone 6 screen!!
+	// max-height: 178vw; // More or less the ratio of an iPhone 6 screen!!
+	color:	$color-base-white;
 
-	@include breakpoint(compact) {
-		padding: rhythm($grid-gutter-rhythm-unit / 2);
+	// White border!
+	// @include breakpoint(compact) {
+	// 	padding: rhythm($grid-gutter-rhythm-unit / 2);
 
-		.bg-image__placeholder {
-			top: rhythm($grid-gutter-rhythm-unit / 2);
-			left: rhythm($grid-gutter-rhythm-unit / 2);
-			right: rhythm($grid-gutter-rhythm-unit / 2);
-			bottom: rhythm($grid-gutter-rhythm-unit / 2);
-		}
-	}
+	// 	.bg-image__placeholder {
+	// 		top: rhythm($grid-gutter-rhythm-unit / 2);
+	// 		left: rhythm($grid-gutter-rhythm-unit / 2);
+	// 		right: rhythm($grid-gutter-rhythm-unit / 2);
+	// 		bottom: rhythm($grid-gutter-rhythm-unit / 2);
+	// 	}
+	// }
 
-	@include breakpoint(medium) {
-		max-height: 108vw;
-	}
+	// @include breakpoint(medium) {
+	// 	max-height: 108vw;
+	// }
 }
 
 .hero__text {
@@ -30,13 +32,9 @@
 	left: 0;
 	height: 100%;
 	width: 100%;
-}
-
-.hero__title,
-.hero__tags,
-.hero__meta {
-	text-align: center;
-	color:	$color-base-white;
+	// padding-bottom: rhythm(1);
+	padding-right: $contain-percentage;
+	padding-left: $contain-percentage;
 }
 
 .hero__title {
@@ -44,13 +42,31 @@
 	@extend %text-kern;
 	@include responsive-text-size($text-bg-title-hero);
 
-	padding-right: $contain-percentage;
-	padding-left: $contain-percentage;
+	margin-bottom: rhythm(.25);
 }
 
-.hero__tags,
+.hero__title,
+.hero__subtitle,
+.hero__meta {
+	text-align: center;
+	color:	$color-base-white;
+}
+
 .hero__meta {
 	@extend %text-small;
+}
+
+.hero__button,
+.hero__buttons > a {
+	pointer-events: auto;
+
+	.hero__subtitle + & {
+		margin-top: rhythm(.75);
+	}
+}
+
+.hero__buttons > a + a {
+	margin-left: rhythm(1);
 }
 
 .hero__meta {
@@ -59,8 +75,9 @@
 	overflow: hidden;
 	width: 100%;
 	bottom: 0;
-	padding-bottom: rhythm(2); // lenght of vertical line
+	padding-bottom: rhythm(1.75); // lenght of vertical line
 	// margin-bottom: rhythm(.5);
+	color: rgba($color-link-light,.7);
 
 	&:after { // vertical line
 		position: absolute;
@@ -69,7 +86,7 @@
 		left: 50%;
 		left: calc(50% - #{rhythm(.05 / 2)});
 		content: "";
-		border-left: solid .05rem $color-base-white;
+		border-left: solid .05rem rgba($color-link-light,.7);
 	}
 
 	// &:before { // arrow head
