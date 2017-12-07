@@ -45,6 +45,28 @@ module.exports = function(grunt) {
 				buffer: 800*1024,
 			},
 		},
+		work : {
+			options: {
+				url: 'http://artlantis.dev/work',
+				width: 1440,
+				height: 900,
+				outputfile: '<%= project.styles_critical %>/work.css',
+				filename: '<%= project.styles %>/main.css',
+				forceInclude: [], // An array of selectors that you want to guarantee will make it from the CSS file into your CriticalCSS output.
+				buffer: 800*1024,
+			},
+		},
+		work_item : {
+			options: {
+				url: 'http://artlantis.dev/work/portraits',
+				width: 1440,
+				height: 900,
+				outputfile: '<%= project.styles_critical %>/work_item.css',
+				filename: '<%= project.styles %>/main.css',
+				forceInclude: [], // An array of selectors that you want to guarantee will make it from the CSS file into your CriticalCSS output.
+				buffer: 800*1024,
+			},
+		},
 		blog : {
 			options: {
 				url: 'http://artlantis.dev/blog',
@@ -56,17 +78,39 @@ module.exports = function(grunt) {
 				buffer: 800*1024,
 			},
 		},
-		// blog_post : {
-		// 	options: {
-		// 		url: 'http://artlantis.dev/blog/xxxxxxxxx',
-		// 		width: 1440,
-		// 		height: 900,
-		// 		outputfile: '<%= project.styles_critical %>/blog_post.css',
-		// 		filename: '<%= project.styles %>/main.css',
-		// 		forceInclude: [], // An array of selectors that you want to guarantee will make it from the CSS file into your CriticalCSS output.
-		// 		buffer: 800*1024,
-		// 	},
-		// },
+		blog_post : {
+			options: {
+				url: 'http://artlantis.dev/blog/summer-holiday-in-liguria',
+				width: 1440,
+				height: 900,
+				outputfile: '<%= project.styles_critical %>/blog_post.css',
+				filename: '<%= project.styles %>/main.css',
+				forceInclude: [], // An array of selectors that you want to guarantee will make it from the CSS file into your CriticalCSS output.
+				buffer: 800*1024,
+			},
+		},
+		info : {
+			options: {
+				url: 'http://artlantis.dev/info',
+				width: 1440,
+				height: 900,
+				outputfile: '<%= project.styles_critical %>/info.css',
+				filename: '<%= project.styles %>/main.css',
+				forceInclude: [], // An array of selectors that you want to guarantee will make it from the CSS file into your CriticalCSS output.
+				buffer: 800*1024,
+			},
+		},
+		contact : {
+			options: {
+				url: 'http://artlantis.dev/contact',
+				width: 1440,
+				height: 900,
+				outputfile: '<%= project.styles_critical %>/contact.css',
+				filename: '<%= project.styles %>/main.css',
+				forceInclude: [], // An array of selectors that you want to guarantee will make it from the CSS file into your CriticalCSS output.
+				buffer: 800*1024,
+			},
+		},
 	});
 
 };
