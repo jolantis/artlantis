@@ -4,12 +4,35 @@
 
 	<?php snippet('banner'); ?>
 
-	<main role="main" class="copy copy--contain">
+	<?php $error_image = $page->images()->shuffle()->first(); ?>
 
-		<h1><?php echo $page->title()->smartypants()->widont(); ?></h1>
+	<main class="hero bg-image bg-image--cover">
 
-		<?php echo $page->text()->kirbytext(); ?>
+		<h1 class="is-hidden-visually"><?php echo $page->title()->smartypants()->widont(); ?></h1>
 
+		<?php echo $error_image->imageset('hero', ['output' => 'bgimage']); ?>
+		<?php $work = $site->find('work'); ?>
+
+		<span class="hero__text aligner aligner--stacked aligner--center">
+			<span class="hero__title"><?php echo $page->hero_title()->smartypants()->widont(); ?></span>
+			<?php if($page->hero_subtitle()->isNotEmpty()): ?>
+				<span class="hero__subtitle"><?php echo $page->hero_subtitle()->smartypants(); ?></span>
+			<?php endif; ?>
+			<span class="hero__buttons aligner aligner--center">
+				<a href="<?php echo $site->url(); ?>" class="button button--border-light icon icon--right">
+					Go to homepage
+					<svg role="presentation" width="24" height="24" title="Right arrow">
+						<use xlink:href="/assets/images/sprite.svg#arrow-right"/>
+					</svg>
+				</a>
+				<a href="<?php echo $site->find('work')->url(); ?>" class="hero__button button button--border-light icon icon--right">
+					View work
+					<svg role="presentation" width="24" height="24" title="Right arrow">
+						<use xlink:href="/assets/images/sprite.svg#arrow-right"/>
+					</svg>
+				</a>
+			</span>
+		</span>
 	</main>
 
 <?php snippet('footer'); ?>

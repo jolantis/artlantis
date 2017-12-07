@@ -4,72 +4,70 @@
 
 	<?php snippet('banner'); ?>
 
-	<main role="main" class="contain-padding">
+	<?php $work = $site->find('work'); ?>
 
-		<?php /*
+	<?php $i=0; foreach($work->children()->visible()->images()->filterBy('filename','!*=','exclude')->shuffle() as $work_image): ?>
 
-		<h1><?php echo $page->title()->smartypants()->widont(); ?></h1>
+		<?php if($work_image->dimensions()->landscape() && $i != 1): ?>
 
-		<?php echo $page->intro()->kirbytext(); ?>
-		<?php echo $page->text()->kirbytext(); ?>
+			<div class="hero bg-image bg-image--cover">
+				<?php echo $work_image->imageset('hero', ['output' => 'bgimage']); ?>
+				<span class="hero__text aligner aligner--stacked aligner--center">
+					<span class="hero__title"><?php echo $page->hero_title()->smartypants(); ?></span>
+					<?php if($page->hero_subtitle()->isNotEmpty()): ?>
+						<p class="hero__subtitle"><?php echo $page->hero_subtitle()->smartypants(); ?></p>
+					<?php endif; ?>
+					<a href="<?php echo $work->url(); ?>" class="hero__button button button--border-light icon icon--right">
+						View work
+						<svg role="presentation" width="24" height="24" title="Right arrow">
+							<use xlink:href="/assets/images/sprite.svg#arrow-right"/>
+						</svg>
+					</a>
+					<span class="hero__meta">Recent blog posts</span>
+				</span>
+			</div>
 
-		*/ ?>
+		<?php $i++; endif; ?>
+
+	<?php endforeach; ?>
+
+	<div class="contain-padding space-leader-xl">
+
+		<h2 class="is-hidden-visually">Recent blog posts</h2>
 
 		<div class="grid grid--gutter">
 
-			<?php $work = $site->find('work'); ?>
-
-			<?php $i=0; foreach($work->children()->visible()->images()->shuffle() as $work_image): ?>
-
-				<?php if($work_image->dimensions()->landscape() && $i != 1): ?>
-
-					<article class="grid__cell">
-						<a href="<?php echo $work->url(); ?>" class="bg-image bg-image--link default-1by1 medium-3by2">
-							<?php echo $work_image->imageset('grid', ['output' => 'bgimage']); ?>
-							<span class="bg-text aligner aligner--center">
-								<span class="aligner__item">
-									<h2 class="bg-text__title-hero">Photography</h2>
-									<p class="bg-text__meta">Portrait &mdash; Wedding &mdash; Real Estatet &mdash; Events</p>
-									<?php /* <p class="button">View work</p> */ ?>
-								</span>
-							</span>
-						</a>
-					</article>
-
-				<?php $i++; endif; ?>
-
-			<?php endforeach; ?>
-
 			<?php $blog = $site->find('blog'); ?>
 
-			<?php foreach($blog->children()->visible()->flip()->limit(2) as $blog_post): ?>
+			<?php foreach($blog->children()->visible()->flip()->limit(4) as $blog_post): ?>
 
 				<?php $blog_post_image = ($blog_post->images()->filterBy('filename','*=','main')->first()) ? $blog_post->images()->filterBy('filename','*=','main')->first() : $blog_post->images()->sortBy('sort', 'asc')->first(); ?>
 
-				<article class="grid__cell medium-1of2">
-					<a href="<?php echo $blog_post->url(); ?>" class="bg-image bg-image--link default-1by1 aligner">
+				<div class="grid__cell medium-1of2">
+					<a href="<?php echo $blog_post->url(); ?>" class="bg-image bg-image--link default-1by1">
 						<?php echo $blog_post_image->imageset('grid', ['output' => 'bgimage']); ?>
-						<span class="bg-text aligner aligner--bottom">
-							<span class="aligner__item">
-								<h2 class="bg-text__title"><?php echo $blog_post->title()->smartypants()->widont(); ?></h2>
-								<p class="bg-text__meta"><?php snippet('datetime', ['relative' => true, 'page' => $blog_post]); ?></p>
-							</span>
+						<span class="bg-text aligner aligner--stacked aligner--bottom">
+							<h3 class="bg-text__title"><?php echo $blog_post->title()->smartypants()->widont(); ?></h3>
+							<p class="bg-text__meta">Posted in blog &mdash; <?php snippet('datetime', ['relative' => true, 'page' => $blog_post]); ?></p>
 						</span>
 					</a>
-				</article>
+				</div>
 
 			<?php endforeach; ?>
 
 		</div>
 
-		<div>
+		<?php $blog = $site->find('blog'); ?>
 
-			<a href="#">All blog posts</a>
-			<a href="#">All work</a>
-
-
+		<div class="aligner aligner--center space-leader-m">
+			<a href="<?php echo $blog->url(); ?>" class="button button--border-dark icon icon--right">
+				More blog posts
+				<svg role="presentation" width="24" height="24" title="Right arrow">
+					<use xlink:href="/assets/images/sprite.svg#arrow-right"/>
+				</svg>
+			</a>
 		</div>
 
-	</main>
+	</div>
 
 <?php snippet('footer'); ?>

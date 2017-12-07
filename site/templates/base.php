@@ -4,7 +4,7 @@
 
 	<?php snippet('banner'); ?>
 
-	<main role="main" class="copy copy--contain space-trailer-l">
+	<main role="main" class="copy copy--contain">
 
 		<h1><?php echo $page->title()->smartypants()->widont(); ?></h1>
 
@@ -13,33 +13,33 @@
 
 		<hr>
 
-		<h2 id="buttons" class="beta-heading space-leader-m">Button</h2>
+		<h2 id="buttons">Buttons</h2>
 
 		<p>
-			<input type="submit" name="submit" value="Submit button" class="button"/>
-			<input type="button" name="submit" value="Input button" class="button"/>
+			<input type="submit" name="submit" value="Submit button" class="button button--simple"/>
+			<input type="button" name="submit" value="Input button" class="button button--simple"/>
 		</p>
 
 		<p>
-			<button class="button">Button button</button>
+			<button class="button button--simple">Button button</button>
 			<a href="#" class="button button--primary" role="button">Anchor button (primary)</a>
 		</p>
 
-		<p><input type="submit" name="submit" value="Submit button" class="button"/></p>
+		<p><input type="submit" name="submit" value="Submit button" class="button button--simple"/></p>
 		<p><input type="button" name="submit" value="Input button (primary)" class="button button--primary"/></p>
 
-		<p><input type="submit" name="submit" value="Small button" class="button button--small"/></p>
-		<p><input type="submit" name="submit" value="Large button" class="button button--large"/></p>
+		<p><input type="submit" name="submit" value="Small button" class="button button--simple button--small"/></p>
+		<p><input type="submit" name="submit" value="Large button" class="button button--simple button--large"/></p>
 
 		<p><button class="button button--primary button--full">Button button (primary, full)</button></p>
-		<p><a href="#" class="button button--full" role="button">Anchor button (full)</a></p>
+		<p><a href="#" class="button button--simple button--full" role="button">Anchor button (full)</a></p>
 
 		<p><button class="button button--primary is-disabled">Button button (primary, disabled)</button></p>
-		<p class="space-trailer-m"><a href="#" class="button is-disabled" role="button">Anchor button (disabled)</a></p>
+		<p><a href="#" class="button button--simple is-disabled" role="button">Anchor button (disabled)</a></p>
 
 		<hr>
 
-		<h2 id="form" class="beta-heading">Form</h2>
+		<h2 id="form">Form</h2>
 
 		<form method="post" action="#" class="form">
 

@@ -4,7 +4,7 @@
 
 	<?php snippet('banner'); ?>
 
-	<main role="main" class="copy copy--contain space-trailer-l">
+	<main role="main" class="copy copy--contain">
 
 		<h1><?php echo $page->title()->smartypants()->widont(); ?></h1>
 
