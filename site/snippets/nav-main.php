@@ -2,11 +2,40 @@
 // ----------------------------------------------------------
 // SNIPPET
 // ----------------------------------------------------------
+
+$loc = isset($loc) ? $loc : false;
+
 ////////////////////////////////////////////////////////// ?>
 
-<nav role="navigation" id="nav-main" class="nav-main">
-	<h2 class="is-hidden-visually">Main navigation</h2>
-	<ul class="nav-main__list">
+<?php if($page->isHomePage()): ?>
+	<?php if($loc == 'header'): ?>
+		<nav role="navigation" class="nav-main compact-aligner__item--right">
+			<h2 class="is-hidden-visually">Main navigation</h2>
+			<ul class="nav-main__list aligner aligner--wrap aligner--center">
+	<?php else: ?>
+		<?php if($loc == 'footer'): ?>
+			<div class="nav-main">
+				<ul class="nav-main__list aligner aligner--wrap">
+		<?php else: ?>
+			<div class="nav-main">
+				<ul class="nav-main__list">
+		<?php endif; ?>
+	<?php endif; ?>
+<?php else: ?>
+	<?php if($loc == 'header'): ?>
+		<div class="nav-main compact-aligner__item--right">
+			<ul class="nav-main__list aligner aligner--wrap aligner--center">
+	<?php else: ?>
+		<?php if($loc == 'footer'): ?>
+			<nav role="navigation" class="nav-main">
+				<h2 class="is-hidden-visually">Main navigation</h2>
+				<ul class="nav-main__list aligner aligner--wrap">
+		<?php else: ?>
+			<div class="nav-main">
+				<ul class="nav-main__list">
+		<?php endif; ?>
+	<?php endif; ?>
+<?php endif; ?>
 
 		<li class="nav-main__item"<?php echo (page() == 'home' && !str::contains(kirby()->request()->path(), 'tag')) ? ' aria-current="page"' : ''; ?>><a rel="home" href="<?php echo $site->url(); ?>">Home</a></li>
 
@@ -19,5 +48,10 @@
 			<?php endif; ?>
 		<?php endforeach; ?>
 
-	</ul>
-</nav>
+<?php if(($page->isHomePage() && $loc == 'header') || (!$page->isHomePage() && $loc == 'footer')): ?>
+		</ul>
+	</nav>
+<?php else: ?>
+		</ul>
+	</div>
+<?php endif; ?>
