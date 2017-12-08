@@ -1,11 +1,11 @@
-# Artlantis
+# Jonathan van Wunnik
 
-My photos.
+My photography website.
 
 
 ## URL
 
-[https://artlantis.nl](https://artlantis.nl)
+[https://jonathanvanwunnik.com](https://jonathanvanwunnik.com)
 
 ## License
 

@@ -17,10 +17,10 @@ module.exports = function(grunt) {
 			options: {
 				watchTask: true,
 				open: false, // 'external'
-				host: 'artlantis.dev',
-				proxy: 'artlantis.dev',
+				host: 'jonathanvanwunnik.dev',
+				proxy: 'jonathanvanwunnik.dev',
 				port: 3000,
-				// tunnel: 'artlantis',                                            // Attempt to use the URL "http://artlantis.localtunnel.me"
+				// tunnel: 'jonathanvanwunnik',                                            // Attempt to use the URL "http://jonathanvanwunnik.localtunnel.me"
 				// logConnections: true,
 				logFileChanges: true,
 				// open: false, // 'ui'

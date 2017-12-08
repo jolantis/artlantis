@@ -29,4 +29,4 @@ User-agent: Mediapartners-Google*
 Disallow:
 Allow: /*
 
-Sitemap: https://artlantis.nl/sitemap.xml
+Sitemap: https://jonathanvanwunnik.com/sitemap.xml

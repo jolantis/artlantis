@@ -1,14 +1,14 @@
 {
-  "name": "Artlantis",
-  "description": "Artlantis — Jonathan van Wunnik",
+  "name": "jonathanvanwunnik",
+  "description": "Jonathan van Wunnik: Photographer",
   "version": "0.0.10",
-  "url": "https://artlantis.nl",
+  "url": "https://jonathanvanwunnik.com",
   "author": "Jonathan van Wunnik <jonathan@artlantis.nl>",
   "copyright": "Jonathan van Wunnik",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jolantis/artlantis.git"
+    "url": "https://github.com/jolantis/jonathanvanwunnik.git"
   },
   "dependencies": {},
   "devDependencies": {

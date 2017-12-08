@@ -52,7 +52,8 @@ class CSS extends \Kirby\Component\CSS {
 
     if (file_exists($url)) {
       $modified = filemtime($url);
-      $filename = f::name($url) . '.' . $modified . '.' . f::extension($url);
+	  // $filename = f::name($url) . '.' . $modified . '.' . f::extension($url);
+	  $filename = f::name($url) . '.' . f::extension($url);
       $dirname  = f::dirname($url);
 
       $url = ($dirname === '.') ? $filename : $dirname . '/' . $filename;
@@ -107,7 +108,8 @@ class JS extends \Kirby\Component\JS {
 
     if (file_exists($src)) {
       $modified = filemtime($src);
-      $filename = f::name($src) . '.' . $modified . '.' . f::extension($src);
+	  // $filename = f::name($src) . '.' . $modified . '.' . f::extension($src);
+	  $filename = f::name($src) . '.' . f::extension($src);
       $dirname  = f::dirname($src);
 
       $src = ($dirname === '.') ? $filename : $dirname . '/' . $filename;

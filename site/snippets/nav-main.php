@@ -37,7 +37,7 @@ $loc = isset($loc) ? $loc : false;
 	<?php endif; ?>
 <?php endif; ?>
 
-		<li class="nav-main__item"<?php echo (page() == 'home' && !str::contains(kirby()->request()->path(), 'tag')) ? ' aria-current="page"' : ''; ?>><a rel="home" href="<?php echo $site->url(); ?>">Home</a></li>
+		<li class="nav-main__item"<?php echo (page() == 'home' && !str::contains(kirby()->request()->path(), 'tag') && !str::contains(kirby()->request()->path(), 'blog')) ? ' aria-current="page"' : ''; ?>><a rel="home" href="<?php echo $site->url(); ?>">Home</a></li>
 
 		<?php foreach($pages->visible()->not() as $page): ?>
 			<?php /* if($filter_key && $filter_value && $page == 'blog' && ($site->url() . '/' . kirby()->request()->path() != site()->errorPage()->url())): */ ?>

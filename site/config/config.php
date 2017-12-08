@@ -86,7 +86,7 @@ c::set('ssl', true);
 
 */
 
-c::set('url', 'https://artlantis.nl');
+c::set('url', 'https://jonathanvanwunnik.com');
 c::set('ssl', true);
 
 

@@ -18,7 +18,7 @@ this Kirby instance is running on (e.g. local, staging or production).
 
 */
 
-c::set('environment', 'stage');
+c::set('environment', 'local');
 
 
 /* -----------------------------------------------------------------------------
@@ -40,15 +40,15 @@ c::set('debug', true);
 c::set('whoops', true);
 
 
-
 /* -----------------------------------------------------------------------------
 URL
 --------------------------------------------------------------------------------
 
 */
 
-c::set('url', 'https://stage.artlantis.nl');
-c::set('ssl', true);
+c::set('url', false);
+c::set('ssl', false);
+
 
 
 /* -----------------------------------------------------------------------------
@@ -76,8 +76,19 @@ Cache
 */
 
 c::set('cache', false);
-c::set('cache.driver', 'memcached');
-c::set('cache.options', array('prefix' => 'artlantis_stage_'));
+c::set('cache.driver', 'file');
+// c::set('cache.options', array('prefix' => 'jonathanvanwunnik_'));
+
+
+/* -----------------------------------------------------------------------------
+Thumbs
+--------------------------------------------------------------------------------
+
+*/
+
+c::set('thumbs.driver','im');
+c::set('thumbs.bin', '/usr/local/bin/convert');                                 // Path to the convert bin for 'im' thumb driver setting (see: http://j.mp/1LJ8n9E)
+
 
 /* -----------------------------------------------------------------------------
 Fingerprint (assets files)
@@ -86,7 +97,6 @@ Fingerprint (assets files)
 */
 
 c::set('fingerprint', true);
-
 
 /* -----------------------------------------------------------------------------
 Analytics, tracking, site stats
