@@ -8,7 +8,7 @@
 
 	<div role="contentinfo" class="contentinfo contain-padding">
 		<div class="delta-heading space-trailer-m">
-			<p><a href="https://jonathanvanwunnik.com" rel="me" class="link link--simple link--no-history">Designer</a> by trade, photographer by heart&#8202;&mdash;&#8202;capturing the beauty of life.</p>
+			<p><a href="https://artlantis.nl" rel="me" class="link link--simple link--no-history">Designer</a> by trade, photographer by heart&#8202;&mdash;&#8202;capturing the beauty of life.</p>
 			<p>Any questions about my work, or my rates, please feel free to <a href="<?php echo $site->find('contact')->url(); ?>" class="link link--simple link--no-history">contact</a> me.</p>
 		</div>
 
