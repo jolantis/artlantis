@@ -1,6 +1,6 @@
 /**
- * Artlantis — Jonathan van Wunnik — v0.0.9 — 2017-12-07
- * https://artlantis.nl
+ * Jonathan van Wunnik: Photographer — v0.0.10 — 2017-12-08
+ * https://jonathanvanwunnik.com
  * Copyright (c) 2017 Jonathan van Wunnik
  * License MIT
  */

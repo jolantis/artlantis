@@ -1,10 +1,10 @@
 /**
- * Artlantis — Jonathan van Wunnik
+ * Jonathan van Wunnik: Photographer
  *
  * @authors   Jonathan van Wunnik <jonathan@artlantis.nl>
- * @link      https://artlantis.nl
- * @version   0.0.9
- * @generated 2017-12-07:03:12
+ * @link      https://jonathanvanwunnik.com
+ * @version   0.0.10
+ * @generated 2017-12-08:01:12
  * @copyright (c) 2017 Jonathan van Wunnik
  * @license   MIT
  */
