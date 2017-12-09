@@ -3,8 +3,21 @@
    ========================================================================== */
 
 .masthead {
+	// position: relative;
 	display: block;
 	padding-top: rhythm(.5);
 	padding-bottom: rhythm(.5);
 	font-weight: 300; // Reset default browser weight for h1 (e.g. ‘bold’)
+
+	// Vertical line
+	// &:before {
+	// 	position: absolute;
+	// 	top: rhythm(-1.5);
+	// 	bottom: 0;
+	// 	left: 50%;
+	// 	height: rhythm(2); // Lenght of vertical line
+	// 	left: calc(50% - #{rhythm(.05 / 2)});
+	// 	content: "";
+	// 	border-left: solid .05rem rgba($color-link-light,.7);
+	// }
 }
