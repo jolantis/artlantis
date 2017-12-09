@@ -8,6 +8,7 @@
 		<?php echo $main_image->imageset('hero', ['output' => 'bgimage']); ?>
 		<span class="hero__text aligner aligner--stacked aligner--center">
 			<span class="hero__title"><?php echo $page->title()->smartypants()->widont(); ?></span>
+			<?php /*
 			<span class="hero__subtitle">
 				<?php if($page->tags()->isNotEmpty()): ?>
 					<?php $i = 0; foreach($tags = str::split($page->tags(),',') as $tag): ?>
@@ -15,7 +16,8 @@
 					<?php $i++; endforeach; ?>
 			<?php endif; ?>
 			</span>
-			<span class="hero__meta"><?php echo $page->images()->count(); ?> photos</span>
+			*/ ?>
+			<span class="hero__meta aligner--left"><?php echo $page->images()->count(); ?> photos</span>
 		</span>
 	</div>
 
@@ -38,10 +40,17 @@
 						endif;
 					?>
 				<?php $i++; endforeach; ?>
-			<?php endif; ?>
 
-			<?php if($page->date($format=true)): ?>
-				on <?php snippet('datetime', ['format' => 'j F Y']); ?>
+				<?php if($page->date($format=true)): ?>
+					on <?php snippet('datetime', ['format' => 'j F Y']); ?>
+				<?php endif; ?>
+
+			<?php else: ?>
+
+				<?php if($page->date($format=true)): ?>
+					Posted on <?php snippet('datetime', ['format' => 'j F Y']); ?>
+				<?php endif; ?>
+
 			<?php endif; ?>
 
 			</p>
