@@ -52,9 +52,9 @@
 	color:	$color-base-white;
 }
 
-.hero__meta {
-	@extend %text-small;
-}
+// .hero__meta {
+// 	@extend %text-small;
+// }
 
 .hero__button,
 .hero__buttons > a {
@@ -75,13 +75,14 @@
 	overflow: hidden;
 	width: 100%;
 	bottom: 0;
-	padding-bottom: rhythm(1.75); // lenght of vertical line
+	padding-bottom: rhythm(1.5); // Lenght of vertical line
 	// margin-bottom: rhythm(.5);
 	color: rgba($color-link-light,.7);
 
-	&:after { // vertical line
+	// Vertical line
+	&:after {
 		position: absolute;
-		top: rhythm(.8);
+		top: rhythm(1);
 		bottom: 0;
 		left: 50%;
 		left: calc(50% - #{rhythm(.05 / 2)});
