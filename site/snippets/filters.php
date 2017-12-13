@@ -21,15 +21,15 @@
 
 		<?php
 			// Fetch all (visible) blog posts
-			$blog_posts = $page->children()->visible();
+			// $page_items = $page->children()->visible(); // ALREADY FETCHED IN PAGE CONTROLLER
 
 			// Fetch filter values (e.g. tags), seperated by comma, associated to blog posts
-			$filter_values = $blog_posts->pluck($filter_key, ',', true);
+			$filter_values = $page_items->pluck($filter_key, ',', true);
 
 			// Sort all filter values (e.g. tags) by the number of instances of each filter value
-			// usort($filter_values, function($a, $b) use($blog_posts, $filter_key) {
-			// 	$aCount = $blog_posts->filterBy($filter_key, $a, ',')->count();
-			// 	$bCount = $blog_posts->filterBy($filter_key, $b, ',')->count();
+			// usort($filter_values, function($a, $b) use($page_items, $filter_key) {
+			// 	$aCount = $page_items->filterBy($filter_key, $a, ',')->count();
+			// 	$bCount = $page_items->filterBy($filter_key, $b, ',')->count();
 			// 	return strcmp($bCount, $aCount);
 			// });
 
@@ -39,11 +39,11 @@
 
 		<?php foreach($filter_values as $filter_item): ?>
 
-			<?php $blog_posts_count = $blog_posts->filterBy($filter_key, '==', tagunslug($filter_item), ',')->count(); // Associated number count of blog posts for the current filter value ?>
+			<?php $page_items_count = $page_items->filterBy($filter_key, '==', tagunslug($filter_item), ',')->count(); // Associated number count of blog posts for the current filter value ?>
 
 			<?php if(!$filter_value || $filter_value != tagslug($filter_item)): ?>
 				<li class="filterslist__item">
-					<a href="<?php echo url($page->url() . '/' . (($filter_key == 'tags') ? 'tag' : $filter_key) . '/' . tagslug($filter_item)) ?>" class="button button--simple" title="Add filter: &lsquo;<?php echo html($filter_item); ?>&rsquo;"><?php echo html($filter_item . ' <small class="filterslist__item-count">' . $blog_posts_count . '</small>'); ?></a>
+					<a href="<?php echo url($page->url() . '/' . (($filter_key == 'tags') ? 'tag' : $filter_key) . '/' . tagslug($filter_item)) ?>" class="button button--simple" title="Add filter: &lsquo;<?php echo html($filter_item); ?>&rsquo;"><?php echo html($filter_item . ' <small class="filterslist__item-count">' . $page_items_count . '</small>'); ?></a>
 				</li>
 			<?php endif; ?>
 
