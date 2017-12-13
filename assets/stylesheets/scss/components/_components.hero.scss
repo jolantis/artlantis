@@ -82,7 +82,7 @@
 	// Vertical line
 	&:after {
 		position: absolute;
-		top: rhythm(1);
+		top: rhythm(1.1);
 		bottom: 0;
 		left: 50%;
 		left: calc(50% - #{rhythm(.05 / 2)});
