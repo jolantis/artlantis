@@ -6,7 +6,7 @@
 
 		<h1 class="beta-heading is-hidden-visually"><?php echo $page->title()->smartypants(); ?></h1>
 
-		<?php snippet('filters', array('filter_key' => 'tags')); ?>
+		<?php snippet('filters', array('filter_key' => 'tags', 'sort' => 'abc')); ?>
 		<?php //snippet('filters'); ?>
 
 		<section class="grid grid--gutter">

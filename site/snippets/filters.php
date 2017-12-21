@@ -20,21 +20,28 @@
 		<?php endif; ?>
 
 		<?php
-			// Fetch all (visible) blog posts
-			// $page_items = $page->children()->visible(); // ALREADY FETCHED IN PAGE CONTROLLER
+			// Get (as passed `filter_items` variable) or otherwise fetch all (visible) page items
+			$page_items = (isset($filter_items)) ? $filter_items : $page->children()->visible();
 
 			// Fetch filter values (e.g. tags), seperated by comma, associated to blog posts
 			$filter_values = $page_items->pluck($filter_key, ',', true);
 
+			// Get (as passed `sort` variable) sort order ('count' or 'abc')
+			$sort = (isset($sort)) ? $sort : false;
+
 			// Sort all filter values (e.g. tags) by the number of instances of each filter value
-			// usort($filter_values, function($a, $b) use($page_items, $filter_key) {
-			// 	$aCount = $page_items->filterBy($filter_key, $a, ',')->count();
-			// 	$bCount = $page_items->filterBy($filter_key, $b, ',')->count();
-			// 	return strcmp($bCount, $aCount);
-			// });
+			if($sort == 'count') {
+				usort($filter_values, function($a, $b) use($page_items, $filter_key) {
+					$aCount = $page_items->filterBy($filter_key, $a, ',')->count();
+					$bCount = $page_items->filterBy($filter_key, $b, ',')->count();
+					return strcmp($bCount, $aCount);
+				});
+			}
 
 			// Sort filter values (e.g. tags) alphabetical
-			sort($filter_values);
+			if($sort == 'abc') {
+				sort($filter_values);
+			}
 		?>
 
 		<?php foreach($filter_values as $filter_item): ?>
