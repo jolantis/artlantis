@@ -14,7 +14,7 @@ $loc = isset($loc) ? $loc : false;
 			<ul class="nav-main__list aligner aligner--wrap aligner--center">
 	<?php else: ?>
 		<?php if($loc == 'footer'): ?>
-			<div class="nav-main">
+			<div class="nav-main contain-padding">
 				<ul class="nav-main__list aligner aligner--wrap">
 		<?php else: ?>
 			<div class="nav-main">
@@ -27,7 +27,7 @@ $loc = isset($loc) ? $loc : false;
 			<ul class="nav-main__list aligner aligner--wrap aligner--center">
 	<?php else: ?>
 		<?php if($loc == 'footer'): ?>
-			<nav role="navigation" class="nav-main">
+			<nav role="navigation" class="nav-main contain-padding">
 				<h2 class="is-hidden-visually">Main navigation</h2>
 				<ul class="nav-main__list aligner aligner--wrap">
 		<?php else: ?>
