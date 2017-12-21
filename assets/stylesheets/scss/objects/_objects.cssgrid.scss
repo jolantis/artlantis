@@ -60,13 +60,13 @@
 				}
 			}
 
-			&:nth-child(6n+1) {
-				grid-column: 1 / -1; // span all columns (no matter how many columns there are!)
+			// &:nth-child(6n+1) {
+			// 	grid-column: 1 / -1; // span all columns (no matter how many columns there are!)
 
-				@include breakpoint(medium) {
-					grid-row: auto / span 2;
-				}
-			}
+			// 	@include breakpoint(medium) {
+			// 		grid-row: auto / span 2;
+			// 	}
+			// }
 		}
 
 		&--wide {
