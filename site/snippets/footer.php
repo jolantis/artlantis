@@ -8,10 +8,7 @@
 
 	<div role="contentinfo" class="contentinfo">
 		<div class="copy copy--contain delta-heading space-trailer-m">
-			<p>
-				Photography is my passion, <a href="https://artlantis.nl" rel="me" class="link link--simple link--no-history"><abbr title="user experience">ux</abbr> design</a> my trade.
-				If you want to learn more about me, my rates and availablity, or just want to go for a <a href="https://en.wikipedia.org/wiki/Photowalking" rel="external">photowalk</a>, please don't hesitate to <a href="<?php echo $site->find('contact')->url(); ?>" class="link link--simple link--no-history">contact me</a>.
-			</p>
+			<?php echo $site->footer_text()->kirbytext(); ?>
 		</div>
 
 		<?php snippet('nav-main', array('loc' => 'footer')); ?>
