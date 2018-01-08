@@ -31,11 +31,11 @@
 
 	<div class="contain-padding space-leader-xl">
 
+		<?php $blog = $site->find('blog'); ?>
+
 		<h2 class="is-hidden-visually">Recent blog posts</h2>
 
 		<div class="grid grid--gutter">
-
-			<?php $blog = $site->find('blog'); ?>
 
 			<?php foreach($blog->children()->visible()->flip()->limit(4) as $blog_post): ?>
 
@@ -54,8 +54,6 @@
 			<?php endforeach; ?>
 
 		</div>
-
-		<?php $blog = $site->find('blog'); ?>
 
 		<div class="aligner aligner--center space-leader-m">
 			<a href="<?php echo $blog->url(); ?>" class="button button--border-dark icon icon--right">
