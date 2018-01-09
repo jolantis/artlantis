@@ -6,7 +6,9 @@
 
 		<div class="contain-padding aligner aligner--baseline">
 
-			<h1 class="beta-heading space-trailer-ggr"><?php echo $page->title()->smartypants()->widont(); ?></h1>
+			<h1 class="beta-heading space-trailer-ggr">
+				<?php echo ($page->long_title()->exists() && $page->long_title()->isNotEmpty()) ? $page->long_title()->smartypants()->widont() : $page->title()->smartypants()->widont(); ?>
+			</h1>
 
 			<?php /*
 			<span class="beta-heading aligner aligner--baseline space-trailer-ggr">

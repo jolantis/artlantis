@@ -6,7 +6,9 @@
 
 	<main class="hero bg-image bg-image--cover">
 
-		<h1 class="is-hidden-visually"><?php echo $page->title()->smartypants()->widont(); ?></h1>
+		<h1 class="is-hidden-visually">
+			<?php echo ($page->long_title()->exists() && $page->long_title()->isNotEmpty()) ? $page->long_title()->smartypants()->widont() : $page->title()->smartypants()->widont(); ?>
+		</h1>
 
 		<?php echo $error_image->imageset('hero', ['output' => 'bgimage']); ?>
 		<?php $work = $site->find('work'); ?>

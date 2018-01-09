@@ -4,7 +4,9 @@
 
 	<main role="main" class="contain-padding">
 
-		<h1 class="beta-heading is-hidden-visually"><?php echo $page->title()->smartypants(); ?></h1>
+		<h1 class="beta-heading is-hidden-visually">
+			<?php echo ($page->long_title()->exists() && $page->long_title()->isNotEmpty()) ? $page->long_title()->smartypants()->widont() : $page->title()->smartypants()->widont(); ?>
+		</h1>
 
 		<?php snippet('filters', array('filter_key' => 'tags', 'sort' => 'abc')); ?>
 		<?php //snippet('filters'); ?>

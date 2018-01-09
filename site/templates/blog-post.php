@@ -23,7 +23,9 @@
 
 	<main role="main" class="copy copy--contain space-leader-xl">
 
-		<h1><?php echo $page->title()->smartypants()->widont(); ?></h1>
+		<h1>
+			<?php echo ($page->long_title()->exists() && $page->long_title()->isNotEmpty()) ? $page->long_title()->smartypants()->widont() : $page->title()->smartypants()->widont(); ?>
+		</h1>
 
 		<?php if($page->tags()->isNotEmpty() || $page->date($format=true)): ?>
 			<p>
