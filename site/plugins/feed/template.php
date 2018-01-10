@@ -61,6 +61,9 @@ imageset::presets([
 					]]></description>
 				<?php else: ?>
 					<description><![CDATA[
+						<?php if($textfield != 'intro' && $item->intro()->exists() && $item->intro()->isNotEmpty()): ?>
+							<?php echo $item->intro()->kirbytext(); ?>
+						<?php endif; ?>
 						<?php echo $item->{$textfield}()->kirbytext(); ?>
 						<?php if($image == true): ?>
 							<?php foreach($item->images() as $item_image): ?>
