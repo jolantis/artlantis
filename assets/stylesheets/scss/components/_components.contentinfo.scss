@@ -6,6 +6,10 @@
 	margin-top: rhythm(2);
 	// text-align: center;
 
+	.copy a:visited {
+		color: $color-base-black;
+	}
+
 	footer {
 		padding-top: rhythm(1);
 		padding-bottom: rhythm(1);
