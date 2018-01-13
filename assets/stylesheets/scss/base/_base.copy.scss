@@ -13,7 +13,9 @@
 
 	&--contain {
 
-		> *:not(.full-width),
+		// > *:not([class*="-width"]),
+		> * :not(.text-width)
+		> * :not(.full-width)
 		> .full-width figcaption {
 			margin-right: $contain-percentage;
 			margin-left: $contain-percentage;
@@ -29,19 +31,35 @@
 			}
 		}
 
-		// > .figure-image:not(.full-width) {
+		> .text-width {
+			padding-right: $contain-percentage;
+			padding-left: $contain-percentage;
+			margin-right: auto;
+			margin-left: auto;
 
-		// 	@include breakpoint(huge) {
-		// 		padding-right: 7.5vw;
-		// 		padding-left: 7.5vw;
-		// 	}
-		// }
+			@include breakpoint(medium) {
+				padding-right: rhythm($contain-rhythm-unit);
+				padding-left: rhythm($contain-rhythm-unit);
+			}
+		}
 
-		// > *:not(.full-width),
-		// > .figure-image figcaption {
-		// 	margin-right: auto;
-		// 	margin-left: auto;
-		// }
+		> .full-width {
+			padding-right: $contain-percentage;
+			padding-left: $contain-percentage;
+
+			@include breakpoint(compact) {
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+
+		.figure-image {
+
+			.grid > figcaption {
+				padding-right: .5 * $grid-gutter-percentage;
+				padding-left: .5 * $grid-gutter-percentage;
+			}
+		}
 
 		> h1, > h2, > h3, > h4, > h5, > h6,
 		> p,
@@ -53,36 +71,9 @@
 		> form,
 		> .blockquote,
 		> .intro,
-		// > .figure-image.full-width figcaption,
-		> .figure-image.text-width {
+		// > .full-width figcaption,
+		> .text-width {
 			max-width: $text-max-width + (2 * strip-unit(rhythm($contain-rhythm-unit))) * 1em; // Text max width in em's
-		}
-
-		// > .blockquote,
-		// > .figure-image.full-width figcaption,
-		// > .figure-image:not([class*="-width"]),
-		// > .figure-grid:not([class*="-width"]) {
-		// 	max-width: $figure-max-width + (2 * rhythm($contain-rhythm-unit)); // Contain width
-		// }
-
-		// > .figure-image figcaption {
-		// 	// max-width: $text-max-width; // Maximize width
-		// 	max-width: $figure-max-width; // Maximize width
-		// }
-
-		> .figure-image.full-width {
-			padding-right: $contain-percentage;
-			padding-left: $contain-percentage;
-
-			@include breakpoint(compact) {
-				padding-left: 0; //rhythm($grid-gutter-rhythm-unit / 2) !important;
-				padding-right: 0; //rhythm($grid-gutter-rhythm-unit / 2) !important;
-			}
-
-			// @include breakpoint(compact, max) {
-			// 	padding-right: $contain-percentage;
-			// 	padding-left: $contain-percentage;
-			// }
 		}
 	}
 
