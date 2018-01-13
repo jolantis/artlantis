@@ -92,8 +92,8 @@
 
 	</main>
 
-	<div class="contain-padding space-leader-m">
-		<?php if($filter_value): ?>
+	<?php if($filter_value): ?>
+		<div class="contain-padding space-leader-m">
 			<?php $blog_posts_count = $page->parent()->children()->visible()->filterBy($filter_key, '==', tagunslug($filter_value), ',')->count(); // Associated number count of blog posts for the current filter value ?>
 			<p>
 				<a href="<?php echo $page->parent()->url(); ?>" class="button button--simple icon icon--right is-active" title="Remove filter: &lsquo;<?php echo tagunslug($filter_value); ?>&rsquo;">
@@ -103,10 +103,10 @@
 						<use xlink:href="/assets/images/sprite.svg#cross"/>
 					</svg>
 				</a>
-				<small>active filter with <a href="<?php echo $page->parent()->url() . '/tags/' . tagslug($filter_value); ?>" class="link link--no-history"><?php echo ($blog_posts_count < 2) ? $blog_posts_count . ' post' : $blog_posts_count . ' posts'; ?></a></small>
+				active filter with <a href="<?php echo $page->parent()->url() . '/tags/' . tagslug($filter_value); ?>" class="link link--no-history"><?php echo ($blog_posts_count < 2) ? $blog_posts_count . ' post' : $blog_posts_count . ' posts'; ?></a>
 			</p>
-		<?php endif; ?>
-	</div>
+		</div>
+	<?php endif; ?>
 
 	<?php snippet('nav-prevnext'); ?>
 
