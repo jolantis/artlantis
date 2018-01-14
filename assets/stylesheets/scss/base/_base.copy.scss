@@ -14,8 +14,7 @@
 	&--contain {
 
 		// > *:not([class*="-width"]),
-		> *:not(.text-width),
-		> *:not(.full-width),
+		> *:not(.text-width):not(.full-width),
 		> .full-width figcaption {
 			margin-right: $contain-percentage;
 			margin-left: $contain-percentage;
