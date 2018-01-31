@@ -71,7 +71,7 @@
 		content: "";
 		width: rhythm(5);
 		width: 16vw;
-		pointer-events: none; // To make events "pass through" the element
+		pointer-events: none; // To *not* make events "pass through" the element
 	}
 
 	.is-visible &,
