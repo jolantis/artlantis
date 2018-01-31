@@ -28,7 +28,7 @@
 		</h1>
 
 		<?php if($page->tags()->isNotEmpty() || $page->date($format=true)): ?>
-			<p>
+			<div>
 
 			<?php if($page->tags()->isNotEmpty()): ?>
 				Posted in
