@@ -14,5 +14,5 @@
     Components: Font Face Observer, Modernizr, etc.
     Software: Kirby CMS, ImageKit + ImageSet
     Webfonts: Kawak Light & Bold
-    (buy: https://www.youworkforthem.com/font-license,
-    license: https://www.youworkforthem.com/font/T7136/kawak)
+    (license: https://www.youworkforthem.com/font-license,
+    buy: https://www.youworkforthem.com/font/T7136/kawak)
