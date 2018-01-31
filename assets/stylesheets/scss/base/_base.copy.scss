@@ -14,10 +14,13 @@
 	&--contain {
 
 		// > *:not([class*="-width"]),
-		> *:not(.text-width):not(.full-width),
-		> .full-width figcaption {
+		> *:not(.text-width):not(.full-width) {
 			margin-right: $contain-percentage;
 			margin-left: $contain-percentage;
+		}
+
+		> *:not(.text-width):not(.full-width),
+		> .figure-image.full-width figcaption {
 
 			@include breakpoint(medium) {
 				margin-right: rhythm($contain-rhythm-unit);
@@ -25,20 +28,35 @@
 			}
 
 			@include breakpoint(huge) {
-				margin-right: 7.5vw;
-				margin-left: 7.5vw;
+				margin-right: rhythm(5 * $contain-rhythm-unit);
+				margin-left: rhythm(5 * $contain-rhythm-unit);
+			}
+		}
+
+		> .figure-image {
+
+			.grid figcaption {
+				padding-right: rhythm(.5 * $grid-gutter-rhythm-unit);
+				padding-left: rhythm(.5 * $grid-gutter-rhythm-unit);
 			}
 		}
 
 		> .text-width {
 			padding-right: $contain-percentage;
 			padding-left: $contain-percentage;
-			margin-right: auto;
-			margin-left: auto;
+			// margin-right: auto; // To center ‘text’ width figure images
+			// margin-left: auto; // To center ‘text’ width figure images
 
 			@include breakpoint(medium) {
 				padding-right: rhythm($contain-rhythm-unit);
 				padding-left: rhythm($contain-rhythm-unit);
+				max-width: strip-unit($text-max-width) + (3.8 * strip-unit(rhythm($contain-rhythm-unit))) * 1em; // Figure image `text-width` is adds 4 times the width of the `contain-rhythm-unit` (to compensate for the left and right paddings!)
+			}
+
+			@include breakpoint(huge) {
+				padding-right: rhythm(5 * $contain-rhythm-unit);
+				padding-left: rhythm(5 * $contain-rhythm-unit);
+				max-width: strip-unit($text-max-width) + (2.4 * strip-unit(rhythm(5 * $contain-rhythm-unit))) * 1em; // Figure image `text-width` is adds 4 times the width of the `contain-rhythm-unit` (to compensate for the left and right paddings!)
 			}
 		}
 
@@ -52,14 +70,6 @@
 			}
 		}
 
-		.figure-image {
-
-			.grid > figcaption {
-				padding-right: .5 * $grid-gutter-percentage;
-				padding-left: .5 * $grid-gutter-percentage;
-			}
-		}
-
 		> h1, > h2, > h3, > h4, > h5, > h6,
 		> p,
 		> ul,
@@ -69,10 +79,8 @@
 		> table,
 		> form,
 		> .blockquote,
-		> .intro,
-		// > .full-width figcaption,
-		> .text-width {
-			max-width: $text-max-width + (2 * strip-unit(rhythm($contain-rhythm-unit))) * 1em; // Text max width in em's
+		> .figure-image figcaption {
+			max-width: strip-unit($text-max-width) + (2 * strip-unit(rhythm($contain-rhythm-unit))) * 1em; // In EM's, relatve to (bigger) text size!
 		}
 	}
 
@@ -100,7 +108,7 @@
 	> *:not(.figure-image) + ul,
 	> *:not(.figure-image) + ol,
 	> *:not(.figure-image) + dl,
-	> *:not(.figure-image) + .intro {
+	> *:not(.figure-image) + .vcard {
 		margin-top: rhythm(.5) !important;
 	}
 
@@ -263,7 +271,7 @@
 	h1 { @extend .beta-heading; }
 	h2 { @extend .gamma-heading; }
 	h3,
-	.intro { @extend .delta-heading; }
+	p:first-of-type { @extend .delta-heading; }
 	h4 { @extend .epsilon-heading; }
 	h5,
 	h6 { @extend .zeta-heading; }
