@@ -55,7 +55,7 @@
 
 		</div>
 
-		<div class="aligner aligner--center space-leader-m">
+		<div class="aligner aligner--center space-leader-xl">
 			<a href="<?php echo $blog->url(); ?>" class="button button--border-dark icon icon--right">
 				More blog posts
 				<svg role="presentation" width="24" height="24" title="Right arrow">
