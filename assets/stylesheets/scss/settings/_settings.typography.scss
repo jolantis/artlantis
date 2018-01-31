@@ -57,7 +57,7 @@ $text-alpha: (                                                                  
 	null:                       (2rem, 1.25),
 	medium:                     (2.25rem),
 	// medium:                     (2.5rem, 1.125),
-	large:                      (2.5rem),
+	huge:                       (2.5rem),
 	// large:                      (3rem, 1.05),
 );
 
@@ -65,7 +65,7 @@ $text-beta: (                                                                   
 	null:                       (1.5rem, 1.154),
 	medium:                     (1.75rem),
 	// medium:                     (2rem, 1.25),
-	large:                      (2rem),
+	huge:                       (2.25rem),
 	// medium:                     (2.25rem, 1.25),
 );
 
@@ -82,7 +82,7 @@ $text-delta: (                                                                  
 	// null:                       (1.125rem, 1.111),
 	medium:                     (1.25rem),
 	// medium:                     (1.125rem, 1.222),
-	huge:                       (1.75rem),
+	huge:                       (1.5rem),
 );
 
 $text-epsilon: (                                                                // epsilon heading font size(s) and line height(s)

@@ -18,9 +18,8 @@
  */
 
 %heading-settings {
-	// @include heading-font(700);
-	@include heading-font(300);
 	@extend %text-hang;
+	@include heading-font(300);
 
 	letter-spacing: .01rem;
 
