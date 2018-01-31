@@ -1,5 +1,5 @@
 <?php
-return function($site, $pages, $page, $data) {
+return function($site, $pages, $page, $args) {
 
 	// Set defaults
 	$page_num     = false;
