@@ -22,9 +22,7 @@
 
 		<?php if($page->text()->isNotEmpty()): ?>
 			<div class="copy copy--contain space-trailer-m">
-				<div class="intro">
-					<?php echo $page->text()->kirbytext(); ?>
-				</div>
+				<?php echo $page->text()->kirbytext(); ?>
 			</div>
 		<?php endif; ?>
 

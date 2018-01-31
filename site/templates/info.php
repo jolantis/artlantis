@@ -9,9 +9,7 @@
 		</h1>
 
 		<?php if($page->intro()->isNotEmpty()): ?>
-		<div class="intro">
 			<?php echo $page->intro()->kirbytext(); ?>
-		</div>
 		<?php endif; ?>
 
 		<?php echo $page->text()->kirbytext(); ?>
