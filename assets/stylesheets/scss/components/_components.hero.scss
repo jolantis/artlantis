@@ -42,6 +42,7 @@
 	@extend %text-kern;
 	@include responsive-text-size($text-bg-title-hero);
 
+	max-width: 100%; // IE 10-11 fix for FLexbug #2: https://github.com/philipwalton/flexbugs#flexbug-2
 	margin-bottom: rhythm(.25);
 }
 
@@ -73,8 +74,9 @@
 	display: block;
 	position: absolute;
 	overflow: hidden;
-	width: 100%;
 	bottom: 0;
+	left: 0; // To center in IE 10-11
+	right: 0; // To center in IE 10-11
 	padding-bottom: rhythm(1.5); // Lenght of vertical line
 	// margin-bottom: rhythm(.5);
 	color: rgba($color-link-light,.7);
