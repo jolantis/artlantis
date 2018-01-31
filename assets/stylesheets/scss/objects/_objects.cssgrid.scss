@@ -6,10 +6,13 @@
 	display: block;
 	padding-right: 0;
 	padding-left: 0;
+	// visibility: hidden;
+	opacity: 0;
+	transition: opacity .05s 0 ease-out;
 
-	&--grid {
+	@supports (display:grid) {
 
-		@supports (display:grid) {
+		&--grid {
 
 			@include breakpoint(compact) {
 
@@ -30,12 +33,19 @@
 		}
 	}
 
-	// &--list {
+	&--grid,
+	&--list {
 
-	// 	.cssgrid__item {
-	// 		margin-bottom: rhythm($grid-gutter-rhythm-unit);
-	// 	}
-	// }
+		.js & {
+			// visibility: visible;
+			opacity: 1;
+		}
+	}
+
+	.no-js & {
+		// visibility: visible;
+		opacity: 1;
+	}
 }
 
 .cssgrid__item {
