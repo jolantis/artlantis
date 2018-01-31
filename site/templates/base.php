@@ -8,7 +8,10 @@
 			<?php echo ($page->long_title()->exists() && $page->long_title()->isNotEmpty()) ? $page->long_title()->smartypants()->widont() : $page->title()->smartypants()->widont(); ?>
 		</h1>
 
-		<?php echo $page->intro()->kirbytext(); ?>
+		<?php if($page->intro()->isNotEmpty()): ?>
+			<?php echo $page->intro()->kirbytext(); ?>
+		<?php endif; ?>
+
 		<?php echo $page->text()->kirbytext(); ?>
 
 		<hr>

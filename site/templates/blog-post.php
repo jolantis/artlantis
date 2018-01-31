@@ -55,16 +55,16 @@
 
 			<?php endif; ?>
 
-			</p>
+			</div>
 		<?php endif; ?>
 
-		<div class="intro">
+		<?php if($page->intro()->isNotEmpty()): ?>
 			<?php echo $page->intro()->kirbytext(); ?>
-		</div>
+		<?php endif; ?>
 
-		<?php if($page->photos()->isNotEmpty()): ?>
+		<?php if($page->text()->isNotEmpty()): ?>
 
-			<?php echo $page->photos()->kirbytext(); ?>
+			<?php echo $page->text()->kirbytext(); ?>
 
 		<?php else: ?>
 
