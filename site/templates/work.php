@@ -8,12 +8,6 @@
 			<?php echo ($page->long_title()->exists() && $page->long_title()->isNotEmpty()) ? $page->long_title()->smartypants()->widont() : $page->title()->smartypants()->widont(); ?>
 		</h1>
 
-		<?php /*
-		<div class="copy">
-			<?php echo $page->intro()->kirbytext(); ?>
-		</div>
-		*/ ?>
-
 		<div class="grid grid--gutter">
 			<?php foreach ($page_items->flip() as $page_item) : ?>
 
