@@ -81,7 +81,7 @@ module.exports = function(grunt) {
 					'<%= project.scripts_modules %>/fontobserver.module.js',
 					// '<%= project.scripts_modules %>/navmain.module.js',
 					// '<%= project.scripts_modules %>/popup.module.js',
-					// '<%= project.scripts_modules %>/toggleview.module.js',
+					'<%= project.scripts_modules %>/toggleview.module.js',
 				// Main
 					'<%= project.scripts_main %>/main.scripts.js',
 				],

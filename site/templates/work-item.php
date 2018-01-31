@@ -28,26 +28,24 @@
 			</div>
 		<?php endif; ?>
 
-		<?php /*
-		<div class="contain-padding aligner">
-			<div class="toggle js-toggle-buttons aligner__item--right">
-				<button class="toggle__item button icon icon--left js-toggle-grid">
-					<svg role="presentation" title="Toggle grid view">
+		<div class="toggle js-toggle-buttons contain-padding">
+			<div class="aligner aligner--right">
+				<button class="toggle__item button button--simple icon icon--big js-toggle-grid" title="Grid view">
+					<svg role="presentation" title="Grid view">
 						<use xlink:href="/assets/images/sprite.svg#grid"/>
 					</svg>
-					<small>Grid view</small>
+					<span class="is-hidden-visually">Grid view</span>
 				</button>
-				<button class="toggle__item button icon icon--left js-toggle-list">
-					<svg role="presentation" title="Toggle list view">
+				<button class="toggle__item button button--simple icon icon--big js-toggle-list">
+					<svg role="presentation" title="Stacked view">
 						<use xlink:href="/assets/images/sprite.svg#stacked"/>
 					</svg>
-					<small>List view</small>
+					<span class="is-hidden-visually">Stacked view</span>
 				</button>
 			</div>
 		</div>
-		*/ ?>
 
-		<div class="contain-padding cssgrid cssgrid--grid js-toggle-target">
+		<div class="contain-padding cssgrid js-toggle-target">
 
 			<?php $i=1; foreach ($page->images()->sortBy('sort', 'asc')->flip() as $image): ?>
 				<div class="cssgrid__item<?php if($image->dimensions()->portrait()): ?> cssgrid__item--tall<?php endif; if($image->dimensions()->ratio() > 2) : ?> cssgrid__item--wide<?php endif; ?>">

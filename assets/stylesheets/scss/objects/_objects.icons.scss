@@ -28,4 +28,12 @@
 			margin-left: .3em;
 		}
 	}
+
+	&--big {
+
+		> svg {
+			width: 1.3em;
+			height: 1.3em;
+		}
+	}
 }
