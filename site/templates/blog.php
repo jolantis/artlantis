@@ -26,7 +26,9 @@
 						<?php echo $page_item_image->imageset('grid', ['output' => 'bgimage']); ?>
 						<span class="bg-text aligner aligner--stacked aligner--bottom">
 							<h2 class="bg-text__title"><?php echo $page_item->title()->smartypants()->widont(); ?></h2>
-							<p class="bg-text__meta"><?php snippet('datetime', ['relative' => true, 'page' => $page_item]); ?> &nbsp;&mdash;&nbsp; <?php echo $page_item->images()->count(); ?> photos</p>
+							<p class="bg-text__meta">
+								<?php snippet('datetime', ['relative' => true, 'page' => $page_item]); ?>&#8202;&mdash;&#8202;<?php echo $page_item->images()->count(); ?> photos
+							</p>
 						</span>
 					</a>
 				</article>
