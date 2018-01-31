@@ -17,13 +17,13 @@
 			<?php endif; ?>
 			</span>
 			*/ ?>
-			<span class="hero__meta aligner--left"><?php echo $page->images()->count(); ?> photos</span>
+			<a data-scroll href="#start" class="hero__meta"><?php echo $page->images()->count(); ?> photos</a>
 		</span>
 	</div>
 
 	<main role="main" class="copy copy--contain space-leader-xl">
 
-		<h1>
+		<h1 id="start">
 			<?php echo ($page->long_title()->exists() && $page->long_title()->isNotEmpty()) ? $page->long_title()->smartypants()->widont() : $page->title()->smartypants()->widont(); ?>
 		</h1>
 

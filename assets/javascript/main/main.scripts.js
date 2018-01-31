@@ -18,7 +18,7 @@ domready(function () {
 
 	// Invoke plugins
 	// gumshoe.init();                                                             // Init gumshoe (scrollspy)
-	// smoothScroll.init();                                                        // Init smoothscroll
+	smoothScroll.init();                                                        // Init smoothscroll
 
 	// Run svg4everybody polyfill (e.g. for IE11)
 	svg4everybody({
