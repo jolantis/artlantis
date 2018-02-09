@@ -75,4 +75,6 @@ if(!empty($results)) {
 
 	</main>
 
-<?php snippet('footer'); ?>
+	<?php snippet('contentinfo'); ?>
+
+<?php snippet('html-foot'); ?>

@@ -110,4 +110,6 @@
 
 	<?php snippet('nav-prevnext'); ?>
 
-<?php snippet('footer'); ?>
+	<?php snippet('contentinfo'); ?>
+
+<?php snippet('html-foot'); ?>
