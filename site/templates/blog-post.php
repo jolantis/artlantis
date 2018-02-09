@@ -17,7 +17,9 @@
 			<?php endif; ?>
 			</span>
 			*/ ?>
-			<a data-scroll href="#start" class="hero__meta"><?php echo $page->images()->count(); ?> photos</a>
+			<span class="hero__meta">
+				<a href="#start"><?php echo $page->images()->count(); ?> photos</a>
+			</span>
 		</span>
 	</div>
 

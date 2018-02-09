@@ -21,7 +21,9 @@
 							<use xlink:href="/assets/images/sprite.svg#arrow-right"/>
 						</svg>
 					</a>
-					<a data-scroll href="#recent-blog-posts" class="hero__meta">Recent blog posts</a>
+					<span class="hero__meta">
+						<a href="#recent-posts">Recent blog posts</a>
+					</span>
 				</span>
 			</div>
 
@@ -33,7 +35,7 @@
 
 		<?php $blog = $site->find('blog'); ?>
 
-		<h2 id="recent-blog-posts" class="is-hidden-visually">Recent blog posts</h2>
+		<h2 id="recent-posts" class="is-hidden-visually">Recent blog posts</h2>
 
 		<div class="grid grid--gutter">
 
