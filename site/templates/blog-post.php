@@ -7,7 +7,7 @@
 	<div class="hero bg-image bg-image--cover">
 		<?php echo $main_image->imageset('hero', ['output' => 'bgimage']); ?>
 		<span class="hero__text aligner aligner--stacked aligner--center">
-			<span class="hero__title"><?php echo $page->title()->smartypants()->widont(); ?></span>
+			<span class="hero__title"><?php echo $page->title()->smartypants(); ?></span>
 			<?php /*
 			<span class="hero__subtitle">
 				<?php if($page->tags()->isNotEmpty()): ?>
