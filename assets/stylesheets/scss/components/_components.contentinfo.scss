@@ -6,9 +6,16 @@
 	margin-top: rhythm(3);
 	// text-align: center;
 
-	.copy a:visited {
-		color: $color-base-black;
-	}
+	// .copy {
+
+	// 	// > p {
+	// 	// 	max-width: strip-unit($text-max-width) + (2 * strip-unit(rhythm($contain-rhythm-unit))) * 1em; // In EM's; relative to (bigger) text size!
+	// 	// }
+
+	// 	a:visited {
+	// 		color: $color-base-black;
+	// 	}
+	// }
 
 	footer {
 		padding-top: rhythm(1);

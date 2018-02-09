@@ -11,25 +11,41 @@
 		// @include underline($color-blue-m-light);
 
 		position: relative;
-		transition: color .24s ease-out;
-		background-color: transparent; // Remove the gray background on active links in IE 10.
-		text-decoration: underline;
-		text-decoration-skip: ink; // See: https://css-tricks.com/more-control-over-text-decoration/
+		// background-color: transparent; // Remove the gray background on active links in IE 10.
+		background-color: $color-gray-x-light;
+		// text-decoration: underline;
+		// text-decoration-skip: ink; // See: https://css-tricks.com/more-control-over-text-decoration/
 		// color: $color-blue-dark;
-		color: $color-base-black;
+		color: $color-link-dark;
 		// color: rgba($color-link-dark,.6);
+		padding: rhythm(.1);
+		-webkit-tap-highlight-color: rgba(0,0,0,0); // Hide transparent highlight color that appears when tapping on iOS/Android
+
+		.no-touchevents & {
+			transition: background-color .24s ease-out, color .24s ease-out;
+		}
 	}
 
 	&:visited {
-		color: $color-gray-light;
+		color: $color-link-visited;
 	}
+
 	&:hover,
 	&:focus {
-		color: $color-gray-light;
+		color: $color-link-dark;
+		background-color: transparent;
+
+		.no-touchevents & {
+			top: -2px;
+			border-bottom: 2px solid $color-link-dark;
+		}
 	}
 	&:active {
-		color: $color-base-black;
-		// transition: none; // Check out article about UI feedback: http://bfred.it/notes/?p=46
+
+		.no-touchevents & {
+			top: 0;
+			border-bottom-width: 0;
+		}
 	}
 
 	&--simple {
@@ -51,7 +67,7 @@
 
 	&--no-history {
 		&:visited {
-			color: $color-base-black;
+			color: $color-link-dark;
 		}
 		&:hover,
 		&:focus,

@@ -18,9 +18,9 @@
  */
 
 %heading-settings {
-	@extend %text-hang;
 	@include heading-font(300);
 
+	hanging-punctuation: first;
 	letter-spacing: .01rem;
 
 	.fonts-loaded & {
@@ -59,7 +59,10 @@
 
 .delta-heading {
 	@extend %heading-settings;
-	@include responsive-text-size($text-delta);
+
+	@include breakpoint(large) {
+		@include responsive-text-size($text-delta);
+	}
 }
 
 /* Epsilon + Zeta */

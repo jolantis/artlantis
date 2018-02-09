@@ -27,10 +27,24 @@
 
 
 		a {
+			position: relative;
 			color: rgba($color-link-dark,.6);
 
-			&:hover {
+			&:hover,
+			&:focus {
 				color: $color-link-dark;
+
+				.no-touchevents & {
+					top: -2px;
+					border-bottom: 2px solid $color-link-dark;
+				}
+			}
+			&:active {
+
+				.no-touchevents & {
+					top: 0;
+					border-bottom-width: 0;
+				}
 			}
 		}
 
@@ -38,6 +52,12 @@
 
 			a {
 				color: $color-link-dark;
+
+				.no-touchevents & {
+					top: 0;
+					border-bottom: none;
+					cursor: default;
+				}
 			}
 		}
 
@@ -50,7 +70,8 @@
 				a {
 					color: rgba($color-link-light,.7);
 
-					&:hover {
+					&:hover,
+					&:focus {
 						color: $color-link-light;
 					}
 				}
@@ -59,6 +80,18 @@
 
 					a {
 						color: $color-link-light;
+					}
+				}
+			}
+
+			.template-home.no-touchevents &,
+			.template-blog-post.no-touchevents &,
+			.template-error.no-touchevents & {
+
+				a {
+					&:hover,
+					&:focus {
+						border-bottom-color: $color-link-light;
 					}
 				}
 			}

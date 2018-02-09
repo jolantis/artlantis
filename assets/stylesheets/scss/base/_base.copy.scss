@@ -80,7 +80,8 @@
 		> form,
 		> .blockquote,
 		> .figure-image figcaption {
-			max-width: strip-unit($text-max-width) + (2 * strip-unit(rhythm($contain-rhythm-unit))) * 1em; // In EM's, relatve to (bigger) text size!
+			// max-width: strip-unit($text-max-width) + (2 * strip-unit(rhythm($contain-rhythm-unit))) * 1rem; // In REM's; *not* relative to (bigger) text size!
+			max-width: strip-unit($text-max-width) + (2 * strip-unit(rhythm($contain-rhythm-unit))) * 1em; // In EM's; relative to (bigger) text size!
 		}
 	}
 
@@ -248,16 +249,17 @@
 	/* Paragraphs
 	   ========================================================================== */
 
-	// p:first-of-type { }
+	p:first-of-type:not(.text-no-intro) {
+		@extend .delta-heading;
+	}
 
 	// p:first-child { }
 
-	// p + p {
-	// 	margin-top: rhythm(-1);
-	// 	text-indent: rhythm(1);
-	// }
-
 	// p:first-child:first-letter { }
+
+	p {
+		@extend %text-hang;
+	}
 
 	/* Headings
 	   ========================================================================== */
@@ -270,18 +272,10 @@
 
 	h1 { @extend .beta-heading; }
 	h2 { @extend .gamma-heading; }
-	h3,
-	p:first-of-type { @extend .delta-heading; }
+	h3 { @extend .delta-heading; }
 	h4 { @extend .epsilon-heading; }
 	h5,
 	h6 { @extend .zeta-heading; }
-
-	/* Paragraphs
-	   ========================================================================== */
-
-	p {
-		@extend %text-hang;
-	}
 
 	/* Figures
 	   ========================================================================== */
@@ -338,12 +332,15 @@
 	}
 
 	abbr {
-		border-bottom: none;
-		text-decoration: underline;
-		text-decoration: underline dotted;
+		border: none;
+		// text-decoration: underline;
+		// text-decoration: underline dotted;
 		text-transform: lowercase;
 		letter-spacing: .05em;
-		font-variant: small-caps; // https://developer.mozilla.org/en-US/docs/CSS/font-variant
+		// font-variant: small-caps; // https://developer.mozilla.org/en-US/docs/CSS/font-variant
+		cursor: help;
+		// background-color: $color-gray-x-light;
+		border-bottom: 1px dotted $color-base-black;
 	}
 
 	code,

@@ -22,7 +22,6 @@
 .button {
 	position: relative;
 	display: inline-block;
-	// padding: rhythm(.5) rhythm(1);
 	padding: 0;
 	margin: 0;
 	border: none;
@@ -38,9 +37,9 @@
 	&--simple,
 	&--border-dark,
 	&--border-light {
-		padding-top: rhythm(.1);
+		padding-top: rhythm(.15);
 		padding-right: rhythm(.5);
-		padding-bottom: rhythm(.1);
+		padding-bottom: rhythm(.05);
 		padding-left: rhythm(.5);
 		line-height: rhythm(1.6);
 		// border-radius: rhythm(.05);
@@ -60,8 +59,9 @@
 		}
 
 		&:active {
-			transform: scale(.98,.98);
+			// transform: scale(.98,.98);
 			outline: none;
+			top: 1px;
 			// transition: none; // Check out article about UI feedback: http://bfred.it/notes/?p=46
 		}
 	}
@@ -72,7 +72,7 @@
 
 	&--primary {
 		background: $color-base-blue;
-		color: $color-base-white;
+		color: $color-link-light;
 
 		&:hover {
 			background: $color-blue-dark;
@@ -93,7 +93,7 @@
 		&:active,
 		&.is-active {
 			background-color: $color-base-black;
-			color: $color-base-white;
+			color: $color-link-light;
 		}
 	}
 
@@ -114,16 +114,19 @@
 
 		&:active {
 			margin-top: 0;
+			top: 0;
 			border-bottom-width: 1px;
 		}
 	}
 
 	&--border-light {
-		border-color: rgba($color-base-white,1);
+		// border-color: rgba($color-base-white,1);
+		border-color: $color-base-white;
 	}
 
 	&--border-dark {
-		border-color: rgba($color-base-black,1);
+		// border-color: rgba($color-base-black,1);
+		border-color: $color-base-black;
 
 		// &:hover,
 		// &:active {
@@ -176,7 +179,8 @@
 		&:hover,
 		&:focus,
 		&:active {
-			top: 0 !important;
+			top: 0;
+			margin-top: 0;
 			background: $color-gray-x-light !important;
 			color: $color-gray-light !important;
 			cursor: default !important;
