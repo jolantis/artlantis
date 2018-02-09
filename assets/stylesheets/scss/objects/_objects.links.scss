@@ -24,6 +24,14 @@
 		.no-touchevents & {
 			transition: background-color .24s ease-out, color .24s ease-out;
 		}
+
+		/**
+		 * Correct for padding on links in vcard (to left align contact info listing)!
+		 */
+
+		.vcard & {
+			margin-left: rhythm(-.1);
+		}
 	}
 
 	&:visited {
