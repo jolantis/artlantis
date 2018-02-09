@@ -19,8 +19,8 @@
 		<title>Cross</title>
 		<desc>A cross or close icon</desc>
 		<g fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-			<line x1="18" y1="6" x2="8" y2="16"/>
-			<line x1="8" y1="6" x2="18" y2="16"/>
+			<line x1="18" y1="5" x2="6" y2="17"/>
+			<line x1="6" y1="5" x2="18" y2="17"/>
 		</g>
 	</symbol>
 	<symbol id="grid" viewBox="0 0 24 24">
