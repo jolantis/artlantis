@@ -51,6 +51,10 @@
 			line-height: rhythm(1.2);
 		}
 
+		&.is-active {
+			padding-bottom: calc(#{rhythm(.05)} + 1px); // Correct for strange hight difference!!!
+		}
+
 		&:hover,
 		&:focus,
 		&:active,
