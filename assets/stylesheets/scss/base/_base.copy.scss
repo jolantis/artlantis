@@ -250,7 +250,7 @@
 	   ========================================================================== */
 
 	p:first-of-type:not(.text-no-intro) {
-		@extend .delta-heading;
+		@extend .beta-heading;
 	}
 
 	// p:first-child { }
@@ -270,12 +270,12 @@
 	// h1.giga-heading { @extend .giga-heading; }
 	// h1.mega-heading { @extend .mega-heading; }
 
-	h1 { @extend .beta-heading; }
-	h2 { @extend .gamma-heading; }
-	h3 { @extend .delta-heading; }
-	h4 { @extend .epsilon-heading; }
+	h1 { @extend .alpha-heading; }
+	h2 { @extend .beta-heading; }
+	h3 { @extend .gamma-heading; }
+	h4 { @extend .delta-heading; }
 	h5,
-	h6 { @extend .zeta-heading; }
+	h6 { @extend .epsilon-heading; }
 
 	/* Figures
 	   ========================================================================== */
