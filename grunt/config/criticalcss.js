@@ -3,7 +3,7 @@ module.exports = function(grunt) {
 	grunt.config('criticalcss', {
 		default : {
 			options: {
-				url: 'http://jonathanvanwunnik.dev',
+				url: 'http://jonathanvanwunnik.test',
 				width: 1440,
 				height: 900,
 				outputfile: '<%= project.styles_critical %>/default.css',
@@ -14,7 +14,7 @@ module.exports = function(grunt) {
 		},
 		// default_mobile : {
 		// 	options: {
-		// 		url: 'http://jonathanvanwunnik.dev',
+		// 		url: 'http://jonathanvanwunnik.test',
 		// 		width: 420, // iPhone 6 Plus is 414 points wide
 		// 		height: 960, //iPhone 6 Plus is 736 points high
 		// 		outputfile: '<%= project.styles_critical %>/default_mobile.css',
@@ -25,7 +25,7 @@ module.exports = function(grunt) {
 		// },
 		// home : {
 		// 	options: {
-		// 		url: 'http://jonathanvanwunnik.dev',
+		// 		url: 'http://jonathanvanwunnik.test',
 		// 		width: 1440,
 		// 		height: 900,
 		// 		outputfile: '<%= project.styles_critical %>/home.css',
@@ -36,7 +36,7 @@ module.exports = function(grunt) {
 		// },
 		base : {
 			options: {
-				url: 'http://jonathanvanwunnik.dev/base',
+				url: 'http://jonathanvanwunnik.test/base',
 				width: 1440,
 				height: 900,
 				outputfile: '<%= project.styles_critical %>/base.css',
@@ -47,7 +47,7 @@ module.exports = function(grunt) {
 		},
 		work : {
 			options: {
-				url: 'http://jonathanvanwunnik.dev/work',
+				url: 'http://jonathanvanwunnik.test/work',
 				width: 1440,
 				height: 900,
 				outputfile: '<%= project.styles_critical %>/work.css',
@@ -58,7 +58,7 @@ module.exports = function(grunt) {
 		},
 		work_item : {
 			options: {
-				url: 'http://jonathanvanwunnik.dev/work/portraits',
+				url: 'http://jonathanvanwunnik.test/work/portraits',
 				width: 1440,
 				height: 900,
 				outputfile: '<%= project.styles_critical %>/work_item.css',
@@ -69,7 +69,7 @@ module.exports = function(grunt) {
 		},
 		blog : {
 			options: {
-				url: 'http://jonathanvanwunnik.dev/blog',
+				url: 'http://jonathanvanwunnik.test/blog',
 				width: 1440,
 				height: 900,
 				outputfile: '<%= project.styles_critical %>/blog.css',
@@ -80,7 +80,7 @@ module.exports = function(grunt) {
 		},
 		blog_post : {
 			options: {
-				url: 'http://jonathanvanwunnik.dev/blog/summer-holiday-in-liguria',
+				url: 'http://jonathanvanwunnik.test/blog/summer-holiday-in-liguria',
 				width: 1440,
 				height: 900,
 				outputfile: '<%= project.styles_critical %>/blog_post.css',
@@ -91,7 +91,7 @@ module.exports = function(grunt) {
 		},
 		info : {
 			options: {
-				url: 'http://jonathanvanwunnik.dev/info',
+				url: 'http://jonathanvanwunnik.test/info',
 				width: 1440,
 				height: 900,
 				outputfile: '<%= project.styles_critical %>/info.css',
@@ -102,7 +102,7 @@ module.exports = function(grunt) {
 		},
 		contact : {
 			options: {
-				url: 'http://jonathanvanwunnik.dev/contact',
+				url: 'http://jonathanvanwunnik.test/contact',
 				width: 1440,
 				height: 900,
 				outputfile: '<%= project.styles_critical %>/contact.css',

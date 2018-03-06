@@ -17,8 +17,8 @@ module.exports = function(grunt) {
 			options: {
 				watchTask: true,
 				open: false, // 'external'
-				host: 'jonathanvanwunnik.dev',
-				proxy: 'jonathanvanwunnik.dev',
+				host: 'jonathanvanwunnik.test',
+				proxy: 'jonathanvanwunnik.test',
 				port: 3000,
 				// tunnel: 'jonathanvanwunnik',                                            // Attempt to use the URL "http://jonathanvanwunnik.localtunnel.me"
 				// logConnections: true,
