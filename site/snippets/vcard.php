@@ -20,5 +20,5 @@
 	<?php if($page->phone()->isNotEmpty()): ?><?php if(s::get('device_class') == 'mobile'): echo '<a href="tel:' . rawurlencode($page->phone()->html()) . '">'; endif; ?><span property="telephone" class="p-tel tel"><?php echo $page->phone()->html(); ?></span><?php if(s::get('device_class') == 'mobile'): ?></a><?php endif; ?><br><?php endif; ?>
 	<?php if($page->email()->isNotEmpty()): ?><a href="mailto:<?php echo $page->email()->html(); ?>" property="email" class="u-email email"><?php echo $page->email()->html(); ?></a><?php endif; ?>
 	<?php if($page->site()->url()): ?><a href="<?php echo $site->url(); ?>" property="url" class="u-url url is-hidden-visually"><?php echo $page->site()->url(); ?></a><br><?php endif; ?>
-	<?php if($page->cvr()->isNotEmpty()): ?>cvr number <span property="taxID"><?php echo $page->cvr()->html(); ?></span><?php endif; ?>
+	<?php if($page->cvr()->isNotEmpty()): ?><abbr title="Centrale Virksomhedsregister">CVR</abbr>-number <span property="taxID"><?php echo $page->cvr()->html(); ?></span><?php endif; ?>
 </div>
