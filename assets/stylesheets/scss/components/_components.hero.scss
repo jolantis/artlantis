@@ -10,16 +10,16 @@
 	color:	$color-base-white;
 
 	// White border!
-	// @include breakpoint(compact) {
-	// 	padding: rhythm($grid-gutter-rhythm-unit / 2);
+	@include breakpoint(small) {
+		padding: rhythm($grid-gutter-rhythm-unit);
 
-	// 	.bg-image__placeholder {
-	// 		top: rhythm($grid-gutter-rhythm-unit / 2);
-	// 		left: rhythm($grid-gutter-rhythm-unit / 2);
-	// 		right: rhythm($grid-gutter-rhythm-unit / 2);
-	// 		bottom: rhythm($grid-gutter-rhythm-unit / 2);
-	// 	}
-	// }
+		.bg-image__placeholder {
+			top: rhythm($grid-gutter-rhythm-unit);
+			left: rhythm($grid-gutter-rhythm-unit);
+			right: rhythm($grid-gutter-rhythm-unit);
+			bottom: rhythm($grid-gutter-rhythm-unit);
+		}
+	}
 
 	// @include breakpoint(medium) {
 	// 	max-height: 108vw;
@@ -60,8 +60,7 @@
 // 	@extend %text-small;
 // }
 
-.hero__button,
-.hero__buttons > a {
+.hero__button {
 	pointer-events: auto;
 
 	.hero__subtitle + & {
@@ -69,7 +68,7 @@
 	}
 }
 
-.hero__buttons > a + a {
+.hero__button > a + a {
 	margin-left: rhythm(1);
 }
 

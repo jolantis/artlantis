@@ -332,15 +332,19 @@
 	}
 
 	abbr {
-		border: none;
-		// text-decoration: underline;
-		// text-decoration: underline dotted;
 		text-transform: lowercase;
-		letter-spacing: .05rem;
+		letter-spacing: .02rem;
 		// font-variant: small-caps; // https://developer.mozilla.org/en-US/docs/CSS/font-variant
-		cursor: help;
-		// background-color: $color-gray-x-light;
-		border-bottom: 1px dotted $color-base-black;
+
+		&[title] {
+			border: none;
+			// text-decoration: underline;
+			// text-decoration: underline dotted;
+			text-decoration: none;
+			cursor: help;
+			// background-color: $color-gray-xx-light;
+			border-bottom: 1px dotted $color-base-black;
+		}
 	}
 
 	code,
@@ -351,7 +355,7 @@
 	}
 
 	code {
-		background-color: $color-gray-x-light;
+		background-color: $color-gray-xx-light;
 	}
 
 	/* Lists
@@ -362,7 +366,7 @@
 	ul,
 	ol {
 		@extend .list;
-		@extend .list--plain;
+		// @extend .list--plain;
 	}
 
 	/* Definition lists */
@@ -382,6 +386,7 @@
 
 	a:not(.button) {
 		@extend .link;
+		// @extend .list--plain;
 	}
 
 	/* External page links */

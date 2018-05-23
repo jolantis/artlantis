@@ -3,22 +3,35 @@
    ========================================================================== */
 
 .contentinfo {
-	margin-top: rhythm(3);
-	// text-align: center;
-
-	// .copy {
-
-	// 	// > p {
-	// 	// 	max-width: strip-unit($text-max-width) + (2 * strip-unit(rhythm($contain-rhythm-unit))) * 1em; // In EM's; relative to (bigger) text size!
-	// 	// }
-
-	// 	a:visited {
-	// 		color: $color-base-black;
-	// 	}
-	// }
+	margin-top: rhythm(3.5);
+	padding-top: rhythm(1.5);
+	background-color: $color-gray-xx-light;
 
 	footer {
 		padding-top: rhythm(1);
 		padding-bottom: rhythm(1);
+		color: rgba($color-link-dark,.6);
+
+		a {
+			position: relative;
+
+			&:hover,
+			&:focus {
+				color: $color-link-dark;
+
+				.no-touchevents & {
+					top: -2px;
+					padding-bottom: rhythm(.05);
+					border-bottom: 2px solid $color-link-dark;
+				}
+			}
+			&:active {
+
+				.no-touchevents & {
+					top: 0;
+					border-bottom-width: 0;
+				}
+			}
+		}
 	}
 }

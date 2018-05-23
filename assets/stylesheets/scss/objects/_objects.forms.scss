@@ -101,7 +101,7 @@
 }
 
 .form__input {
-	@include input-placeholder { color: $color-gray-x-light; }
+	@include input-placeholder { color: $color-gray-xx-light; }
 
 	padding: rhythm(.25); // To keep vertical rhythm it should be smaller than rhythm podding of `.form__label`
 	// outline: none; // Disbale default browser focus outline (make sure to add custom focus styling)
@@ -112,7 +112,7 @@
 	-webkit-appearance: none; // Reset iOS inset schaodw on inputs
 
 	&:focus {
-		border-color: $color-gray-x-light;
+		border-color: $color-gray-xx-light;
 		background-color: $color-base-white;
 	}
 }

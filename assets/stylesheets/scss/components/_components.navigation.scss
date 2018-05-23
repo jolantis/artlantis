@@ -24,75 +24,75 @@
 			padding-bottom: rhythm(.5);
 			padding-left: rhythm(.5);
 		}
+	}
 
+	a {
+		position: relative;
+		color: rgba($color-link-dark,.6);
 
-		a {
-			position: relative;
-			color: rgba($color-link-dark,.6);
+		&:hover,
+		&:focus {
+			color: $color-link-dark;
 
-			&:hover,
-			&:focus {
-				color: $color-link-dark;
-
-				.no-touchevents & {
-					top: -2px;
-					border-bottom: 2px solid $color-link-dark;
-				}
+			.no-touchevents & {
+				top: -2px;
+				padding-bottom: rhythm(.05);
+				border-bottom: 2px solid $color-link-dark;
 			}
-			&:active {
+		}
+		&:active {
 
-				.no-touchevents & {
-					top: 0;
-					border-bottom-width: 0;
-				}
+			.no-touchevents & {
+				top: 0;
+				border-bottom-width: 0;
 			}
 		}
 
 		&[aria-current="page"] {
+			color: $color-link-dark;
+
+			.no-touchevents & {
+				top: 0;
+				border-bottom: none;
+				cursor: default;
+			}
+		}
+	}
+
+	header & { // Target only nav in header part (not in contentinfo)
+
+		.template-home &,
+		.template-blog-post &,
+		.template-error & {
+			padding-right: rhythm($grid-gutter-rhythm-unit);
+			padding-left: rhythm($grid-gutter-rhythm-unit);
+
+			@include breakpoint(medium) {
+				padding-right: 0;
+			}
 
 			a {
-				color: $color-link-dark;
+				color: rgba($color-link-light,.7);
 
-				.no-touchevents & {
-					top: 0;
-					border-bottom: none;
-					cursor: default;
+				&:hover,
+				&:focus {
+					color: $color-link-light;
+				}
+
+				&[aria-current="page"] {
+					color: $color-link-light;
 				}
 			}
 		}
 
-		header & {
+		.template-home.no-touchevents &,
+		.template-blog-post.no-touchevents &,
+		.template-error.no-touchevents & {
 
-			.template-home &,
-			.template-blog-post &,
-			.template-error & {
-
-				a {
-					color: rgba($color-link-light,.7);
-
-					&:hover,
-					&:focus {
-						color: $color-link-light;
-					}
-				}
-
-				&[aria-current="page"] {
-
-					a {
-						color: $color-link-light;
-					}
-				}
-			}
-
-			.template-home.no-touchevents &,
-			.template-blog-post.no-touchevents &,
-			.template-error.no-touchevents & {
-
-				a {
-					&:hover,
-					&:focus {
-						border-bottom-color: $color-link-light;
-					}
+			a {
+				&:hover,
+				&:focus {
+					border-bottom-color: $color-link-light;
 				}
 			}
 		}

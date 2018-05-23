@@ -12,25 +12,26 @@
 
 		position: relative;
 		// background-color: transparent; // Remove the gray background on active links in IE 10.
-		background-color: $color-gray-x-light;
+		background-color: $color-gray-xx-light;
 		// text-decoration: underline;
 		// text-decoration-skip: ink; // See: https://css-tricks.com/more-control-over-text-decoration/
 		// color: $color-blue-dark;
 		color: $color-link-dark;
 		// color: rgba($color-link-dark,.6);
-		padding: rhythm(.1);
+		border-radius: rhythm(.1);
+		// padding: rhythm(.05);
+		// padding-top: rhythm(.1);
+		// padding-bottom: rhythm(.05);
+		// margin-left: rhythm(-.05);
+		// margin-right: rhythm(-.05);
 		-webkit-tap-highlight-color: rgba(0,0,0,0); // Hide transparent highlight color that appears when tapping on iOS/Android
+
+		.contentinfo & {
+			background-color: $color-gray-x-light;
+		}
 
 		.no-touchevents & {
 			transition: background-color .24s ease-out, color .24s ease-out;
-		}
-
-		/**
-		 * Correct for padding on links in vcard (to left align contact info listing)!
-		 */
-
-		.vcard & {
-			margin-left: rhythm(-.1);
 		}
 	}
 
@@ -41,10 +42,16 @@
 	&:hover,
 	&:focus {
 		color: $color-link-dark;
-		background-color: transparent;
+		border-radius: 0;
+
+		&,
+		.contentinfo & {
+			background-color: transparent;
+		}
 
 		.no-touchevents & {
 			top: -2px;
+			padding-bottom: rhythm(.05);
 			border-bottom: 2px solid $color-link-dark;
 		}
 	}
@@ -53,6 +60,13 @@
 		.no-touchevents & {
 			top: 0;
 			border-bottom-width: 0;
+		}
+	}
+
+	&:hover {
+
+		.no-touchevents & abbr {
+			border-bottom: none; // Hide abbr's dotted border on hover (when inside a link/anchor)
 		}
 	}
 
