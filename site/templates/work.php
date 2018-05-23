@@ -9,7 +9,7 @@
 		</h1>
 
 		<div class="grid grid--gutter">
-			<?php foreach ($page_items->flip() as $page_item) : ?>
+			<?php foreach ($page_items as $page_item) : ?>
 
 				<?php $page_item_image = ($page_item->images()->filterBy('filename','*=','main')->first()) ? $page_item->images()->filterBy('filename','*=','main')->first() : $page_item->images()->sortBy('sort', 'asc')->first(); ?>
 
