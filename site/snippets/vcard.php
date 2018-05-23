@@ -2,6 +2,13 @@
 // ----------------------------------------------------------
 // SNIPPET
 // ----------------------------------------------------------
+/////////////////////////////////////////////////////////////
+
+// Pass another page's content:
+// snippet('vcard', array('contact_page' => $contact_page));
+
+$page = (isset($contact_page)) ? page($contact_page) : $page;
+
 ////////////////////////////////////////////////////////// ?>
 
 <div vocab="http://schema.org/" typeof="Person" class="h-card vcard">
