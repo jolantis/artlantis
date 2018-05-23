@@ -4,7 +4,7 @@
 
 	<main role="main" class="contain-padding">
 
-		<h1 class="beta-heading">
+		<h1 class="alpha-heading">
 			<?php echo ($page->long_title()->exists() && $page->long_title()->isNotEmpty()) ? $page->long_title()->smartypants()->widont() : $page->title()->smartypants()->widont(); ?>
 		</h1>
 
