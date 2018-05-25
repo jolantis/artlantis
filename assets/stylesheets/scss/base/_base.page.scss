@@ -28,6 +28,7 @@ html {
 	color: $color-base-black;
 	background-color: $background-color;
 
+	&.template-temp,
 	&.template-home,
 	&.template-blog-post,
 	&.template-error {
