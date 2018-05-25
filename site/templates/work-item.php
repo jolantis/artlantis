@@ -45,7 +45,7 @@
 
 		<div class="contain-padding cssgrid js-toggle-target">
 
-			<?php $i=1; foreach ($page->images()->sortBy('sort', 'asc')->flip() as $image): ?>
+			<?php $i=1; foreach ($page->images()->sortBy('sort', 'asc')->shuffle() as $image): ?>
 				<div class="cssgrid__item<?php if($image->dimensions()->portrait()): ?> cssgrid__item--tall<?php endif; if($image->dimensions()->ratio() > 2) : ?> cssgrid__item--wide<?php endif; ?>">
 					<figure class="figure-image">
 						<?php echo $image->imageset('default'); ?>
