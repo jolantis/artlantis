@@ -39,7 +39,17 @@
 
 		<div class="grid grid--gutter">
 
-			<?php foreach($blog->children()->visible()->flip()->limit(4) as $blog_post): ?>
+			<?php
+				// Fetch the basic set of pages
+				$blog_items = $blog->children()->visible();
+
+				# Filter by date to exclude future posts (on production only)
+				if(c::get('environment') != 'local' && c::get('environment') != 'stage') {
+					$blog_items = $blog_items->filterBy('date', '<', time());
+				}
+			?>
+
+			<?php foreach($blog_items->flip()->limit(4) as $blog_post): ?>
 
 				<?php $blog_post_image = ($blog_post->images()->filterBy('filename','*=','main')->first()) ? $blog_post->images()->filterBy('filename','*=','main')->first() : $blog_post->images()->sortBy('sort', 'asc')->first(); ?>
 
