@@ -249,7 +249,7 @@
 	/* Paragraphs
 	   ========================================================================== */
 
-	p:first-of-type:not(.text-no-intro) {
+	p:first-of-type {
 		@extend .beta-heading;
 	}
 
