@@ -46,6 +46,8 @@
 
 	max-width: 100%; // IE 10-11 fix for FLexbug #2: https://github.com/philipwalton/flexbugs#flexbug-2
 	margin-bottom: rhythm(.25);
+	padding-left: rhythm($grid-gutter-rhythm-unit);
+	padding-right: rhythm($grid-gutter-rhythm-unit);
 	// font-weight: 400;
 }
 
