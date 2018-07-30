@@ -8,7 +8,7 @@
 			<?php echo ($page->long_title()->exists() && $page->long_title()->isNotEmpty()) ? $page->long_title()->smartypants()->widont() : $page->title()->smartypants()->widont(); ?>
 		</h1>
 
-		<?php snippet('filters', array('filter_key' => 'tags', 'sort' => 'abc')); ?>
+		<?php snippet('filters', array('filter_key' => 'tags', 'sort' => 'count')); ?>
 		<?php //snippet('filters'); ?>
 
 		<section class="grid grid--gutter">
