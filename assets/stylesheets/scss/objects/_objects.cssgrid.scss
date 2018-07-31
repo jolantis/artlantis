@@ -27,9 +27,9 @@
 				}
 			}
 
-			@include breakpoint(medium) {
-				grid-template-columns: repeat(3, 1fr);
-			}
+			// @include breakpoint(medium) {
+			// 	grid-template-columns: repeat(3, 1fr);
+			// }
 		}
 	}
 
@@ -98,10 +98,10 @@
 				grid-row: auto / span 2;
 			}
 
-			// &:nth-child(7):not(.cssgrid__item--tall):not(.cssgrid__item--wide) {
-			&:nth-child(7):not(.cssgrid__item--tall) {
-				grid-column-start: 2;
-			}
+			// // &:nth-child(7):not(.cssgrid__item--tall):not(.cssgrid__item--wide) {
+			// &:nth-child(7):not(.cssgrid__item--tall) {
+			// 	grid-column-start: 2;
+			// }
 		}
 	}
 }
