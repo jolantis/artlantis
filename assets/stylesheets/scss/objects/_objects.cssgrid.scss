@@ -70,6 +70,7 @@
 				grid-row: auto / span 2;
 
 				&:nth-child(1) {
+					grid-column: auto / span 1;
 
 					+ .cssgrid__item:not(.cssgrid__item--tall) {
 						grid-column: auto / span 2;
@@ -81,19 +82,24 @@
 				// 	grid-column: 1 / -1; // span all columns (no matter how many columns there are!)
 
 				// 	@include breakpoint(medium) {
+				// 		grid-column: auto / span 1;
 				// 		grid-row: auto / span 2;
 				// 	}
 				// }
 			}
 
-			&--wide {
-				grid-column: 1 / -1; // span all columns (no matter how many columns there are!)
-			}
+			// &--wide {
+			// 	grid-column: 1 / -1; // span all columns (no matter how many columns there are!)
+			// }
 
 			&:nth-child(6n+1):not(.cssgrid__item--tall):not(.cssgrid__item--wide) {
 				grid-column: auto / span 2;
 				grid-row: auto / span 2;
 			}
+
+			// &:nth-child(6n+7):not(.cssgrid__item--wide) {
+			// 	grid-column-start: 2;
+			// }
 		}
 	}
 }
