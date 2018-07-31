@@ -98,7 +98,7 @@ The name of the home and error page folders.
 
 */
 
-c::set('home', 'temp');
+c::set('home', 'home');
 c::set('error', 'error');
 
 
