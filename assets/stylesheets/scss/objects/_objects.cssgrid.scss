@@ -92,14 +92,16 @@
 			// 	grid-column: 1 / -1; // span all columns (no matter how many columns there are!)
 			// }
 
-			&:nth-child(6n+1):not(.cssgrid__item--tall):not(.cssgrid__item--wide) {
+			// &:nth-child(6n+1):not(.cssgrid__item--tall):not(.cssgrid__item--wide) {
+			&:nth-child(6n+1):not(.cssgrid__item--tall) {
 				grid-column: auto / span 2;
 				grid-row: auto / span 2;
 			}
 
-			// &:nth-child(6n+7):not(.cssgrid__item--wide) {
-			// 	grid-column-start: 2;
-			// }
+			// &:nth-child(7):not(.cssgrid__item--tall):not(.cssgrid__item--wide) {
+			&:nth-child(7):not(.cssgrid__item--tall) {
+				grid-column-start: 2;
+			}
 		}
 	}
 }
