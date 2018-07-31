@@ -55,6 +55,38 @@
 
 		</div>
 
+		<aside class="contain-padding space-leader-xl">
+			<?php $work = site()->find('work'); ?>
+
+			<h2 class="is-hidden-visually">More work</h2>
+
+			<div class="grid grid--gutter">
+				<?php foreach($work->children()->visible()->not(site()->activePage())->shuffle()->limit(2) as $work_item): ?>
+
+					<?php $work_item_image = ($work_item->images()->filterBy('filename','*=','main')->first()) ? $work_item->images()->filterBy('filename','*=','main')->first() : $work_item->images()->sortBy('sort', 'asc')->first(); ?>
+
+					<div class="grid__cell medium-1of2">
+						<a href="<?php echo $work_item->url(); ?>" class="bg-image bg-image--link aligner">
+						<?php if($work_item_image): ?>
+							<?php // echo $work_item_image->imageset('grid'); ?>
+							<?php echo $work_item_image->imageset('grid', ['output' => 'bgimage']); ?>
+							<span class="bg-text aligner aligner--stacked aligner--center">
+								<h3 class="bg-text__title-big"><?php echo $work_item->title()->smartypants()->widont(); ?></h3>
+								<p class="bg-text__button button button--border-light icon icon--right">
+									View
+									<svg role="presentation" width="24" height="24" title="Right arrow">
+										<use xlink:href="/assets/images/sprite.svg#arrow-right"/>
+									</svg>
+								</p>
+							</span>
+						<?php endif; ?>
+					</a>
+					</div>
+
+				<?php endforeach ?>
+			</div>
+		</aside>
+
 	</main>
 
 	<?php snippet('contentinfo'); ?>
