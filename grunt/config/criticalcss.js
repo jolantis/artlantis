@@ -80,7 +80,7 @@ module.exports = function(grunt) {
 		},
 		blog_post : {
 			options: {
-				url: 'http://jonathanvanwunnik.test/blog/summer-holiday-in-liguria',
+				url: 'http://jonathanvanwunnik.test/blog/fair-time',
 				width: 1440,
 				height: 900,
 				outputfile: '<%= project.styles_critical %>/blog_post.css',
