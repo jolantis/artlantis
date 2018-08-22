@@ -13,7 +13,8 @@
 		font-weight: 300; // Reset default browser weight for h1 (e.g. ‘bold’)
 	}
 
-	.template-home & {
+	.template-home &,
+	.template-blog-post & {
 		padding-left: rhythm($grid-gutter-rhythm-unit);
 		color: $color-link-light;
 
