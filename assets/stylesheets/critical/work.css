@@ -1,5 +1,5 @@
 /**
- * Jonathan van Wunnik: Photographer — v1.0.3 — 2018-08-03
+ * Jonathan van Wunnik: Photographer — v1.0.4 — 2018-08-22
  * https://jonathanvanwunnik.com
  * Copyright (c) 2018 Jonathan van Wunnik
  * License MIT
