@@ -31,7 +31,8 @@ var FontObserverHandler = (function () {
 			// document.documentElement.classList.add('fonts-loaded');
 			enhance.cookie('fonts_loaded', 'true', 7);
 			// console.log('Kawak fonts have loaded.');
-		}, function () {
+		}).catch(function () {
+			// document.documentElement.classList.add('fonts-failed');
 			console.info('Web fonts could not be loaded in time. Falling back to system fonts.');
 		});
 
