@@ -7,6 +7,14 @@
 	padding-top: rhythm(1.5);
 	background-color: $color-gray-xx-light;
 
+	> .copy {
+		@extend %text-kern;
+		@include responsive-text-size($text-beta);
+
+		hanging-punctuation: first;
+		letter-spacing: .01rem;
+	}
+
 	footer {
 		padding-top: rhythm(1);
 		padding-bottom: rhythm(1);

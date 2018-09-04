@@ -7,7 +7,7 @@
 <?php // snippet('nav-main'); ?>
 
 <div role="contentinfo" class="contentinfo">
-	<div class="copy copy--contain beta-heading space-trailer-m">
+	<div class="copy copy--contain space-trailer-m">
 		<?php echo $site->footer_text()->kirbytext(); ?>
 	</div>
 

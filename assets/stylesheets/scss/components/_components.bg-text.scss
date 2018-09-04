@@ -31,16 +31,12 @@
 	@extend %heading-settings;
 	@extend %text-kern;
 	@include responsive-text-size($text-bg-title-plus);
-
-	// font-weight: 400;
 }
 
 .bg-text__title {
 	@extend %heading-settings;
 	@extend %text-kern;
 	@include responsive-text-size($text-bg-title);
-
-	font-weight: 400;
 }
 
 // .bg-text__meta {
