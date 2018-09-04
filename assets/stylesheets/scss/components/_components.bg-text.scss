@@ -29,13 +29,19 @@
 
 .bg-text__title-big {
 	@extend %heading-settings;
+	@extend %heading-font; // Kawak Regular (boldy)
 	@extend %text-kern;
+	@extend %text-break;
+	@extend %text-hyphen;
 	@include responsive-text-size($text-bg-title-plus);
 }
 
 .bg-text__title {
 	@extend %heading-settings;
+	@extend %heading-font; // Kawak Regular (boldy)
 	@extend %text-kern;
+	@extend %text-break;
+	@extend %text-hyphen;
 	@include responsive-text-size($text-bg-title);
 }
 

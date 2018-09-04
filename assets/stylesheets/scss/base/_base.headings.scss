@@ -17,13 +17,16 @@
  */
 
 %heading-settings {
-	@include heading-font(400);
-
+	font-weight: normal;
 	hanging-punctuation: first;
 	letter-spacing: .01rem;
+}
+
+%heading-font {
+	@include heading-font(400);
 
 	.fonts-loaded & {
-		font-family: $heading-web-font;
+		font-family: $heading-web-font; // Kawak Regular (boldy)
 	}
 }
 
@@ -35,9 +38,9 @@
 
 .alpha-heading {
 	@extend %heading-settings;
+	@extend %text-kern;
 	@extend %text-break;
 	@extend %text-hyphen;
-	@extend %text-kern;
 	@include responsive-text-size($text-alpha);
 }
 
@@ -45,9 +48,9 @@
 
 .beta-heading {
 	@extend %heading-settings;
+	@extend %text-kern;
 	@extend %text-break;
 	@extend %text-hyphen;
-	@extend %text-kern;
 	@include responsive-text-size($text-beta);
 }
 

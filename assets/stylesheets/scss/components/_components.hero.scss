@@ -39,9 +39,9 @@
 
 .hero__title {
 	@extend %heading-settings;
+	@extend %text-kern;
 	@extend %text-break;
 	@extend %text-hyphen;
-	@extend %text-kern;
 	@include responsive-text-size($text-bg-title-hero);
 
 	max-width: 100%; // IE 10-11 fix for FLexbug #2: https://github.com/philipwalton/flexbugs#flexbug-2

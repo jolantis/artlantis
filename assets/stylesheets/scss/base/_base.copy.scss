@@ -250,11 +250,10 @@
 	   ========================================================================== */
 
 	p:first-of-type {
-		@extend %text-kern;
-		@include responsive-text-size($text-beta);
-
-		hanging-punctuation: first;
-		letter-spacing: .01rem;
+		// @extend %heading-settings;
+		// @extend %text-kern;
+		// @include responsive-text-size($text-beta);
+		@extend .beta-heading;
 	}
 
 	// p:first-child { }
