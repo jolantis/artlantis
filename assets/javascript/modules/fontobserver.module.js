@@ -51,21 +51,21 @@ var FontObserverHandler = (function () {
 		// 	document.documentElement.className += ' fonts-loaded';
 		// 	// document.documentElement.classList.add('fonts-loaded');
 		// 	enhance.cookie('fonts_loaded', 'true', 7);
-		// 	// console.log('Kawak fonts have loaded.');
+		// 	// console.info('Kawak fonts have loaded.');
 		// }).catch(function () {
 		// 	// document.documentElement.classList.add('fonts-failed');
-		// 	console.log('Kawak fonts loading has timed out (> 3 sec.). Falling back to system fonts.');
+		// 	console.info('Kawak fonts loading has timed out (> 3 sec.). Falling back to system fonts.');
 		// });
 
 		// // Prioritised loading
 		// kawak_light.load().then(function () {
 		// 	document.documentElement.className += ' kawak-light-loaded';
-		// 	console.log('Kawak Light font has loaded.');
+		// 	console.info('Kawak Light font has loaded.');
 
 		// 	kawak_regular.load().then(function () {
 		// 		document.documentElement.className += ' kawak-regular-loaded';
 		// 		document.documentElement.className += ' fonts-loaded';
-		// 		console.log('Kawak Regular font has loaded.');
+		// 		console.info('Kawak Regular font has loaded.');
 		// 	});
 		// });
 
