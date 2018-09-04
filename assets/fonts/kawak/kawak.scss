@@ -32,7 +32,7 @@
 /* Light */
 
 @font-face {
-	font-family: 'Kawak';
+	font-family: 'Kawak Light';
 	src: url('/assets/fonts/kawak/kawak-light.woff2') format('woff2'),
 		 url('/assets/fonts/kawak/kawak-light.woff') format('woff'),
 		 url('/assets/fonts/kawak/kawak-light.ttf') format('truetype');
@@ -44,10 +44,10 @@
 /* Regular */
 
 @font-face {
-	font-family: 'Kawak';
-	src: url('/assets/fonts/kawak/kawak.woff2') format('woff2'),
-		 url('/assets/fonts/kawak/kawak.woff') format('woff'),
-		 url('/assets/fonts/kawak/kawak.ttf') format('truetype');
+	font-family: 'Kawak Regular';
+	src: url('/assets/fonts/kawak/kawak-regular.woff2') format('woff2'),
+		 url('/assets/fonts/kawak/kawak-regular.woff') format('woff'),
+		 url('/assets/fonts/kawak/kawak-regular.ttf') format('truetype');
 	font-display: swap;                                                         /* options: auto, block, swap, fallback and optional */
 	font-weight: 400;
 	font-style: normal;

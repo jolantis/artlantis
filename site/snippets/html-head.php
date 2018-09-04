@@ -30,8 +30,8 @@ $fontobserver = (isset($_COOKIE['fonts_loaded']) && $_COOKIE['fonts_loaded'] == 
 	<?php /* <link rel="dns-prefetch" href="https://maps.googleapis.com"> */ ?>
 	<link rel="dns-prefetch" href="https://www.google-analytics.com">
 
+	<link rel="preload" href="<?php echo site()->url(); ?>/assets/fonts/kawak/kawak-regular.woff2" as="font" type="font/woff2" crossorigin>
 	<link rel="preload" href="<?php echo site()->url(); ?>/assets/fonts/kawak/kawak-light.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="<?php echo site()->url(); ?>/assets/fonts/kawak/kawak.woff2" as="font" type="font/woff2" crossorigin>
 
 	<title><?php echo $page->window_title(); if(c::get('environment') == 'local'): echo ' [DEV]'; endif; ?></title>
 	<meta name="description" content="<?php echo $page->meta_description(); ?>">
