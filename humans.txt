@@ -13,6 +13,6 @@
     Standards: HTML5, CSS3, JavaScript
     Components: Font Face Observer, Modernizr, etc.
     Software: Kirby CMS, ImageKit + ImageSet
-    Webfonts: Kawak Light & Bold
+    Webfonts: Kawak Light & Regular
     (license: https://www.youworkforthem.com/font-license,
     buy: https://www.youworkforthem.com/font/T7136/kawak)
