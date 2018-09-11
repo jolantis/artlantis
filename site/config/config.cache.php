@@ -8,7 +8,7 @@ Enable/disable Kirby's cache.
 
 */
 
-c::set('cache', true);
+c::set('cache', false);
 c::set('cache.driver', 'memcached');                                            // Valid values are: file, memcached and apc
 c::set('cache.root', '/var/cache');                                             // The cache directory location
 c::set('cache.options', array('host' => 'localhost', 'port' => 11211));         // Change the default memcached driver host and port (the default is localhost and  11211)
