@@ -29,7 +29,7 @@
 
 .bg-text__title-big {
 	@extend %heading-settings;
-	@extend %heading-font; // Kawak Regular (boldy)
+	@extend %heading-font; // Kawak Regular (400) ~ Bolder
 	@extend %text-kern;
 	@extend %text-break;
 	@extend %text-hyphen;
@@ -38,7 +38,7 @@
 
 .bg-text__title {
 	@extend %heading-settings;
-	@extend %heading-font; // Kawak Regular (boldy)
+	@extend %heading-font; // Kawak Regular (400) ~ Bolder
 	@extend %text-kern;
 	@extend %text-break;
 	@extend %text-hyphen;

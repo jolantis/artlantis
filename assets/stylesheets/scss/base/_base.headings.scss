@@ -26,7 +26,7 @@
 	@include heading-font(400);
 
 	.fonts-loaded & {
-		font-family: $heading-web-font; // Kawak Regular (boldy)
+		font-family: $heading-web-font-stack; // Kawak Regular (400) ~ Bolder
 	}
 }
 
