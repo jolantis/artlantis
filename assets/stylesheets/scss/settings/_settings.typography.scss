@@ -5,11 +5,11 @@
 // Font stacks
 // --------------------------------------------------------------------------
 
-$sans-font-stack:               "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Light", "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, ArialMT, sans-serif;
-$sans-web-font:                 "Kawak Light", $sans-font-stack;
+$sans-font-stack:               "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, ArialMT, sans-serif;
+$sans-web-font:                 "Kawak", $sans-font-stack;
 
 $heading-font-stack:            "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, ArialMT, sans-serif;
-$heading-web-font:              "Kawak Regular", $heading-font-stack;
+$heading-web-font:              "Kawak", $heading-font-stack;
 
 $serif-font-stack:              "Lucida Bright", "LucidaBright", Georgia, serif;
 $mono-font-stack:               Monaco, "Courier New", "CourierNewPSMT", Courier, monospace, serif;

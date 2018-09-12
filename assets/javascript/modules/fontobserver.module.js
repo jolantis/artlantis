@@ -15,10 +15,10 @@ var FontObserverHandler = (function () {
 		}
 
 		// Define the fonts and font variants to observed
-		var kawak_light = new FontFaceObserver('Kawak Light', {
+		var kawak_light = new FontFaceObserver('Kawak', {
 			weight: 300
 		});
-		var kawak_regular = new FontFaceObserver('Kawak Regular', {
+		var kawak_regular = new FontFaceObserver('Kawak', {
 			weight: 400
 		});
 
