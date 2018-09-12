@@ -6,10 +6,10 @@
 // --------------------------------------------------------------------------
 
 $sans-font-stack:               "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Light", "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, ArialMT, sans-serif;
-$sans-web-font:                 "Kawak Light", "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Light", "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, ArialMT, sans-serif;
+$sans-web-font:                 "Kawak Light", $sans-font-stack;
 
 $heading-font-stack:            "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, ArialMT, sans-serif;
-$heading-web-font:              "Kawak Regular", "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, ArialMT, sans-serif;
+$heading-web-font:              "Kawak Regular", $heading-font-stack;
 
 $serif-font-stack:              "Lucida Bright", "LucidaBright", Georgia, serif;
 $mono-font-stack:               Monaco, "Courier New", "CourierNewPSMT", Courier, monospace, serif;
