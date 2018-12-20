@@ -337,9 +337,9 @@
 
 	abbr {
 		letter-spacing: .02rem;
-		font-variant: small-caps; // https://developer.mozilla.org/en-US/docs/CSS/font-variant
-		text-transform: lowercase; // Enable if no small caps are a part of the webfont!
-		font-size: 112%; // Enable if no small caps are a part of the webfont!
+		// font-variant: small-caps; // https://developer.mozilla.org/en-US/docs/CSS/font-variant
+		// text-transform: lowercase; // Enable if no small caps are a part of the webfont!
+		// font-size: 112%; // Enable if no small caps are a part of the webfont!
 
 		&[title] {
 
